@@ -1,0 +1,20 @@
+---
+const { title, description } = Astro.props;
+
+
+const formattedDescription = description
+  .replace(/Continuamente/g, '<strong>Continuamente</strong>')
+  .replace(/Migliaia di ore di esperienza su Amazon Seller Central e Vendor Central/g, '<strong class="font-bold">Migliaia di ore di esperienza su Amazon Seller Central e Vendor Central</strong>')
+  .replace(/Fondatore, un Imprenditore, un Direttore E-Commerce, un Manager di Marketplace o un Manager E-Commerce,/g, '<strong class="font-bold">Fondatore, un Imprenditore, un Direttore E-Commerce, un Manager di Marketplace o un Manager E-Commerce,</strong>')
+  .replace(/gestire con successo Amazon Vendor & Seller/g, '<strong class="font-bold">gestire con successo Amazon Vendor & Seller</strong>')
+  .replace(/guide utili e pratiche per la risoluzione di tutti i tuoi grattacapo/g, '<strong class="font-bold">guide utili e pratiche per la risoluzione di tutti i tuoi grattacapo</strong>');
+---
+
+<div class="flex flex-col md:flex-row items-start md:items-center gap-4 mb-10">
+  <div class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% rounded-lg p-3">
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white whitespace-nowrap">
+      {title}
+    </h2>
+  </div>
+  <p class="text-lg md:text-xl font-normal text-gray-700 md:max-w-2xl" set:html={formattedDescription} />
+</div>

@@ -1,0 +1,67 @@
+---
+import Container from "./Container.astro"
+import Topic from "./Topic.astro";
+import teamData from './Data/team.json';
+import Collapse from "./Collapse.astro";
+import FounderSection from "./FounderSection.astro";
+
+---
+<Container>
+<div class="relative flex flex-col items-center md:flex-row">
+    <Topic title="Il Team Storm X" description="Una parte del nostro Team di esperti Amazon. Migliaia di ore di esperienza su Amazon Seller Central e Vendor Central a disposizione della tua PMI"/>
+</div>
+
+<FounderSection />
+
+<div class="flex-row items-center py-5" id="team">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4">
+    {
+    teamData.team.map(({ title, description, name, link, profile} ) => (
+    <div class="h-[331px] px-[35px] py-10 bg-white rounded-[45px] shadow-card border border-zinc-900 flex-col justify-start items-start gap-2.5 inline-flex text-black">
+        <div class="flex-col justify-start items-start gap-7 flex">
+            <div class="self-stretch justify-start items-start inline-flex">
+                <div class="grow shrink basis-0 justify-start items-center gap-8 flex">
+                    <div class="h-[102.82px] left-0 top-0 relative">
+                        <img src={profile} alt={name}/>
+                    </div>
+                    <div class="flex-col justify-end items-start inline-flex">
+                        <div class="text-lg font-bold">{title}</div>
+                        <div class="text-lg font-medium">{name}</div>
+                    </div>
+                </div>
+                <a class="top-0 right-0" href={link}>
+                    <img src="/team/lng.svg" alt="vector"/>
+                </a>
+            </div>
+            <hr class="w-full border border-black"/>
+            <p class="text-sm md:text-lg">{description}</p>
+        </div>
+    </div>
+    ))
+    }
+    </div>
+</div>
+
+
+
+<div class="pt-20 relative flex flex-col items-center md:flex-row">
+    <Topic title="Il Nostro Processo" description="Aumentiamo la tua quota di mercato. Continuamente.Gestiamo tutti i pilastri di Amazon. Anche quelli che la maggior parte delle agenzie ignora, come la gestione del catalogo e la SEO. Quando il PPC lavora con la SEO e la SEO lavora con il design, l'intero catalogo guadagna quota di mercato insieme."/>
+</div>
+
+<div class="my-6">
+    <div class="space-y-10">
+        {
+        teamData.process.map((process, key) => (
+            <Collapse label={process.label} index={key + 1}>
+            {process.content}
+            </Collapse>
+        ))
+        }
+    </div>
+</div>
+
+
+
+
+
+</Container>

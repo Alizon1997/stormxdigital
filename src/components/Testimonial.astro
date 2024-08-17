@@ -1,0 +1,117 @@
+---
+import Container from "./Container.astro"
+import ArticleIcon from "./Icons/ArticleIcon.astro"
+import VideoIcon from "./Icons/VideoIcon.astro"
+import Topic from "./Topic.astro"
+import articlesData from '../components//Data/articles.json';
+
+---
+<Container>
+  <div class="relative flex flex-col items-center md:flex-row">
+    <Topic title="Cosa Dicono Di Noi" description="Alcuni feedback di nostri clienti che abbiamo aiutato a crescere su Amazon Seller Central e Vendor Central. Siamo una agenzia Amazon apprezzata in Europa" />
+  </div>
+
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[1px]">
+      <div class="flex flex-col items-center mb-4">
+        <img src="/Container.png" alt="Daniel Gray" class="w-72 h-72rounded-full mb-2" />
+        <h3 class="text-xl font-bold text-[#F95C04]">Daniel Gray - Sales Director</h3>
+        <p class="text-xl font-semibold">Powerplay Brands LTD</p>
+      </div>
+      <p class="text-[#F95C04] text-lg font-bold text-center mb-4">"Siamo Cresciuti Del 56% In 1 Anno"</p>
+      <p class="text-center text-lg">Venivamo da un esperienza non molto positiva con la nostra precedente Agenzia Amazon.</p>
+      <p class="text-center text-lg mt-2">Con Storm X invece abbiamo avuto un ottima esperienza, raggiungendo e supreando i target di fatturato che ci eravamo presupposti.</p>
+      <p class="text-center text-lg mt-2">Si capisce sin da subito la loro competenza e siamo felici di poter collaborare con loro.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[1px]">
+      <div class="flex flex-col items-center mb-4">
+        <img src="/Container.png" alt="Daniel Gray" class="w-72 h-72rounded-full mb-2" />
+        <h3 class="text-xl font-bold text-[#F95C04]">Daniel Gray - Sales Director</h3>
+        <p class="text-xl font-semibold">Powerplay Brands LTD</p>
+      </div>
+      <p class="text-[#F95C04] text-lg font-bold text-center mb-4">"Siamo Cresciuti Del 56% In 1 Anno"</p>
+      <p class="text-center text-lg">Venivamo da un esperienza non molto positiva con la nostra precedente Agenzia Amazon.</p>
+      <p class="text-center text-lg mt-2">Con Storm X invece abbiamo avuto un ottima esperienza, raggiungendo e supreando i target di fatturato che ci eravamo presupposti.</p>
+      <p class="text-center text-lg mt-2">Si capisce sin da subito la loro competenza e siamo felici di poter collaborare con loro.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-[45px] shadow-lg border-black border-[1px]">
+      <div class="flex flex-col items-center mb-4">
+        <img src="/Container2.png" alt="Tom Parr" class="w-72 h-72rounded-full mb-2" />
+        <h3 class="text-xl font-bold text-[#F95C04]">Tom Parr - E-Commerce Manager</h3>
+        <p class="text-xl font-semibold">Reliance Medical LTD</p>
+      </div>
+      <p class="text-[#F95C04] text-lg font-bold text-center mb-4">"Da 1,5 Mln a 4 Mln in 2 Anni"</p>
+      <p class="text-center text-lg">Marcello e Storm X ci aiutano nella gestione completa del nostro Amazon Vendor in Europa.</p>
+      <p class="text-center text-lg mt-2">Il team Storm X parla diverse lingue il che ha reso possibile per noi espanderci in Europa.</p>
+      <p class="text-center text-lg mt-2">Grazie a Storm X oggi il nostro business su Amazon sviluppa oltre i 4 Milioni di fatturato. Quando abbiamo iniziato eravamo a 1.5.</p>
+    </div>
+  </div>
+</Container>
+
+<Container class="px-4 sm:px-6 lg:px-8">
+  <div class="relative overflow-hidden bg-[#E1E1E1] rounded-[2rem]">
+    <div class="flex flex-col lg:flex-row items-center">
+      <div class="relative z-10 flex items-center w-full lg:w-1/2">
+        <img src="/woman.png" alt="Excited woman in red uniform" class="w-full h-auto lg:h-[592px] lg:w-auto object-cover lg:object-contain"/>
+
+        <div class="absolute top-0 left-0 right-0 bottom-0 flex items-end justify-center pb-8">
+          {[1,2,3,4,5].map((_, index) => (
+            <div 
+             
+              class="bg-yellow-400 w-6 mx-1"
+              style={{height: `${(index + 1) * 15}%`}}
+            ></div>
+          ))}
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 p-8 flex flex-col justify-center relative z-10">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Amazon Metodo Storm X</h2>
+        <p class="mb-6 text-lg leading-snug">
+          Tutti i segreti del nostro team rivelati in questo playbook.
+          Gli stessi processi che attuiamo per i nostri clienti li
+          abbiamo trascritti e messi a disposizione in maniera
+          gratuita per tutti i responsabili E-Commerce alle prese
+          con Amazon
+        </p>
+        <button class="bg-[#F95C04] text-white font-bold py-3 px-6 rounded-lg text-xl uppercase tracking-wide self-start">
+          SCARICALA GRATIS
+        </button>
+      </div>
+    </div>
+  </div>
+</Container>
+
+<Container>
+
+  <div class="relative flex flex-col items-center md:flex-row">
+    <Topic title="Tutorials & Best Practices" description="Non il classico noioso Blog. In questa sezione troverai guide utili e pratiche per la risoluzione di tutti i tuoi grattacapo di Amazon Seller & Vendor" />
+  </div>
+
+  <div class="py-8  max-w-screen-xl lg:py-16 ">
+    <div class="grid gap-8 lg:grid-cols-2">
+      {
+      articlesData.map(({ id, type, title, publish_date, brief, author, authorImage} ) => (
+        <article class="p-6 bg-white rounded-3xl border border-gray-200 shadow-card">
+            <div class="flex justify-between items-center mb-5 text-gray-500">
+                <span class="bg-[#F95C04] text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
+                  {type == 'Article' ? (<ArticleIcon />) : (<VideoIcon />)}
+                  {type}
+                </span>
+                <span class="text-sm">{publish_date}</span>
+            </div>
+            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{title}</h2>
+            <p class="mb-5 font-light text-gray-500" style="white-space: pre-line">{brief}</p>
+            <div class="flex justify-end items-end">
+                <a href={`/blogs/${id}`} class="inline-flex items-center text-lg font-bold text-[#F95C04] hover:text-black">
+                    Read More
+                    <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </article> 
+      ))
+      }
+    </div>  
+  </div>
+</Container>

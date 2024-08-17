@@ -1,0 +1,56 @@
+{
+    "team":
+    [
+        {
+            "title": "Armand Ohoungnon",
+            "name": "PPC Specialist",
+            "description": "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+            "profile": "/team/c1.png",
+            "link": "/"
+        },
+       
+        {
+            "title": "Francesco Monopoli",
+            "name": "Catalog Specialist",
+            "description": "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
+            "profile": "/team/c2.png",
+            "link": "/"
+        },
+        {
+            "title": "Sali Leshi",
+            "name": "Design Specialist",
+            "description": "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+            "profile": "/team/c3.png",
+            "link": "/"
+        }
+
+    ], 
+    
+    "process":
+    [
+        {
+            "label": "Audit Gratuito Account Amazon Seller o Vendor",
+            "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+        },
+        {
+            "label": "Ottimizzazione Catalogo Amazon, Content A+, Brand Story A+ e Vetrina Del Brand",
+            "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+        },
+        {
+            "label": "Avvio e Ottimizzazione Campagne Pubblicitarie Amazon Awareness, Considerazione e Conversione",
+            "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+        },
+        {
+            "label": "Monitoraggio KPI & Analisi Dati Amazon",
+            "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+        },
+        {
+            "label": "Gestione Pratiche Con Amazon Seller Support",
+            "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+        },
+        {
+            "label": "Ripetizione Del Processo",
+            "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+        }
+    ]
+}
