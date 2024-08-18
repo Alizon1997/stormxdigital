@@ -9,7 +9,12 @@ export default {
 		xl: "1440px",
 	  },
 	  colors: {
+		customGradient: {
+			start: '#F95C04',
+			end: '#FF8E0A',
+		  },
 		black: "#000000",
+		orange: "#F95C04",
 		white: "#FFFFFF",
 		gray: "#0D0C22",
 		stone: "#231F20",
