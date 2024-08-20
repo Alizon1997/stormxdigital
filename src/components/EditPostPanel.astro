@@ -17,7 +17,7 @@ try {
 
 // If post is not found, you might want to redirect or show an error message
 if (!post) {
-    return Astro.redirect('/blog-panel');
+    return Astro.redirect('/admin/blog-panel');
 }
 ---
 
@@ -127,7 +127,7 @@ if (!post) {
 
                     if (result.success) {
                         alert('Post updated successfully');
-                        window.location.href = '/blog-panel';
+                        window.location.href = '/admin/blog-panel';
                     } else {
                         throw new Error(result.error || 'Failed to update post');
                     }

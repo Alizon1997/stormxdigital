@@ -33,7 +33,7 @@ const TinyMCEEditor: React.FC<TinyMCEEditorProps> = ({ initialValue = '', onEdit
       initialValue={initialValue}
       init={{
         height: 500,
-        menubar: false,
+        menubar: true,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
           'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
