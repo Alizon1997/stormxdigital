@@ -6,5 +6,10 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   output: 'server',
   adapter: vercel(),
-  integrations: [tailwind(),react()]
+  integrations: [tailwind(),react()],
+  vite: {
+    ssr: {
+      noExternal: ['react-icons'],
+    },
+  }
 });

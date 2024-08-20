@@ -54,47 +54,69 @@ const posts = await fetchPosts();
 </div>
 
 
+
 <script>
-    import { databases, DATABASE_ID, COLLECTION_ID } from '../lib/appwrite';
+    console.log('Script started');
 
-    async function deletePost(documentId: string) {
+    function deletePost(documentId: string): void {
+        console.log('deletePost function called with ID:', documentId);
         if (confirm('Are you sure you want to delete this post?')) {
-            try {
-                await databases.deleteDocument(DATABASE_ID, COLLECTION_ID, documentId);
-                console.log('Post deleted successfully');
-                
-                // Remove the deleted post from the UI
-                const postRow = document.getElementById(`post-row-${documentId}`);
-                if (postRow) {
-                    postRow.remove();
+            fetch('/api/deletePost', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ documentId }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-
-                // Show a success message
-                alert('Post deleted successfully');
-            } catch (error) {
+                return response.json();
+            })
+            .then(result => {
+                if (result.success) {
+                    console.log('Post deleted successfully');
+                    const postRow = document.getElementById(`post-row-${documentId}`);
+                    if (postRow) {
+                        postRow.remove();
+                    }
+                    alert('Post deleted successfully');
+                } else {
+                    throw new Error(result.error || 'Failed to delete post');
+                }
+            })
+            .catch(error => {
                 console.error('Error deleting post:', error);
                 alert(`Failed to delete post. Error: ${error instanceof Error ? error.message : String(error)}`);
-            }
+            });
         }
     }
 
-    // Add event listeners to delete buttons
-    document.addEventListener('DOMContentLoaded', () => {
+    function setupDeleteButtons(): void {
+        console.log('Setting up delete buttons');
         const deleteButtons = document.querySelectorAll('.delete-post-btn');
+        console.log('Found', deleteButtons.length, 'delete buttons');
         deleteButtons.forEach(button => {
             button.addEventListener('click', (event: Event) => {
-                const target = event.currentTarget as HTMLElement | null;
-                if (target) {
-                    const postId = target.getAttribute('data-post-id');
-                    if (postId) {
-                        deletePost(postId);
-                    } else {
-                        console.error('Post ID not found');
-                    }
+                console.log('Delete button clicked');
+                const target = event.currentTarget as HTMLElement;
+                const postId = target.getAttribute('data-post-id');
+                if (postId) {
+                    deletePost(postId);
                 } else {
-                    console.error('Event target is null');
+                    console.error('Post ID not found');
                 }
             });
         });
-    });
+    }
+
+    // Use different event listeners for different environments
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupDeleteButtons);
+    } else {
+        setupDeleteButtons();
+    }
+
+    console.log('Script ended');
 </script>

@@ -14,16 +14,14 @@ export const POST: APIRoute = async ({ request }) => {
   const COLLECTION_ID = '66c1f64c0037db2953d1';
 
   try {
-    const text = await request.text();
-    console.log("Request body:", text);
+    const body = await request.json();
+    console.log("Parsed request data:", body);
 
-    if (!text) {
-      throw new Error("Request body is empty");
+    const { documentId } = body;
+
+    if (!documentId) {
+      throw new Error("Document ID is missing");
     }
-
-    const { documentId } = JSON.parse(text);
-    
-    console.log("Parsed request data:", { documentId });
 
     await databases.deleteDocument(
       DATABASE_ID,
@@ -35,9 +33,6 @@ export const POST: APIRoute = async ({ request }) => {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://stormxdigital.vercel.app',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
       }
     });
   } catch (error) {
@@ -50,9 +45,6 @@ export const POST: APIRoute = async ({ request }) => {
       status: 500,
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://stormxdigital.vercel.app',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
       }
     });
   }
