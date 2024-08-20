@@ -6,6 +6,6 @@ export async function fetchPosts() {
     return response.documents;
   } catch (error) {
     console.error('Error fetching posts:', error);
-    return [];
+    throw new Error(`Failed to fetch posts: ${error.message}`);
   }
 }
