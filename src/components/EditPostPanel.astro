@@ -17,7 +17,7 @@ try {
 
 // If post is not found, you might want to redirect or show an error message
 if (!post) {
-    return Astro.redirect('/admin/blog-panel');
+    return Astro.redirect('/blog-panel');
 }
 ---
 
@@ -112,7 +112,7 @@ if (!post) {
                         body: JSON.stringify({
                             documentId: postId,
                             title,
-                            description: btoa(unescape(encodeURIComponent(description))), // Encode the HTML content
+                            description, // Send the HTML content as is, without encoding
                             author,
                             publish_date: new Date(publish_date).toISOString()
                         }),
@@ -127,7 +127,7 @@ if (!post) {
 
                     if (result.success) {
                         alert('Post updated successfully');
-                        window.location.href = '/admin/blog-panel';
+                        window.location.href = '/blog-panel';
                     } else {
                         throw new Error(result.error || 'Failed to update post');
                     }

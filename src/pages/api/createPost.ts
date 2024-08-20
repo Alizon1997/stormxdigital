@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { Client, Databases } from "appwrite";
 
 export const POST: APIRoute = async ({ request }) => {
-  console.log("Received POST request to /api/updatePost");
+  console.log("Received POST request to /api/createPost");
 
   const client = new Client()
     .setEndpoint('https://cloud.appwrite.io/v1')
@@ -20,24 +20,27 @@ export const POST: APIRoute = async ({ request }) => {
       throw new Error("Request body is empty");
     }
 
-    const { documentId, title, description, author, publish_date } = JSON.parse(text);
+    const { type, title, brief, author, authorImage, description, publish_date } = JSON.parse(text);
     
-    console.log("Parsed request data:", { documentId, title, author, publish_date });
+    console.log("Parsed request data:", { type, title, brief, author, authorImage, publish_date });
     console.log("Description length:", description.length);
 
-    await databases.updateDocument(
+    const response = await databases.createDocument(
       DATABASE_ID,
       COLLECTION_ID,
-      documentId,
+      'unique()',
       {
+        type,
         title,
-        description,
+        brief,
         author,
+        authorImage,
+        description,
         publish_date
       }
     );
 
-    return new Response(JSON.stringify({ success: true }), {
+    return new Response(JSON.stringify({ success: true, document: response }), {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
@@ -47,10 +50,10 @@ export const POST: APIRoute = async ({ request }) => {
       }
     });
   } catch (error) {
-    console.error('Server-side error updating post:', error);
+    console.error('Server-side error creating post:', error);
     return new Response(JSON.stringify({
       success: false,
-      error: 'Failed to update post',
+      error: 'Failed to create post',
       details: error instanceof Error ? error.message : String(error)
     }), {
       status: 500,

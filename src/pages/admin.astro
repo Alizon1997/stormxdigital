@@ -32,7 +32,7 @@ if (Astro.request.method === 'POST') {
         sameSite: 'strict',
         maxAge: 60 * 60 * 24 // 1 day
       });
-      return Astro.redirect('./admin/blog-panel');
+      return Astro.redirect('./blog-panel');
     } else {
       console.log('Login failed');
       errorMessage = 'Invalid credentials. Please try again.';

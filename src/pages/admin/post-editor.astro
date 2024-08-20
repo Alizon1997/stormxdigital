@@ -71,16 +71,6 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
 </AdminLayout>
 
 <script>
-  import { Client, Databases } from 'appwrite';
-
-  const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('66c1f5c9000dae8a3ecc');
-
-  const databases = new Databases(client);
-  const DATABASE_ID = 'blog_db';
-  const COLLECTION_ID = '66c1f64c0037db2953d1';
-
   // Function to get TinyMCE content
   function getTinyMCEContent() {
     if (typeof window.tinymce !== 'undefined' && window.tinymce.get('description')) {
@@ -117,11 +107,12 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
       const description = getTinyMCEContent();
 
       try {
-        const response = await databases.createDocument(
-          DATABASE_ID,
-          COLLECTION_ID,
-          'unique()',
-          {
+        const response = await fetch('/api/createPost', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
             type,
             title,
             brief,
@@ -129,10 +120,15 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
             authorImage,
             description,
             publish_date: new Date().toISOString(),
-          }
-        );
+          }),
+        });
 
-        console.log('Post published successfully:', response);
+        if (!response.ok) {
+          throw new Error('Failed to publish post');
+        }
+
+        const result = await response.json();
+        console.log('Post published successfully:', result);
         alert('Post published successfully!');
         // Optionally, reset the form or redirect to a new page
         // postForm.reset();
