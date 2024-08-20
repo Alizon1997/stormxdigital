@@ -15,7 +15,21 @@ interface Post {
   author: string;
   authorImage: string;
 }
-const posts: Post[] = await fetchPosts();
+
+// Assuming fetchPosts returns a Promise<Document[]>
+const fetchedPosts = await fetchPosts();
+
+// Map the fetched posts to ensure they match the Post interface
+const posts: Post[] = fetchedPosts.map(doc => ({
+  $id: doc.$id,
+  type: doc.type,
+  title: doc.title,
+  publish_date: doc.publish_date,
+  brief: doc.brief,
+  description: doc.description,
+  author: doc.author,
+  authorImage: doc.authorImage
+}));
 
 ---
 
