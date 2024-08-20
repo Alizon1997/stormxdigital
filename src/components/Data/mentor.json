@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name1": "GESTIONE COMPLETA DEL TUO",
+        "name2": "ACCOUNT AMAZON",
+        "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
+        "arrow": "./services/ag.svg",
+        "link": "./",
+        "image": "./services/01.svg"
+    },
+    
+    {
+        "id": 2,
+        "name1": "OTTIMIZZAZIONE SEO DEI LISTINI ",
+        "name2": "AMAZON E DEI PRODOTTI",
+        "background": "h-[310px] p-12 rounded-[45px] shadow-card border border-black justify-between items-center flex text-white bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82%",
+        "arrow": "./services/aw.svg",
+        "link": "./",
+        "image": "./services/02.svg"
+    },
+    {
+    
+        "id": 3,
+        "name1": "RICERCA KEYWORDS",
+        "name2": "SEO AMAZON",
+        "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
+        "arrow": "./services/aw.svg",
+        "link": "./",
+        "image": "./services/03.svg"
+    },
+    {
+        "id": 4, 
+        "name1": "REGISTRO MARCHI AMAZON",
+        "name2": "BRAND REGISTRY",
+        "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
+        "arrow": "./services/ag.svg",
+        "link": "./",
+        "image": "./services/04.svg"
+    },
+    {
+        "id": 5,
+        "name1": "AMAZON CRO",
+        "name2": "OTTIMIZZAZIONE LISTING",
+        "background": "h-[310px] p-12 rounded-[45px] shadow-card border border-black justify-between items-center flex text-white bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82%",
+        "arrow": "./services/aw.svg",
+        "link": "./",
+        "image": "./services/05.svg"
+    },
+    {
+        "id": 6,
+        "name1": "REPORTISTICA & ANALISI",
+        "name2": "DATI AMAZON",
+        "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
+        "arrow": "./services/aw.svg",
+        "link": "./",
+        "image": "./services/06.svg"
+    }
+]

@@ -1,0 +1,17 @@
+---
+export const prerender = false;
+import EditPostPanel from '../../../components/EditPostPanel.astro';
+import AdminLayout from '@/layouts/AdminLayout.astro';
+
+const { id } = Astro.params;
+
+if (!id) {
+  return Astro.redirect('/admin/blog-panel');
+}
+---
+
+<AdminLayout title="Edit Post">
+  <main>
+    <EditPostPanel id={id} />
+  </main>
+</AdminLayout>

@@ -12,7 +12,7 @@ import articlesData from '../components//Data/articles.json';
   </div>
 
   <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[1px]">
+    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[0.5px] border-b-[8px] border-black">
       <div class="flex flex-col items-center mb-4">
         <img src="/Container.png" alt="Daniel Gray" class="w-72 h-72rounded-full mb-2" />
         <h3 class="text-lg font-bold text-[#F95C04]">Daniel Gray - Sales Director</h3>
@@ -24,7 +24,7 @@ import articlesData from '../components//Data/articles.json';
       <p class="text-center text-base mt-2">Si capisce sin da subito la loro competenza e siamo felici di poter collaborare con loro.</p>
     </div>
 
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[1px]">
+    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[0.5px] border-b-[8px] border-black">
       <div class="flex flex-col items-center mb-4">
         <img src="/Container.png" alt="Daniel Gray" class="w-72 h-72rounded-full mb-2" />
         <h3 class="text-xl font-bold text-[#F95C04]">Daniel Gray - Sales Director</h3>
@@ -36,7 +36,7 @@ import articlesData from '../components//Data/articles.json';
       <p class="text-center text-base mt-2">Si capisce sin da subito la loro competenza e siamo felici di poter collaborare con loro.</p>
     </div>
 
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-black border-[1px]">
+    <div class="bg-white p-6 rounded-[45px] shadow-lg border-black border-[0.5px] border-b-[8px] ">
       <div class="flex flex-col items-center mb-4">
         <img src="/Container2.png" alt="Tom Parr" class="w-72 h-72rounded-full mb-2" />
         <h3 class="text-xl font-bold text-[#F95C04]">Tom Parr - E-Commerce Manager</h3>
@@ -93,7 +93,7 @@ import articlesData from '../components//Data/articles.json';
     <div class="grid gap-8 lg:grid-cols-2">
       {
       articlesData.map(({ id, type, title, publish_date, brief, author, authorImage} ) => (
-        <article class="p-6 bg-white rounded-3xl border border-gray-200 shadow-card">
+        <article class="p-6 bg-white rounded-3xl border border-black shadow-card">
             <div class="flex justify-between items-center mb-5 text-gray-500">
                 <span class="bg-[#F95C04] text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
                   {type == 'Article' ? (<ArticleIcon />) : (<VideoIcon />)}

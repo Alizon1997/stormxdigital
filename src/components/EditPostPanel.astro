@@ -1,0 +1,143 @@
+---
+import { databases, DATABASE_ID, COLLECTION_ID } from '../lib/appwrite';
+import { fetchPosts } from '../lib/fetchPosts';
+import TinyMCEEditor from '../components/RichTextEditorEdit';
+
+// Get the post ID from the URL
+const { id } = Astro.params;
+
+// Fetch the specific post
+let post;
+try {
+    const posts = await fetchPosts();
+    post = posts.find(p => p.$id === id);
+} catch (error) {
+    console.error('Error fetching post:', error);
+}
+
+// If post is not found, you might want to redirect or show an error message
+if (!post) {
+    return Astro.redirect('/admin/blog-panel');
+}
+---
+
+<div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold mb-6">Edit Post</h1>
+    <form id="editPostForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+                Title
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" value={post.title}>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+                Description
+            </label>
+            <TinyMCEEditor client:load id="description" initialValue={post.description} />
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="author">
+                Author
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="author" type="text" value={post.author}>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="publish_date">
+                Publish Date
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="publish_date" type="date" value={new Date(post.publish_date).toISOString().split('T')[0]}>
+        </div>
+        <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Update Post
+            </button>
+        </div>
+    </form>
+</div>
+
+<script define:vars={{ postId: id }}>
+    let editorInitialized = false;
+    let initializationAttempts = 0;
+    const maxAttempts = 10;
+
+    function checkEditorInitialization() {
+        if (window.tinymce && window.tinymce.get('description')) {
+            editorInitialized = true;
+            console.log('TinyMCE editor initialized');
+        } else if (initializationAttempts < maxAttempts) {
+            initializationAttempts++;
+            setTimeout(checkEditorInitialization, 500);
+        } else {
+            console.error('TinyMCE editor failed to initialize');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        checkEditorInitialization();
+
+        const form = document.getElementById('editPostForm');
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                if (!editorInitialized) {
+                    alert('The editor is not yet initialized. Please wait a moment and try again.');
+                    return;
+                }
+
+                const titleElement = document.getElementById('title');
+                const authorElement = document.getElementById('author');
+                const publishDateElement = document.getElementById('publish_date');
+
+                if (!titleElement || !authorElement || !publishDateElement) {
+                    console.error('One or more form elements not found');
+                    return;
+                }
+
+                const title = titleElement.value;
+                const author = authorElement.value;
+                const publish_date = publishDateElement.value;
+
+                // Get content from TinyMCE
+                const description = window.tinymce.get('description').getContent();
+
+                try {
+                    const response = await fetch('/api/updatePost', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            documentId: postId,
+                            title,
+                            description: btoa(unescape(encodeURIComponent(description))), // Encode the HTML content
+                            author,
+                            publish_date: new Date(publish_date).toISOString()
+                        }),
+                    });
+
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alert('Post updated successfully');
+                        window.location.href = '/admin/blog-panel';
+                    } else {
+                        throw new Error(result.error || 'Failed to update post');
+                    }
+                } catch (error) {
+                    console.error('Error updating post:', error);
+                    alert(`Failed to update post. Error: ${error.message}`);
+                }
+            });
+        } else {
+            console.error('Form not found');
+        }
+    });
+</script>

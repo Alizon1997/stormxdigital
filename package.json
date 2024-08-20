@@ -11,9 +11,40 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.7.2",
+    "@ckeditor/ckeditor5-build-classic": "^43.0.0",
+    "@ckeditor/ckeditor5-react": "^9.0.0",
+    "@lexical/react": "^0.17.0",
+    "@tinymce/tinymce-react": "^5.1.1",
+    "@tiptap/extension-code-block-lowlight": "^2.6.4",
+    "@tiptap/extension-color": "^2.6.4",
+    "@tiptap/extension-image": "^2.6.4",
+    "@tiptap/extension-text-align": "^2.6.4",
+    "@tiptap/extension-text-style": "^2.6.4",
+    "@tiptap/extension-youtube": "^2.6.4",
+    "@tiptap/pm": "^2.6.4",
+    "@tiptap/react": "^2.6.4",
+    "@tiptap/starter-kit": "^2.6.4",
+    "appwrite": "^15.0.0",
     "astro": "^4.1.2",
+    "astro-icon": "^1.1.1",
+    "lexical": "^0.17.0",
+    "lowlight": "^3.1.0",
+    "lucide-react": "^0.428.0",
+    "novel": "^0.5.0",
+    "preact": "^10.23.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.4"
+    "tinymce": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/tinymce": "^4.6.9",
+    "typescript": "^5.5.4"
   }
 }

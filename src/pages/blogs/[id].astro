@@ -1,45 +1,125 @@
 ---
 import Container from "../../components/Container.astro"
 import Layout from '../../layouts/Layout.astro';
-import articlesData from '../../components//Data/articles.json';
+import { databases, DATABASE_ID, COLLECTION_ID } from '../../lib/appwrite';
+
+export const prerender = false;
 
 export async function getStaticPaths() {
-  return articlesData.map(({ id, title, publish_date, description, author, authorImage}) => {
-    return {
-      params: { id },
-      props: { id, title, publish_date, description, author, authorImage},
-    };
-  });
+  return [];
 }
-const { title, publish_date, description, author, authorImage} = Astro.props;
-export const prerender = true;
 
+const { id } = Astro.params;
+
+let post;
+try {
+  post = await databases.getDocument(DATABASE_ID, COLLECTION_ID, id);
+} catch (error) {
+  console.error('Error fetching post:', error);
+  return Astro.redirect('/404');
+}
+
+const { title, type, brief, description, author, authorImage, publish_date } = post;
+const formattedDate = new Date(publish_date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
 ---
 
-<Layout title="Welcome to My site">
-	<main class="space-y-40 mb-40 pt-24">
-	<Container>
-        <section class="bg-white">
-            <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                <div class="font-light text-gray-500 sm:text-lg">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">{title}</h2>
-                    <p class="mb-4">{description}</p>
-                    <div class="flex justify-between items-center mt-6">
-                        <div class="flex items-center space-x-4">
-                          <img class="w-7 h-7 rounded-full" src={authorImage} alt={author + " cover"} />
-                          <span class="font-medium">
-                              {author}
-                          </span>
-                        </div>
-                        <span class="text-sm">{publish_date}</span>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mt-8">
-                    <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
-                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
-                </div>
+<Layout title={title}>
+  <main class="pt-12 pb-16 lg:pt-16 lg:pb-24 bg-white">
+    <Container>
+      <article class="max-w-3xl mx-auto">
+        <header class="mb-8 lg:mb-10">
+          <div class="flex items-center mb-6">
+            <img class="w-12 h-12 rounded-full mr-4" src={authorImage} alt={author}>
+            <div>
+              <p class="text-lg font-semibold text-gray-900">{author}</p>
+              <div class="flex items-center text-sm text-gray-600">
+                <span>{type}</span>
+                <span class="mx-2">•</span>
+                <time datetime={publish_date}>{formattedDate}</time>
+              </div>
             </div>
-        </section>
+          </div>
+          <h1 class="text-3xl font-bold leading-tight text-gray-900 lg:text-4xl mb-4">{title}</h1>
+          <p class="text-xl text-gray-700 leading-relaxed">{brief}</p>
+        </header>
+        
+        <div class="prose prose-lg max-w-none" set:html={description}></div>
+      </article>
     </Container>
-	</main>
+  </main>
 </Layout>
+
+<style is:global>
+  /* Tailwind Typography styles for the post content */
+  .prose h2 { @apply text-2xl font-bold mt-8 mb-4 text-gray-900; }
+  .prose h3 { @apply text-xl font-bold mt-6 mb-3 text-gray-900; }
+  .prose p { @apply mb-4 text-gray-800; }
+  .prose ul, .prose ol { 
+    @apply ml-6 mb-4 list-outside;
+  }
+  .prose ul { 
+    @apply list-disc;
+  }
+  .prose ol { 
+    @apply list-decimal;
+  }
+  .prose li { 
+    @apply mb-2 text-gray-800;
+    padding-left: 0.5rem;
+  }
+  .prose li::marker { 
+    @apply text-orange font-bold;
+  }
+  .prose a { @apply text-blue-600 hover:underline; }
+  .prose img { @apply max-w-full h-auto my-4 rounded-lg mx-auto; }
+  .prose blockquote { @apply pl-4 py-2 my-4 border-l-4 border-blue-500 italic bg-blue-50; }
+  .prose pre { @apply bg-gray-800 p-4 rounded-lg overflow-x-auto my-4; }
+  .prose code { @apply bg-gray-800 px-1 py-0.5 rounded text-sm; }
+
+
+  .prose table {
+    @apply w-full my-4 overflow-hidden;
+    border-radius: 0.375rem; /* equivalent to rounded-md */
+    border: 0.5px solid #1F2937; /* equivalent to border-gray-800 */
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .prose th {
+    @apply p-2 font-semibold text-left bg-orange text-white;
+    border: 0px solid #1F2937; /* equivalent to border-gray-800 */
+  }
+  .prose td {
+    @apply p-2;
+    border: 0px solid #1F2937; /* equivalent to border-gray-800 */
+  }
+  .prose tr:first-child th:first-child {
+    border-top-left-radius: 0.375rem;
+  }
+  .prose tr:first-child th:last-child {
+    border-top-right-radius: 0.375rem;
+  }
+  .prose tr:last-child td:first-child {
+    border-bottom-left-radius: 0.375rem;
+  }
+  .prose tr:last-child td:last-child {
+    border-bottom-right-radius: 0.375rem;
+  }
+  /* Ensure right border for all cells */
+  .prose th:not(:last-child),
+  .prose td:not(:last-child) {
+    border-right: 1px solid #1F2937;
+  }
+  /* Ensure bottom border for all rows except the last */
+  .prose tr:not(:last-child) th,
+  .prose tr:not(:last-child) td {
+    border-bottom: 1px solid #1F2937;
+  }
+  .prose iframe {
+    @apply mx-auto my-4 w-full max-w-2xl h-64 md:h-96;
+  }
+</style>
+</style>

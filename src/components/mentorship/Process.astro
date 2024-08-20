@@ -1,0 +1,23 @@
+---
+import Container from "../Container.astro"
+import Topic from "../Topic.astro";
+import teamData from '../Data/team.json';
+import Collapse from "../Collapse.astro";
+---
+<Container>
+<div class="pt-20 relative flex flex-col items-center md:flex-row">
+    <Topic title="Il Nostro Processo" description="Aumentiamo la tua quota di mercato. Continuamente.Gestiamo tutti i pilastri di Amazon. Anche quelli che la maggior parte delle agenzie ignora, come la gestione del catalogo e la SEO. Quando il PPC lavora con la SEO e la SEO lavora con il design, l'intero catalogo guadagna quota di mercato insieme."/>
+</div>
+
+<div class="my-6">
+    <div class="space-y-10">
+        {
+        teamData.process.map((process, key) => (
+            <Collapse label={process.label} index={key + 1}>
+            {process.content}
+            </Collapse>
+        ))
+        }
+    </div>
+</div>
+</Container>

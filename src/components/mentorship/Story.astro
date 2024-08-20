@@ -1,0 +1,65 @@
+---
+import Container from "../Container.astro";
+import Topic from "../Topic.astro";
+
+const stats = [
+  { value: "78%", label: "Crescita Fatturato Amazon" },
+  { value: "63%", label: "Incremento Margine Netto" },
+  { value: "16%", label: "Incremento Tasso di Conversione" },
+];
+---
+
+<Container>
+
+  <div class="bg-white p-8 rounded-lg shadow-lg">
+    <div class="relative flex flex-col items-center md:flex-row mb-12">
+      <Topic title="Storie Di Successo" description="Cosa consideriamo “Un Successo” quando parliamo di Amazon a Storm X Digital? Alcuni esempi qui sotto dove abbiamo aumentato del 218% il fatturato di Safe Industrial. Oppure come abbiamo trasformato il mercato dei Kit Di Primo Soccorso su Amazon raggiungendo olte 14 Mila unità al mese per un solo prodotto in Amazon UK" />
+    </div>
+    
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="md:w-2/3">
+        <img src="/mentorship/reliancelogo.png" alt="Reliance Medical" class="mb-4 h-12" />
+        
+        <h3 class="text-xl font-bold mb-2">Sintesi</h3><br/>
+        <p class="mb-4 text-base font-normal">
+          Reliance Medical, fornitore leader di articoli di pronto soccorso, voleva migliorare la 
+          sua presenza sul mercato e incrementare le vendite in un panorama competitivo. 
+          Di fronte alla sfida di un ambiente di vendita al dettaglio in evoluzione e alle 
+          crescenti aspettative dei clienti, l'azienda ha intrapreso una revisione strategica 
+          delle operazioni di vendita e marketing.
+        </p>
+
+        <h3 class="text-xl font-bold mb-2">Background</h3><br/>
+        <p class="mb-4 text-base font-normal">
+          Reliance Medical, grazie alle sue forniture mediche di alta qualità, si è affermata 
+          negli anni, come azienda di fiducia nel settore sanitario. 
+          La sua vasta gamma di prodotti si rivolge a diversi settori, tra cui quello 
+          industriale, educativo e ricreativo. Tuttavia, la rapida trasformazione digitale del 
+          mercato ha reso necessario un approccio innovativo per mantenere e far crescere 
+          la propria quota di mercato.
+        </p>
+
+        <h3 class="text-xl font-bold mb-2">Sfida e Risultati</h3><br/>
+        <p class="mb-4 text-base font-normal">
+          La sfida principale era quella di aumentare il volume delle vendite e i ricavi in un 
+          mercato saturo di concorrenti affermati. Reliance Medical voleva attirare nuovi 
+          clienti e fidelizzare quelli esistenti, il tutto migliorando l'efficienza operativa e 
+          gestendo le complessità della catena di fornitura.
+        </p>
+      </div>
+
+      <div class="md:w-1/3">
+        <img src="/mentorship/saline.png" alt="Saline Eye Wash" class="w-full h-auto" />
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-start gap-8 mt-8">
+      {stats.map((stat) => (
+        <div class="text-left">
+          <p class="text-5xl font-bold text-orange">{stat.value}</p>
+          <p class="text-lg text-black">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Container>

@@ -1,0 +1,22 @@
+---
+export const prerender = false;
+
+import Layout from '../../layouts/Layout.astro';
+import StormXBlogPanel from '../../components/StormXBlogPanel.astro';
+import AdminLayout from '@/layouts/AdminLayout.astro';
+
+console.log('Blog panel accessed');
+console.log('Cookie value:', Astro.cookies.get('adminLoggedIn')?.value);
+
+// Check if user is logged in
+if (!Astro.cookies.get('adminLoggedIn')?.boolean()) {
+  console.log('User not logged in, redirecting to login page');
+  return Astro.redirect('./admin');
+}
+
+console.log('User is logged in, rendering blog panel');
+---
+
+<AdminLayout title="Blog Panel">
+    <StormXBlogPanel />
+</AdminLayout>

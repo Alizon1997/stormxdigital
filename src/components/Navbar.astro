@@ -16,7 +16,7 @@ import Container from "./Container.astro"
   <Container>
     <div class="flex flex-wrap items-center justify-between mx-auto py-3">
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/StormXLogo.svg" class="h-16" alt="Logo" />
+          <img src="/StormXLogo.svg" class="lg:h-8 xl:h-16" alt="Logo" />
       </a>
       <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 " aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -25,7 +25,7 @@ import Container from "./Container.astro"
           </svg>
       </button>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col text-xl p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white ">
+        <ul class="font-medium flex flex-col lg:text-base xl:text-xl p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white ">
             {navLinks.map(link => (
             <li>
                 <a href={link.href} class="block py-2 px-3 text-black rounded md:bg-transparent md:p-0">{link.label}</a>
@@ -39,7 +39,7 @@ import Container from "./Container.astro"
         </ul>
       </div>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <a class="px-9 py-5 rounded-2xl border bg-gradient-to-r from-[#FF8E0A] via-[#FF8E0A] to-[#F95C04]  text-white hover:text-black inline-flex" href="https://github.com/manulthanura/Positivus" target="_blank"><h2 class="font-bold text-center text-xl leading-7">PIANIFICA CHIAMATA</h2>
+        <a class="md:px-3 md:py-2 lg:px-9 lg:py-5 rounded-2xl border bg-gradient-to-r from-[#FF8E0A] via-[#FF8E0A] to-[#F95C04]  text-white hover:text-black inline-flex" href="https://github.com/manulthanura/Positivus" target="_blank"><h2 class="font-bold text-center lg:text-base xl:text-xl leading-7">PIANIFICA CHIAMATA</h2>
         </a>
       </div>
     </div>

@@ -1,0 +1,167 @@
+---
+export const prerender = false;
+
+import RichTextEditorWrapper from '@/components/RichTextEditorWrapper.astro';
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import TinyMCEEditor from '../../components/RichTextEditor';
+import { Editor } from '@tinymce/tinymce-react';
+
+// Check if user is logged in
+if (!Astro.cookies.get('adminLoggedIn')?.boolean()) {
+  return Astro.redirect('/admin');
+}
+
+// Default values
+const defaultAuthor = "Marcello Di Pierro";
+const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
+---
+
+<AdminLayout title="Post Editor">
+  <div class="max-w-5xl mx-auto mt-10 bg-gray-400 rounded-lg shadow-lg p-8">
+    <h1 class="text-3xl font-bold mb-8 text-gray-800">Create New Post</h1>
+    <form id="postForm" class="space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <label for="type" class="block text-sm font-medium text-gray-700 mb-2">Type</label>
+          <select id="type" name="type" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+            <option>Article</option>
+            <option>News</option>
+            <option>Tutorial</option>
+          </select>
+        </div>
+        <div>
+          <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+          <input type="text" id="title" name="title" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Enter post title">
+        </div>
+      </div>
+      
+      <div>
+        <label for="brief" class="block text-sm font-medium text-gray-700 mb-2">Brief</label>
+        <textarea id="brief" name="brief" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Enter a brief description"></textarea>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <label for="author" class="block text-sm font-medium text-gray-700 mb-2">Author</label>
+          <input type="text" id="author" name="author" value={defaultAuthor} readonly class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 cursor-not-allowed" placeholder="Author name">
+        </div>
+        <div>
+          <label for="authorImage" class="block text-sm font-medium text-gray-700 mb-2">Author Image URL</label>
+          <input type="text" id="authorImage" name="authorImage" value={defaultAuthorImage} readonly class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 cursor-not-allowed" placeholder="https://example.com/author-image.jpg">
+        </div>
+      </div>
+      
+      <div>
+        <label for="description" class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+        <div class="mt-1 rounded-md border border-gray-300 overflow-hidden">
+          <TinyMCEEditor client:load id="description" />
+        </div>
+      </div>
+      
+      <div class="flex justify-end mt-8 space-x-4">
+        <button type="button" id="saveButton" class="px-6 py-3 bg-gray-900 text-white text-lg rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition duration-150 ease-in-out">
+          Source Code
+        </button>
+        <button type="submit" class="px-6 py-3 bg-indigo-600 text-white text-lg rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+          Publish Post
+        </button>
+      </div>
+    </form>
+  </div>
+</AdminLayout>
+
+<script>
+  import { Client, Databases } from 'appwrite';
+
+  const client = new Client()
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('66c1f5c9000dae8a3ecc');
+
+  const databases = new Databases(client);
+  const DATABASE_ID = 'blog_db';
+  const COLLECTION_ID = '66c1f64c0037db2953d1';
+
+  // Function to get TinyMCE content
+  function getTinyMCEContent() {
+    if (typeof window.tinymce !== 'undefined' && window.tinymce.get('description')) {
+      return window.tinymce.get('description').getContent();
+    } else {
+      console.error('TinyMCE editor not found');
+      return '';
+    }
+  }
+
+  const postForm = document.getElementById('postForm');
+  if (postForm) {
+    postForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const typeElement = document.getElementById('type') as HTMLSelectElement;
+      const titleElement = document.getElementById('title') as HTMLInputElement;
+      const briefElement = document.getElementById('brief') as HTMLTextAreaElement;
+      const authorElement = document.getElementById('author') as HTMLInputElement;
+      const authorImageElement = document.getElementById('authorImage') as HTMLInputElement;
+
+      if (!typeElement || !titleElement || !briefElement || !authorElement || !authorImageElement) {
+        console.error('One or more form elements are missing');
+        return;
+      }
+
+      const type = typeElement.value;
+      const title = titleElement.value;
+      const brief = briefElement.value;
+      const author = authorElement.value;
+      const authorImage = authorImageElement.value;
+
+      // Get TinyMCE content
+      const description = getTinyMCEContent();
+
+      try {
+        const response = await databases.createDocument(
+          DATABASE_ID,
+          COLLECTION_ID,
+          'unique()',
+          {
+            type,
+            title,
+            brief,
+            author,
+            authorImage,
+            description,
+            publish_date: new Date().toISOString(),
+          }
+        );
+
+        console.log('Post published successfully:', response);
+        alert('Post published successfully!');
+        // Optionally, reset the form or redirect to a new page
+        // postForm.reset();
+        // window.location.href = '/admin/posts';
+      } catch (error) {
+        console.error('Error publishing post:', error);
+        alert('Error publishing post. Please try again.');
+      }
+    });
+  } else {
+    console.error('Form element not found');
+  }
+
+  const saveButton = document.getElementById('saveButton');
+  if (saveButton) {
+    saveButton.addEventListener('click', () => {
+      // Add your save draft functionality here
+      const description = getTinyMCEContent();
+      console.log('Draft content:', description);
+      alert('Draft saved!');
+    });
+  } else {
+    console.error('Save button not found');
+  }
+
+  // TypeScript declaration for tinymce on window object
+  declare global {
+    interface Window {
+      tinymce?: any;
+    }
+  }
+</script>

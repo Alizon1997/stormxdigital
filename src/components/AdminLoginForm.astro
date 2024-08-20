@@ -1,0 +1,37 @@
+---
+---
+
+<form id="loginForm" class="space-y-4">
+    <h1 class="text-2xl font-bold mb-4">Admin Login</h1>
+    <div>
+      <input type="text" id="username" placeholder="Username" required class="w-full p-2 border rounded" />
+    </div>
+    <div>
+      <input type="password" id="password" placeholder="Password" required class="w-full p-2 border rounded" />
+    </div>
+    <button type="submit" class="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">Login</button>
+  </form>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.getElementById('loginForm');
+      const usernameInput = document.getElementById('username') as HTMLInputElement;
+      const passwordInput = document.getElementById('password') as HTMLInputElement;
+  
+      if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const username = usernameInput?.value;
+          const password = passwordInput?.value;
+          
+          // Replace with your actual credentials
+          if (username === 'stormxdigital' && password === 'b(EkUg3$nCbt') {
+            localStorage.setItem('adminLoggedIn', 'true');
+            window.location.href = '/admin/post-editor';
+          } else {
+            alert('Invalid credentials');
+          }
+        });
+      }
+    });
+  </script>
