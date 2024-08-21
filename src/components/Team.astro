@@ -45,7 +45,7 @@ import FounderSection from "./FounderSection.astro";
 
 
 <div class="pt-20 relative flex flex-col items-center md:flex-row">
-    <Topic title="Il Nostro Processo" description="Aumentiamo la tua quota di mercato. Continuamente.Gestiamo tutti i pilastri di Amazon. Anche quelli che la maggior parte delle agenzie ignora, come la gestione del catalogo e la SEO. Quando il PPC lavora con la SEO e la SEO lavora con il design, l'intero catalogo guadagna quota di mercato insieme."/>
+    <Topic title="Il Nostro Processo" description="Aumentiamo costantemente la tua quota di mercato. Gestiamo ogni aspetto della tua presenza su Amazon, inclusi quelli che molte agenzie trascurano, come la gestione del catalogo e la SEO. Quando le campagne PPC funzionano in sinergia con la SEO e il Design, l'intero catalogo guadagna insieme quote di mercato."/>
 </div>
 
 <div class="my-6">
@@ -57,11 +57,49 @@ import FounderSection from "./FounderSection.astro";
             </Collapse>
         ))
         }
+        <div class="group outline-none accordion-section" tabindex="1">
+            <div class="group group-focus:bg-[#F95C04] group-focus:shadow-none shadow-card bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% group-focus:rounded-b-none group-focus:rounded-t-3xl rounded-3xl flex justify-between px-4 py-3 items-center transition-colors ease duration-500 cursor-pointer pr-10 relative">
+              <div class="flex items-center group-focus:text-white px-10 pt-10 w-full transition ease duration-500">
+                <div class="flex pb-10 gap-5 w-full items-center">
+                  <div class="flex justify-between w-full items-center rouded-full">
+                    <div class="flex items-center gap-5">
+                      {
+                        6 && (
+                          <>
+                            <p class="text-6xl font-medium text-white  flex items-center">
+                              0{6}
+                            </p>
+                            <p class="lg:text-3xl text-lg text-white ">{'Ripetizione Del Processo'}</p>
+                          </>
+                        )
+                      }
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
     </div>
 </div>
 
 
 
 
+  
+  <style>
+      .accodion-chevron::after{
+          content: "";
+          @apply h-[70%] w-[8px] transform transition-transform bg-black absolute left-1/2 -translate-x-1/2;
+      }
+      .accodion-chevron::before{
+          content: "";
+          @apply h-[70%] w-[8px] rotate-90 transform bg-black absolute left-1/2 -translate-x-1/2;
+      }
+      .group:focus-within .accodion-chevron::after {
+          @apply rotate-90;
+      }
+  </style>
 
 </Container>

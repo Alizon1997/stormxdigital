@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --swiper-navigation-color: #F95C04;
+  }
 
 @layer base {
   .font-outline {

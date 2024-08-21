@@ -1,22 +1,21 @@
 [
   {
     "id":1,
-    "type": "Tutorial",
-    "title": "How to quickly deploy a static website",
+    "type": "Article",
+    "title": "Articolo",
     "publish_date": "14 days ago",
-    "brief": "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.",
-    "description": "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.",
-    "author": "Jese Leos",
+    "brief": "Scoprite come YourBank ha trasformato la vita con soluzioni digitali innovative e un servizio clienti personalizzato. Scopri perché i nostri clienti si affidano a noi per un viaggio finanziario sicuro e prospero.",
+    "author": "Marcello di Pierro",
     "authorImage": "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
   },
   {
     "id":2,
-    "type": "Article",
-    "title": "Our first project with Astro",
+    "type": "Tutorial",
+    "title": "Come Vendere su Amazon nel 2024",
     "publish_date": "14 days ago",
-    "brief": "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.",
-    "description": "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.",
-    "author": "Bonnie Green",
+    "brief": "Scoprite come YourBank ha trasformato la vita con soluzioni digitali innovative e un servizio clienti personalizzato. Scopri perché i nostri clienti si affidano a noi per un viaggio finanziario sicuro e prospero.",
+    "description": "Scoprite come YourBank ha trasformato la vita con soluzioni digitali innovative e un servizio clienti personalizzato. Scopri perché i nostri clienti si affidano a noi per un viaggio finanziario sicuro e prospero.",
+    "author": "Marcello di Pierro",
     "authorImage": "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
   }
 ]

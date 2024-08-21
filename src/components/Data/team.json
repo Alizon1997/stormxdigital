@@ -4,7 +4,7 @@
         {
             "title": "Armand Ohoungnon",
             "name": "PPC Specialist",
-            "description": "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+            "description": "Verticale da 5 anni nel Performance Marketing su Amazon. Sono la persona che si occupa della Strategia e dell'operatività dell'Advertising del tuo account Seller / Vendor",
             "profile": "/team/c1.png",
             "link": "/"
         },
@@ -12,14 +12,14 @@
         {
             "title": "Francesco Monopoli",
             "name": "Catalog Specialist",
-            "description": "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
+            "description": "6 anni di esperienza nella creazione di E-commerce e gestione a 360° di Amazon Seller e Vendor. Esperto in SEO, Analisi dati per il marketing e Project management",
             "profile": "/team/c2.png",
             "link": "/"
         },
         {
             "title": "Sali Leshi",
             "name": "Design Specialist",
-            "description": "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+            "description": "Oltre 5 anni di esperienza nella progettazione di Immagini Secondarie, Immagini Principali e Contenuti A+ per Account Seller e Vendor.",
             "profile": "/team/c3.png",
             "link": "/"
         }
@@ -47,10 +47,7 @@
         {
             "label": "Gestione Pratiche Con Amazon Seller Support",
             "content": "Ci occupiamo della completa gestione di Amazon Seller Central. Apriamo, monitoriamo e chiudiamo i ticket necessari al fine di risolvere eventuali problematiche o situazioni con Amazon Seller Support."
-        },
-        {
-            "label": "Ripetizione Del Processo",
-            "content": ""
         }
+       
     ]
 }
