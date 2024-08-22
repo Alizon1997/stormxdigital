@@ -4,51 +4,61 @@ import ArticleIcon from "../Icons/ArticleIcon.astro"
 import VideoIcon from "../Icons/VideoIcon.astro"
 import Topic from "../Topic.astro"
 import articlesData from '../../components//Data/articles.json';
-
+import TestimonialSlider from "../TestimonialSlider";
+const testimonials = [
+  {
+    name: "Daniel Gray - Sales Director",
+    company: "Powerplay Brands LTD",
+    image: "/Container.png",
+    quote: "Siamo Cresciuti Del 56% In 1 Anno",
+    content: "Marcello e Storm X sono i nostri partner esclusivi in Italia per i marchi Lee, Wrangler, DKNY, Reebok e Ben Sherman.",
+    additionalContent: "Si occupano di organizzare e partecipare a incontri con catene sportive, aprendo nuove opportunità per noi, come ad esempio con Coop Italia e Amazon IT."
+  },
+  {
+    name: "Jimmy Chen - CEO MET Jeans",
+    company: "Powerplay Brands LTD",
+    image: "/Container.png",
+    quote: "Siamo Cresciuti Del 56% In 1 Anno",
+    content: "Storm X ci ha supportato nel nostro primo approccio su Amazon, dimostrando di conoscere perfettamente la piattaforma.",
+    additionalContent: "Inoltre, hanno aperto nuove opportunità per noi, generando un fatturato di oltre 300K."
+  },
+  {
+    name: "Tom Parr - E-Commerce Manager",
+    company: "Reliance Medical LTD",
+    image: "/Container.png",
+    quote: "Da 1,5 Mln a 4 Mln in 2 Anni",
+    content: "Marcello e Storm X ci aiutano nella gestione completa del nostro Amazon Vendor in Europa. Il team Storm X parla diverse lingue il che ha reso possibile per noi espanderci in Europa.",
+    additionalContent: "Grazie a Storm X oggi il nostro business su Amazon sviluppa oltre i 4 Milioni di fatturato. Quando abbiamo iniziato eravamo a 1.5."
+  }
+];
 ---
+
 <Container>
-  <div class="relative flex flex-col items-center md:flex-row">
+  <div class="relative flex flex-col items-center md:flex-row mb-8 sm:mb-12">
     <Topic title="Cosa Dicono Di Noi" description="Alcuni feedback di nostri clienti che abbiamo aiutato a crescere su Amazon Seller Central e Vendor Central. Siamo una agenzia Amazon apprezzata in Europa" />
   </div>
 
-  <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[0.5px] border-b-[8px] border-black">
-      <div class="flex flex-col items-center mb-4">
-        <img src="/Container.png" alt="Daniel Gray" class="w-72 h-72rounded-full mb-2" />
-        <h3 class="text-lg font-bold text-[#F95C04]">Daniel Gray - Sales Director</h3>
-        <p class="text-lg font-semibold">Powerplay Brands LTD</p>
-      </div>
-      <p class="text-[#F95C04] text-base font-bold text-center mb-4">"Siamo Cresciuti Del 56% In 1 Anno"</p>
-      <p class="text-center text-base">Venivamo da un esperienza non molto positiva con la nostra precedente Agenzia Amazon.</p>
-      <p class="text-center text-base mt-2">Con Storm X invece abbiamo avuto un ottima esperienza, raggiungendo e supreando i target di fatturato che ci eravamo presupposti.</p>
-      <p class="text-center text-base mt-2">Si capisce sin da subito la loro competenza e siamo felici di poter collaborare con loro.</p>
+  <div class="mt-8">
+    <div class="lg:hidden">
+      <TestimonialSlider client:load testimonials={testimonials} />
     </div>
-
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[0.5px] border-b-[8px] border-black">
-      <div class="flex flex-col items-center mb-4">
-        <img src="/Container.png" alt="Daniel Gray" class="w-72 h-72rounded-full mb-2" />
-        <h3 class="text-xl font-bold text-[#F95C04]">Daniel Gray - Sales Director</h3>
-        <p class="text-xl font-semibold">Powerplay Brands LTD</p>
-      </div>
-      <p class="text-[#F95C04] text-lg font-bold text-center mb-4">"Siamo Cresciuti Del 56% In 1 Anno"</p>
-      <p class="text-center text-base">Venivamo da un esperienza non molto positiva con la nostra precedente Agenzia Amazon.</p>
-      <p class="text-center text-base mt-2">Con Storm X invece abbiamo avuto un ottima esperienza, raggiungendo e supreando i target di fatturato che ci eravamo presupposti.</p>
-      <p class="text-center text-base mt-2">Si capisce sin da subito la loro competenza e siamo felici di poter collaborare con loro.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-black border-[0.5px] border-b-[8px] ">
-      <div class="flex flex-col items-center mb-4">
-        <img src="/Container2.png" alt="Tom Parr" class="w-72 h-72rounded-full mb-2" />
-        <h3 class="text-xl font-bold text-[#F95C04]">Tom Parr - E-Commerce Manager</h3>
-        <p class="text-xl font-semibold">Reliance Medical LTD</p>
-      </div>
-      <p class="text-[#F95C04] text-lg font-bold text-center mb-4">"Da 1,5 Mln a 4 Mln in 2 Anni"</p>
-      <p class="text-center text-base">Marcello e Storm X ci aiutano nella gestione completa del nostro Amazon Vendor in Europa.</p>
-      <p class="text-center text-base mt-2">Il team Storm X parla diverse lingue il che ha reso possibile per noi espanderci in Europa.</p>
-      <p class="text-center text-base mt-2">Grazie a Storm X oggi il nostro business su Amazon sviluppa oltre i 4 Milioni di fatturato. Quando abbiamo iniziato eravamo a 1.5.</p>
+    <div class="hidden lg:grid lg:grid-cols-3 gap-8 px-4">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white p-6 sm:p-8 rounded-[45px] shadow-lg border-[0.5px] border-b-[8px] border-black">
+          <div class="flex flex-col items-center mb-4">
+            <div class="w-40 h-40 xl:w-48 xl:h-48 mb-4 rounded-full overflow-hidden">
+              <img src={testimonial.image} alt={testimonial.name} class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-lg xl:text-xl font-bold text-[#F95C04] text-center">{testimonial.name}</h3>
+            <p class="text-base xl:text-lg font-semibold text-center">{testimonial.company}</p>
+          </div>
+          <p class="text-[#F95C04] text-base xl:text-lg font-bold text-center mb-4">"{testimonial.quote}"</p>
+          <p class="text-center text-sm xl:text-base">{testimonial.content}</p>
+          {testimonial.additionalContent && (
+            <p class="text-center text-sm xl:text-base mt-2">{testimonial.additionalContent}</p>
+          )}
+        </div>
+      ))}
     </div>
   </div>
 </Container>
-
-
-

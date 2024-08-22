@@ -11,7 +11,7 @@ console.log('Cookie value:', Astro.cookies.get('adminLoggedIn')?.value);
 // Check if user is already logged in
 if (Astro.cookies.get('adminLoggedIn')?.boolean()) {
   console.log('User is logged in, redirecting to blog panel');
-  return Astro.redirect('./blog-panel');
+  return Astro.redirect('./admin/blog-panel');
 }
 
 // Handle form submission

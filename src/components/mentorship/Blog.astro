@@ -4,6 +4,11 @@ import ArticleIcon from "../Icons/ArticleIcon.astro";
 import VideoIcon from "../Icons/VideoIcon.astro";
 import Topic from "../Topic.astro";
 import articlesData from '../../components//Data/articles.json';
+import PostCarousel from "../PostCard";
+import { fetchPosts } from "@/lib/fetchPosts";
+
+const posts = await fetchPosts();
+
 ---
 
 <Container>
@@ -12,29 +17,16 @@ import articlesData from '../../components//Data/articles.json';
       <Topic title="Tutorials & Best Practices" description="Non il classico noioso Blog. In questa sezione troverai guide utili e pratiche per la risoluzione di tutti i tuoi grattacapo di Amazon Seller & Vendor" />
     </div>
   
-    <div class="py-8  max-w-screen-xl lg:py-16 ">
-      <div class="grid gap-8 lg:grid-cols-2">
-        {
-        articlesData.map(({ id, type, title, publish_date, brief, author, authorImage} ) => (
-          <article class="p-6 bg-white rounded-3xl border border-black shadow-card">
-              <div class="flex justify-between items-center mb-5 text-gray-500">
-                  <span class="bg-[#F95C04] text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
-                    {type == 'Article' ? (<ArticleIcon />) : (<VideoIcon />)}
-                    {type}
-                  </span>
-                  <span class="text-sm">{publish_date}</span>
-              </div>
-              <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">{title}</h2>
-              <p class="mb-5 font-light text-gray-500" style="white-space: pre-line">{brief}</p>
-              <div class="flex justify-end items-end">
-                  <a href={`/blogs/${id}`} class="inline-flex items-center text-base font-bold text-[#F95C04] hover:text-black text-lg">
-                      Leggi Di Più
-                      <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
-              </div>
-          </article> 
-        ))
-        }
-      </div>  
-    </div>
+    <PostCarousel client:load posts={posts} />
   </Container>
+
+
+
+
+
+
+
+
+
+
+  

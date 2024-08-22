@@ -12,12 +12,12 @@ const founderData = {
 <Container>
   <div class="bg-gray-100 rounded-[15px] sm:rounded-[30px] p-4 sm:p-6 md:p-8 lg:p-10 shadow-lg">
     <div class="flex flex-col lg:flex-row gap-6 items-stretch">
-      <div class="w-full lg:w-[424px] bg-white rounded-[30px] sm:rounded-[45px] shadow-md border border-black flex-col justify-start items-start inline-flex text-black overflow-hidden" style="aspect-ratio: auto; min-height: 323px; border-width: 1px; border-bottom-width: 10px;">
-        <div class="flex flex-col h-full justify-between p-4 sm:p-6 md:p-8 lg:p-10" style="max-width: 100%;">
+      <div class="w-full lg:w-[424px] bg-white rounded-[30px] sm:rounded-[45px] shadow-md border border-black flex-col justify-start items-start inline-flex text-black overflow-hidden" style="border-width: 1px; border-bottom-width: 10px;">
+        <div class="flex flex-col h-full justify-between p-4 sm:p-6 md:p-8 lg:p-10 w-full">
           <div>
             <div class="flex justify-between items-start w-full mb-4">
               <div class="flex items-center gap-2 sm:gap-4">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
                   <img src={founderData.image} alt={founderData.name} class="w-full h-full object-cover"/>
                 </div>
                 <div>
@@ -27,21 +27,21 @@ const founderData = {
                       <img src="/team/lng.svg" alt="LinkedIn" class="w-4 h-4 sm:w-5 sm:h-5"/>
                     </a>
                   </div>
-                  <div class="text-sm sm:text-base md:text-lg font-semibold">{founderData.title}</div>
+                  <div class="text-sm sm:text-base font-semibold">{founderData.title}</div>
                 </div>
               </div>
             </div>
-            <p class="text-sm sm:text-base md:text-lg font-normal">{founderData.experience}</p>
+            <p class="text-sm sm:text-base font-normal">{founderData.experience}</p>
           </div>
         </div>
       </div>
 
       <div class="w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:pl-8">
         <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Pianifica Una Call Per Conoscere Il Nostro Coach</h2>
-        <p class="text-sm sm:text-base md:text-lg">
-          Tutti i segreti del nostro team rivelati in questo playbook. Gli stessi processi che attuamo per i nostri clienti li abbiamo trascritti e messi a disposizione in maniera gratuita per tutti i responsabili E-Commerce alle prese con Amazon
+        <p class="text-sm sm:text-base">
+          Tutti i segreti del nostro team rivelati in questo playbook. Gli stessi processi che attuiamo per i nostri clienti li abbiamo trascritti e messi a disposizione in maniera gratuita per tutti i responsabili E-Commerce alle prese con Amazon
         </p>
-        <button class="w-full sm:w-auto px-4 sm:px-6 py-3 bg-orange text-white rounded-lg font-bold text-sm md:text-base lg:text-lg uppercase">
+        <button class="w-full sm:w-auto px-4 sm:px-6 py-3 bg-orange text-white rounded-lg font-bold text-sm sm:text-base uppercase">
           Pianifica Call Gratuita
         </button>
       </div>

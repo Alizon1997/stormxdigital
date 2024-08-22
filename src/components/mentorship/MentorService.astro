@@ -1,69 +1,88 @@
 ---
-import Container from "../Container.astro"
+import Container from "../Container.astro";
 import Topic from "../Topic.astro";
+import { Carousel } from "../MentorCard";
+
+const cards = [
+  {
+    title: "GESTIONE COMPLETA DEL TUO ACCOUNT AMAZON",
+    content: "Assumi degli specialisti in Brand Growth; in questo modo potrai:",
+    listItems: [
+      "Migliorare le performance delle tue vendite e intercettare nuovi clienti.",
+      "Trasformare il tuo marchio e i tuoi prodotti in un'esperienza di acquisto coinvolgente per i tuoi clienti.",
+      "Creare contenuti fotografici e video che esaltano la storia del tuo marchio.",
+      "Usufruire degli annunci e delle promozioni di Amazon per incrementare le vendite.",
+    ],
+    bgClass: "bg-white",
+    textColor: "text-black",
+    number: "1",
+  },
+  {
+    title: "OTTIMIZZAZIONE SEO DEI LISTINI AMAZON E DEI PRODOTTI",
+    content: "",
+    listItems: [
+      "Esporre i tuoi prodotti ai clienti più pertinenti, per aumentare le conversioni di vendita (ottimizzazione SEO dell'algoritmo del mercato).",
+      "Posizionarti su Amazon per parole chiave rilevanti.",
+      "Differenziarti dalla concorrenza grazie alla nostra analisi del mercato",
+      "Dominare il mercato con le nostre strategie SEO Amazon.",
+    ],
+    bgClass: "bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82%",
+    textColor: "text-white",
+    number: "2",
+  },
+  {
+    title: "STRATEGIA PUBBLICITARIA DEI PRODOTTI E LANCIO CAMPAGNE",
+    content: "",
+    listItems: [
+      "Incrementare le vendite su Amazon grazie alle campagne Amazon PPC e annunci display su misura con cui potrai massimizzare il ROI.",
+      "Implementazione Campagne Sponsored Product, Sponsored Brand e Sponsored Display",
+      "Promuovere il tuo marchio con contenuti fotografici e video.",
+    ],
+    bgClass: "bg-gray-900",
+    textColor: "text-white",
+    number: "3",
+  },
+  {
+    title: "OTTIMIZZAZIONE TASSO DI CONVERSIONE DEI PRODOTTI AMAZON",
+    content: "",
+    listItems: [
+      "Ottimizzare le conversioni su Amazon con il nostro servizio CRO.",
+      "Targeting del pubblico di riferimento ideale per il tuo marchio attraverso i nostri strumenti di analisi di mercato.",
+      "Massimizzare oggi la tua presenza su Amazon per promuovere una crescita esponenziale per la tua azienda domani.",
+    ],
+    bgClass: "bg-white",
+    textColor: "text-black",
+    number: "4",
+  },
+];
 ---
 
 <Container>
   <div class="relative flex flex-col items-center md:flex-row" id="services">
-    <h2 class="text-orange text-4xl font-bold pb-6">4 Motivi Perchè Devi Utilizzare Il “Metodo Storm X</h2>
+    <h2 class="text-orange text-3xl sm:text-4xl font-bold pb-6 text-center md:text-left">
+      4 Motivi Perchè Devi Utilizzare Il "Metodo Storm X
+    </h2>
   </div>
 
   <div class="flex-row items-center py-5">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {/* Card 1 */}
-      <div class="min-h-[310px] p-4 sm:p-6 md:p-8 rounded-[20px] sm:rounded-[45px] shadow-card border border-black justify-between items-start flex flex-col bg-white relative overflow-hidden">
-        <div class="z-10">
-          <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">GESTIONE COMPLETA DEL TUO ACCOUNT AMAZON</h3>
-          <p class="text-xs md:text-base mb-2 sm:mb-4">Assumi degli specialisti in Brand Growth; in questo modo potrai:</p>
-          <ul class="list-disc pl-4 sm:pl-5 text-xs md:text-base space-y-1 sm:space-y-2">
-            <li>Migliorare le performance delle tue vendite e intercettare nuovi clienti.</li>
-            <li>Trasformare il tuo marchio e i tuoi prodotti in un'esperienza di acquisto coinvolgente per i tuoi clienti.</li>
-            <li>Creare contenuti fotografici e video che esaltano la storia del tuo marchio.</li>
-            <li>Usufruire degli annunci e delle promozioni di Amazon per incrementare le vendite.</li>
-          </ul><br/>
+    <div class="hidden md:grid md:grid-cols-2 gap-4">
+      {cards.map((card, index) => (
+        <div class={`min-h-[310px] p-4 sm:p-6 md:p-8 rounded-[20px] sm:rounded-[45px] shadow-card border border-black justify-between items-start flex flex-col ${card.bgClass} ${card.textColor} relative overflow-hidden`}>
+          <div class="z-10">
+            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">{card.title}</h3>
+            {card.content && <p class="text-xs md:text-base mb-2 sm:mb-4">{card.content}</p>}
+            <ul class="list-disc pl-4 sm:pl-5 text-xs md:text-base space-y-1 sm:space-y-2">
+              {card.listItems.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class={`absolute bottom-2 right-6 text-4xl sm:text-5xl md:text-6xl font-bold ${card.textColor} z-0`}>{card.number}</div>
         </div>
-        <div class="absolute bottom-2 right-6 text-4xl sm:text-5xl md:text-6xl font-bold text-black  z-0">1</div>
-      </div>
-
-      {/* Card 2 */}
-      <div class="min-h-[310px] p-4 sm:p-6 md:p-8 rounded-[20px] sm:rounded-[45px] shadow-card border border-black justify-between items-start flex flex-col bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white relative overflow-hidden">
-        <div class="z-10">
-          <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">OTTIMIZZAZIONE SEO DEI LISTINI AMAZON E DEI PRODOTTI</h3>
-          <ul class="list-disc pl-4 sm:pl-5 text-xs md:text-base space-y-1 sm:space-y-2">
-            <li>Esporre i tuoi prodotti ai clienti più pertinenti, per aumentare le conversioni di vendita (ottimizzazione SEO dell'algoritmo del mercato).</li>
-            <li>Posizionarti su Amazon per parole chiave rilevanti.</li>
-            <li>Differenziarti dalla concorrenza grazie alla nostra analisi del mercato</li>
-            <li>Dominare il mercato con le nostre strategie SEO Amazon.</li>
-          </ul>
-        </div>
-        <div class="absolute bottom-2 right-6 text-4xl sm:text-5xl md:text-6xl font-bold text-white z-0">2</div>
-      </div>
-
-      {/* Card 3 */}
-      <div class="min-h-[310px] p-4 sm:p-6 md:p-8 rounded-[20px] sm:rounded-[45px] shadow-card border border-black justify-between items-start flex flex-col bg-gray-900 text-white relative overflow-hidden">
-        <div class="z-10">
-          <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">STRATEGIA PUBBLICITARIA DEI PRODOTTI E LANCIO CAMPAGNE</h3>
-          <ul class="list-disc pl-4 sm:pl-5 text-xs md:text-base space-y-1 sm:space-y-2">
-            <li>Incrementare le vendite su Amazon grazie alle campagne Amazon PPC e annunci display su misura con cui potrai massimizzare il ROI.</li>
-            <li>Implementazione Campagne Sponsored Product, Sponsored Brand e Sponsored Display</li>
-            <li>Promuovere il tuo marchio con contenuti fotografici e video.</li>
-          </ul><br/>
-        </div>
-        <div class="absolute bottom-2 right-6 text-4xl sm:text-5xl md:text-6xl  font-bold text-white z-0">3</div>
-      </div>
-
-      {/* Card 4 */}
-      <div class="min-h-[310px] p-4 sm:p-6 md:p-8 rounded-[20px] sm:rounded-[45px] shadow-card border border-black justify-between items-start flex flex-col bg-white relative overflow-hidden">
-        <div class="z-10">
-          <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">OTTIMIZZAZIONE TASSO DI CONVERSIONE DEI PRODOTTI AMAZON</h3>
-          <ul class="list-disc pl-4 sm:pl-5 text-xs md:text-base space-y-1 sm:space-y-2">
-            <li>Ottimizzare le conversioni su Amazon con il nostro servizio CRO.</li>
-            <li>Targeting del pubblico di riferimento ideale per il tuo marchio attraverso i nostri strumenti di analisi di mercato.</li>
-            <li>Massimizzare oggi la tua presenza su Amazon per promuovere una crescita esponenziale per la tua azienda domani.</li>
-          </ul>
-        </div><br/>
-        <div class="absolute bottom-2 right-6 text-4xl sm:text-5xl md:text-6xl  font-bold text-black z-0">4</div>
-      </div>
+      ))}
+    </div>
+    <div class="md:hidden">
+      <Carousel client:load cards={cards} />
     </div>
   </div>
 </Container>
