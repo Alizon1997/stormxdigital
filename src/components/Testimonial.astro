@@ -1,95 +1,62 @@
 ---
-
-import ArticlesSwiper from "./ArticlesSwipe"
 import Container from "./Container.astro"
-
 import Topic from "./Topic.astro"
-import { fetchPosts } from '../lib/fetchPosts'; // Make sure this path is correct
-import { VideoIcon } from "lucide-react";
-import ArticleIcon from "./Icons/ArticleIcon.astro";
+import TestimonialSlider from "./TestimonialSlider"
 
-const articlesData = await fetchPosts();
-
+const testimonials = [
+  {
+    name: "Daniel Gray - Sales Director",
+    company: "Powerplay Brands LTD",
+    image: "/Container.png",
+    quote: "Siamo Cresciuti Del 56% In 1 Anno",
+    content: "Marcello e Storm X sono i nostri partner esclusivi in Italia per i marchi Lee, Wrangler, DKNY, Reebok e Ben Sherman.",
+    additionalContent: "Si occupano di organizzare e partecipare a incontri con catene sportive, aprendo nuove opportunità per noi, come ad esempio con Coop Italia e Amazon IT."
+  },
+  {
+    name: "Jimmy Chen - CEO MET Jeans",
+    company: "Powerplay Brands LTD",
+    image: "/Container.png",
+    quote: "Siamo Cresciuti Del 56% In 1 Anno",
+    content: "Storm X ci ha supportato nel nostro primo approccio su Amazon, dimostrando di conoscere perfettamente la piattaforma.",
+    additionalContent: "Inoltre, hanno aperto nuove opportunità per noi, generando un fatturato di oltre 300K."
+  },
+  {
+    name: "Tom Parr - E-Commerce Manager",
+    company: "Reliance Medical LTD",
+    image: "/Container.png",
+    quote: "Da 1,5 Mln a 4 Mln in 2 Anni",
+    content: "Marcello e Storm X ci aiutano nella gestione completa del nostro Amazon Vendor in Europa. Il team Storm X parla diverse lingue il che ha reso possibile per noi espanderci in Europa.",
+    additionalContent: "Grazie a Storm X oggi il nostro business su Amazon sviluppa oltre i 4 Milioni di fatturato. Quando abbiamo iniziato eravamo a 1.5."
+  }
+];
 ---
+
 <Container>
-  <div class="relative flex flex-col items-center md:flex-row">
+  <div class="relative flex flex-col items-center md:flex-row mb-8 sm:mb-12">
     <Topic title="Cosa Dicono Di Noi" description="Alcuni feedback di nostri clienti che abbiamo aiutato a crescere su Amazon Seller Central e Vendor Central." />
   </div>
 
-  <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[0.5px] border-b-[8px] border-black">
-      <div class="flex flex-col items-center mb-4">
-        <img src="/Container.png" alt="Daniel Gray" class="w-72 h-72rounded-full mb-2" />
-        <h3 class="text-lg font-bold text-[#F95C04]">Daniel Gray - Sales Director</h3>
-        <p class="text-lg font-semibold">Powerplay Brands LTD</p>
-      </div>
-      <p class="text-[#F95C04] text-base font-bold text-center mb-4">"Siamo Cresciuti Del 56% In 1 Anno"</p>
-      <p class="text-center text-base">Marcello e Storm X sono i nostri partner esclusivi in Italia per i marchi Lee, Wrangler, DKNY, Reebok e Ben Sherman. </p>
-      <p class="text-center text-base mt-2">Si occupano di organizzare e partecipare a incontri con catene sportive, aprendo nuove opportunità per noi, come ad esempio con Coop Italia e Amazon IT. </p>
+  <div class="mt-8">
+    <div class="lg:hidden">
+      <TestimonialSlider client:load testimonials={testimonials} />
     </div>
-
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-[0.5px] border-b-[8px] border-black">
-      <div class="flex flex-col items-center mb-4">
-        <img src="/Container.png" alt="Daniel Gray" class="w-72 h-72rounded-full mb-2" />
-        <h3 class="text-xl font-bold text-[#F95C04]">Jimmy Chen -  CEO MET Jeans</h3>
-        <p class="text-xl font-semibold">Powerplay Brands LTD</p>
-      </div>
-      <p class="text-[#F95C04] text-lg font-bold text-center mb-4">"Siamo Cresciuti Del 56% In 1 Anno"</p>
-      <p class="text-center text-base">Storm X ci ha supportato nel nostro primo approccio su Amazon, dimostrando di conoscere perfettamente la piattaforma. </p>
-      <p class="text-center text-base mt-2">Inoltre, hanno aperto nuove opportunità per noi, generando un fatturato di oltre 300K.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-[45px] shadow-lg border-black border-[0.5px] border-b-[8px] ">
-      <div class="flex flex-col items-center mb-4">
-        <img src="/Container2.png" alt="Tom Parr" class="w-72 h-72rounded-full mb-2" />
-        <h3 class="text-xl font-bold text-[#F95C04]">Tom Parr - E-Commerce Manager</h3>
-        <p class="text-xl font-semibold">Reliance Medical LTD</p>
-      </div>
-      <p class="text-[#F95C04] text-lg font-bold text-center mb-4">“Da 1,5 Mln a 4 Mln in 2 Anni”</p>
-      <p class="text-center text-base">Marcello e Storm X ci aiutano nella gestione completa del nostro Amazon Vendor in Europa.</p>
-      <p class="text-center text-base mt-2">Il team Storm X parla diverse lingue il che ha reso possibile per noi espanderci in Europa.</p>
-      <p class="text-center text-base mt-2">Grazie a Storm X oggi il nostro business su Amazon sviluppa oltre i 4 Milioni di fatturato. Quando abbiamo iniziato eravamo a 1.5.</p>
-    </div>
-  </div>
-</Container>
-
-<Container class="px-4 sm:px-6 lg:px-8">
-  <div class="relative overflow-hidden bg-[#E1E1E1] rounded-[2rem]">
-    <div class="flex flex-col lg:flex-row items-center">
-      <div class="relative z-10 flex items-center w-full lg:w-1/2">
-        <img src="/woman.png" alt="Excited woman in red uniform" class="w-full h-auto lg:h-[592px] lg:w-auto object-cover lg:object-contain"/>
-
-        <div class="absolute top-0 left-0 right-0 bottom-0 flex items-end justify-center pb-8">
-          {[1,2,3,4,5].map((_, index) => (
-            <div 
-             
-              class="bg-yellow-400 w-6 mx-1"
-              style={{height: `${(index + 1) * 15}%`}}
-            ></div>
-          ))}
+    <div class="hidden lg:grid lg:grid-cols-3 gap-8 px-4">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white p-6 sm:p-8 rounded-[45px] shadow-lg border-[0.5px] border-b-[8px] border-black">
+          <div class="flex flex-col items-center mb-4">
+            <div class="w-40 h-40 xl:w-48 xl:h-48 mb-4 rounded-full overflow-hidden">
+              <img src={testimonial.image} alt={testimonial.name} class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-lg xl:text-xl font-bold text-[#F95C04] text-center">{testimonial.name}</h3>
+            <p class="text-base xl:text-lg font-semibold text-center">{testimonial.company}</p>
+          </div>
+          <p class="text-[#F95C04] text-base xl:text-lg font-bold text-center mb-4">"{testimonial.quote}"</p>
+          <p class="text-center text-sm xl:text-base">{testimonial.content}</p>
+          {testimonial.additionalContent && (
+            <p class="text-center text-sm xl:text-base mt-2">{testimonial.additionalContent}</p>
+          )}
         </div>
-      </div>
-      <div class="w-full lg:w-1/2 p-8 flex flex-col justify-center relative z-10">
-        <h2 class="text-2xl lg:text-3xl font-bold mb-4">Amazon Metodo Storm X</h2>
-        <p class="mb-6 text-base leading-snug">
-          Gli stessi processi che attuamo per i nostri clienti li abbiamo trascritti e messi a 
-          disposizione in maniera gratuita per tutti i responsabili E-Commerce alle prese con Amazon  
-        </p>
-        <button class="bg-[#F95C04] text-white font-bold py-3 px-6 rounded-lg text-lg uppercase tracking-wide self-start">
-          SCARICALA GRATIS
-        </button>
-      </div>
+      ))}
     </div>
   </div>
-</Container>
-
-<Container>
-  <div class="relative flex flex-col items-center md:flex-row">
-    <Topic title="Tutorials & Best Practices" description="Non il classico noioso Blog. In questa sezione troverai guide utili e pratiche per la risoluzione di tutti i tuoi grattacapo di Amazon Seller & Vendor." />
-  </div>
-
-  <ArticlesSwiper 
-  client:load 
-  articles={articlesData}
-/>
 </Container>

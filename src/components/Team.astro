@@ -4,6 +4,7 @@ import Topic from "./Topic.astro";
 import teamData from './Data/team.json';
 import Collapse from "./Collapse.astro";
 import FounderSection from "./FounderSection.astro";
+import ResponsiveTeamComponent from "./TeamCarousel";
 
 ---
 <Container>
@@ -13,34 +14,8 @@ import FounderSection from "./FounderSection.astro";
 
 <FounderSection />
 
-<div class="flex-row items-center py-5" id="team">
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4">
-    {
-    teamData.team.map(({ title, description, name, link, profile} ) => (
-    <div class="h-[331px] px-[35px] py-10 bg-white rounded-[45px] shadow-card border border-zinc-900 flex-col justify-start items-start gap-2.5 inline-flex text-black">
-        <div class="flex-col justify-start items-start gap-7 flex">
-            <div class="self-stretch justify-start items-start inline-flex">
-                <div class="grow shrink basis-0 justify-start items-center gap-8 flex">
-                    <div class="h-[102.82px] left-0 top-0 relative">
-                        <img src={profile} alt={name}/>
-                    </div>
-                    <div class="flex-col justify-end items-start inline-flex">
-                        <div class="text-lg font-bold">{title}</div>
-                        <div class="text-lg font-medium">{name}</div>
-                    </div>
-                </div>
-                <a class="top-0 right-0" href={link}>
-                    <img src="/team/lng.svg" alt="vector"/>
-                </a>
-            </div>
-            <hr class="w-full border border-black"/>
-            <p class="text-sm md:text-base">{description}</p>
-        </div>
-    </div>
-    ))
-    }
-    </div>
-</div>
+<ResponsiveTeamComponent teamData={teamData} client:load />
+
 
 
 
@@ -48,7 +23,7 @@ import FounderSection from "./FounderSection.astro";
     <Topic title="Il Nostro Processo" description="Aumentiamo costantemente la tua quota di mercato. Gestiamo ogni aspetto della tua presenza su Amazon, inclusi quelli che molte agenzie trascurano, come la gestione del catalogo e la SEO. Quando le campagne PPC funzionano in sinergia con la SEO e il Design, l'intero catalogo guadagna insieme quote di mercato."/>
 </div>
 
-<div class="my-6">
+<div class="my-6 mx-2">
     <div class="space-y-10">
         {
         teamData.process.map((process, key) => (
@@ -58,7 +33,7 @@ import FounderSection from "./FounderSection.astro";
         ))
         }
         <div class="group outline-none accordion-section" tabindex="1">
-            <div class="group group-focus:bg-[#F95C04] group-focus:shadow-none shadow-card bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% group-focus:rounded-b-none group-focus:rounded-t-3xl rounded-3xl flex justify-between px-4 py-3 items-center transition-colors ease duration-500 cursor-pointer pr-10 relative">
+            <div class="group group-focus:bg-[#F95C04] group-focus:shadow-none shadow-card bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% group-focus:rounded-b-none group-focus:rounded-t-3xl rounded-[60px] md:rounded-3xl  flex justify-between px-4 py-3 items-center transition-colors ease duration-500 cursor-pointer pr-10 relative">
               <div class="flex items-center group-focus:text-white px-10 pt-10 w-full transition ease duration-500">
                 <div class="flex pb-10 gap-5 w-full items-center">
                   <div class="flex justify-between w-full items-center rouded-full">

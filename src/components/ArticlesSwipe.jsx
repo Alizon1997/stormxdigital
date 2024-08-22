@@ -69,10 +69,10 @@ const ArticlesSwiper = ({ articles }) => {
       </div>
       
       {/* Navigation Arrows */}
-      <div className="swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 bg-black opacity-5 rounded-full p-2 sm:p-3 shadow-md z-10">
+      <div className="swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2  rounded-full p-2 sm:p-3 shadow-md z-10">
         <ChevronLeft size={20} className="text-[#F95C04]" />
       </div>
-      <div className="swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 bg-black rounded-full p-2 sm:p-3 shadow-md z-10">
+      <div className="swiper-button-next absolute right-0 top-1/2 -translate-y-1/2  rounded-full p-2 sm:p-3 shadow-md z-10">
         <ChevronRight size={20} className="text-[#F95C04]" />
       </div>
     </div>

@@ -12,36 +12,42 @@ const features = [
   "Supporto Nelle Negoziazioni Con Amazon Vendor"
 ];
 ---
+
 <div class="flex justify-center p-6">
-  <div class="w-full max-w-[1320px] bg-white rounded-[45px] shadow-lg border border-black p-6">
+  <div class="w-full max-w-[1320px] bg-white rounded-[45px] shadow-lg border-0 lg:border border-white lg:border-black p-6">
     <!-- Header -->
     <h2 class="text-xl md:text-3xl font-bold text-center text-[#FF6600] mb-8">
       Perché Lavorare con Noi
     </h2>
 
-    <!-- Table Wrapper for Mobile Responsiveness -->
-    <div class="overflow-x-auto">
+    <!-- Mobile Image (visible on md and smaller screens) -->
+    <div class="block lg:hidden">
+      <img src="/mobile_table.png" alt="Feature comparison" class="w-full" />
+    </div>
+
+    <!-- Table (visible on lg and larger screens) -->
+    <div class="hidden lg:block overflow-x-auto">
       <table class="w-full text-left border-collapse">
         <thead>
           <tr>
-            <th class="p-2 md:p-4 border border-black"></th>
-            <th class="p-2 md:p-4 text-center text-white font-bold border border-black">
+            <th class="p-2 lg:p-4 border border-black"></th>
+            <th class="p-2 lg:p-4 text-center text-white font-bold border border-black">
               <div class="flex items-center justify-center gap-2">
-                <img src="/StormXLogo.svg" alt="STORM DIGITAL" class="w-20 md:w-auto" />
+                <img src="/StormXLogo.svg" alt="STORM DIGITAL" class="w-20 lg:w-auto" />
               </div>
             </th>
-            <th class="p-2 md:p-4 text-xl md:text-3xl font-bold text-center border border-black">Others</th>
+            <th class="p-2 lg:p-4 text-xl lg:text-3xl font-bold text-center border border-black">Others</th>
           </tr>
         </thead>
         <tbody>
           {features.map((feature, index) => (
-            <tr >
-              <td class="p-2 md:p-4 text-sm md:text-lg border border-black font-bold">{feature}</td>
-              <td class="p-2 md:p-4 text-center bg-gradient-to-r from-[#F95C04] to-[#FF8E0A] text-white border border-black">
-                <img src="/table/yes.png" alt="Check" class="w-4 md:w-6 h-4 md:h-6 mx-auto" />
+            <tr>
+              <td class="p-2 lg:p-4 text-sm lg:text-lg border border-black font-bold">{feature}</td>
+              <td class="p-2 lg:p-4 text-center bg-gradient-to-r from-[#F95C04] to-[#FF8E0A] text-white border border-black">
+                <img src="/table/yes.png" alt="Check" class="w-4 lg:w-6 h-4 lg:h-6 mx-auto" />
               </td>
-              <td class="p-2 md:p-4 text-center border border-black">
-                <img src="/table/no.png" alt="Cross" class="w-4 md:w-6 h-4 md:h-6 mx-auto" />
+              <td class="p-2 lg:p-4 text-center border border-black">
+                <img src="/table/no.png" alt="Cross" class="w-4 lg:w-6 h-4 lg:h-6 mx-auto" />
               </td>
             </tr>
           ))}

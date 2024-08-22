@@ -1,46 +1,70 @@
 ---
 import Container from "./Container.astro"
 import Topic from "./Topic.astro"
+import { FaCheckCircle, FaLanguage, FaChartLine, FaUserCheck, FaRocket, FaHandshake, FaArrowRight } from 'react-icons/fa'
+
 ---
 
 <Container>
   <div class="bg-white p-4 sm:p-6 lg:p-8">
     <Topic
       title="Storie Di Successo"
-      description="Cosa consideriamo “Un Successo” quando parliamo di Amazon a Storm X Digital? Alcuni esempi qui sotto dove abbiamo aumentato del 218% il fatturato di Safe Industrial. Oppure come abbiamo trasformato il mercato dei Kit Di Primo Soccorso su Amazon raggiungendo olte 14 Mila unità vendute al mese per un solo prodotto in Amazon UK."
+      description="Cosa consideriamo ``Un Successo`` quando parliamo di Amazon a Storm X Digital? Alcuni esempi qui sotto dove abbiamo aumentato del 218% il fatturato di Safe Industrial. Oppure come abbiamo trasformato il mercato dei Kit Di Primo Soccorso su Amazon raggiungendo olte 14 Mila unità vendute al mese per un solo prodotto in Amazon UK."
     />
     
-    <div class="mt-6 sm:mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-      <div class=" p-4 sm:p-6 rounded-lg">
-        <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">RELIANCE MEDICAL LTD <br/> Amazon Vendor Account</h3>
-        <p class="mb-3 sm:mb-4 text-base sm:text-lg">Reliance Medical è un nostro cliente ormai dal 2022. La loro necessità era quella di trovare una Agenzia Amazon potesse aiutarli nella espansione in Europa dei propri prodotti attraverso un&apos;attività che includesse: <b>Ottimizzazione Schede Prodotto,</b> Realizzazione e traduzione in FR, IT, DE, ES, EN di Content A+ Premium e <b>realizzazione strategia pubblicitaria</b> che include SP, SB e SD ADV.</p>
-        <a href="#" class="text-[#F95C04] font-bold text-lg">Leggi Di Più →</a>
-        
-        <div class="mt-4 sm:mt-6 flex justify-between items-end">
+    <div class="mt-4 sm:mt-6 lg:mt-8 space-y-8 sm:space-y-12 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8">
+      <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+        <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">RELIANCE MEDICAL LTD <br/> Amazon Vendor Account</h3>
+        <div class="space-y-4 sm:space-y-6">
+          <div class="flex items-start">
+            <FaCheckCircle className="w-6 h-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+            <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">Ottimizzazione Schede Prodotto:</span> Miglioramento delle listinge per maggiore visibilità.</p>
+          </div>
+          <div class="flex items-start">
+            <FaLanguage className="w-6 h-6 text-blue-500 mr-2 flex-shrink-0 mt-1" />
+            <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">Content A+ Premium:</span> Creazione e traduzione in FR, IT, DE, ES, EN.</p>
+          </div>
+          <div class="flex items-start">
+            <FaChartLine className="w-6 h-6 text-purple-500 mr-2 flex-shrink-0 mt-1" />
+            <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">Strategia Pubblicitaria:</span> Implementazione di SP, SB e SD ADV.</p>
+          </div>
+        </div>
+        <a href="#" class="mt-6 inline-flex items-center text-[#F95C04] font-bold text-lg sm:text-xl hover:underline">
+          Leggi Di Più 
+          <FaArrowRight className="w-5 h-5 ml-1" />
+        </a>
+
+        <div class="mt-8 flex justify-between items-center bg-white rounded-lg p-4 shadow-inner">
           <div class="text-center">
             <p class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F95C04]">78%</p>
-            <p class="text-xs sm:text-sm lg:text-base font-normal mt-1">Crescita Fatturato<br/>Amazon</p>
+            <p class="text-sm sm:text-base lg:text-base font-medium mt-2 text-gray-600">Crescita Fatturato Amazon</p>
           </div>
           <div class="text-center">
             <p class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F95C04]">63%</p>
-            <p class="text-xs sm:text-sm lg:text-base font-normal mt-1">Incremento Margine<br/>Netto</p>
+            <p class="text-sm sm:text-base lg:text-base font-medium mt-2 text-gray-600">Incremento Margine Netto</p>
           </div>
           <div class="text-center">
             <p class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F95C04]">16%</p>
-            <p class="text-xs sm:text-sm lg:text-base font-normal mt-1">Incremento Tasso di<br/>Conversione</p>
+            <p class="text-sm sm:text-base lg:text-base font-medium mt-2 text-gray-600">Incremento Tasso di Conversione</p>
           </div>
         </div>
       </div>
       
-      <div class=" p-4 sm:p-6 rounded-lg">
-        <img src="/amazon_img.png" alt="Testimonial" class="w-full rounded-lg mb-4">
+      <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+        <img src="/amazon_img.png" alt="Testimonial" class="w-full rounded-lg mb-6 shadow-md">
+        <div class="bg-white rounded-lg p-4 shadow-inner">
+          <h4 class="text-lg sm:text-xl font-semibold mb-2 text-gray-800">Testimonianza del Cliente</h4>
+          <p class="text-base sm:text-lg italic text-gray-700">"Storm X ha trasformato la nostra presenza su Amazon, portando risultati straordinari e diventando parte integrante del nostro team."</p>
+          <p class="text-sm sm:text-base font-medium mt-2 text-gray-600">- Direttore Marketing, Reliance Medical Ltd</p>
+        </div>
       </div>
     </div>
     
-    <div class="mt-6 sm:mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-      <div class=" p-4 sm:p-6 rounded-lg">
-        <div class="bg-yellow-300 item-center rounded-lg">
-            <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
+    <div class="mt-8 sm:mt-12 space-y-8 sm:space-y-12 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8">
+      <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+        <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">Video Testimonianza</h3>
+        <div class="bg-yellow-300 rounded-lg overflow-hidden shadow-md">
+            <div class="relative pb-[56.25%] h-0">
                 <iframe class="absolute top-0 left-0 w-full h-full"
                         src="https://www.youtube.com/embed/aTzsHLqwN8s?si=ijdpqTprp7tYtGuB"
                         title="YouTube video player"
@@ -51,25 +75,41 @@ import Topic from "./Topic.astro"
                 </iframe>
             </div>
         </div>
+        <p class="mt-4 text-base sm:text-lg text-gray-700">Guarda il video per scoprire come abbiamo aiutato i nostri clienti a raggiungere il successo su Amazon.</p>
       </div>
       
-      <div class=" p-4 sm:p-6 rounded-lg">
-        <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">SAFE INDUSTRIAL LTD - Kirsty<br/>Amazon Seller Account</h3>
-        <p class="mb-3 sm:mb-4 text-base sm:text-lg">Ho lavorato con Storm X per oltre due anni, e sono stati un vero punto di svolta per il nostro business su Amazon, incrementando il nostro fatturato del 218%.<br/><b> La loro competenza e l'approccio personalizzato hanno fatto una differenza enorme.</b> Lavorare con Storm X è come avere dei colleghi piuttosto che un'agenzia esterna e ora sono una parte essenziale del nostro team.” <b>- Kirsty Rogers | Sales Manager at Safe Industrial</b> </p>
-        <a href="#" class="text-[#F95C04] font-bold">Leggi Di Più →</a>
+      <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+        <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">SAFE INDUSTRIAL LTD - Kirsty<br/>Amazon Seller Account</h3>
+        <div class="space-y-4 sm:space-y-6">
+          <div class="flex items-start">
+            <FaUserCheck className="w-6 h-6 text-teal-500 mr-2 flex-shrink-0 mt-1" />
+            <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">Collaborazione Duratura:</span> Partnership di successo da oltre due anni.</p>
+          </div>
+          <div class="flex items-start">
+            <FaRocket className="w-6 h-6 text-red-500 mr-2 flex-shrink-0 mt-1" />
+            <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">Crescita Esplosiva:</span> Incremento del fatturato del 218% su Amazon.</p>
+          </div>
+          <div class="flex items-start">
+            <FaHandshake className="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-1" />
+            <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">Approccio Personalizzato:</span> Storm X è diventato parte essenziale del team.</p>
+          </div>
+        </div>
+
+        <blockquote class="mt-6 italic text-base sm:text-lg text-gray-700">"Storm X ha fatto una differenza enorme. Lavorare con loro è come avere dei colleghi piuttosto che un'agenzia esterna."</blockquote>
+        <p class="mt-2 font-semibold text-sm sm:text-base text-gray-600">- Kirsty Rogers | Sales Manager at Safe Industrial</p>
         
-        <div class="mt-4 sm:mt-6 flex justify-between items-end">
+        <div class="mt-8 flex justify-between items-center bg-white rounded-lg p-4 shadow-inner">
           <div class="text-center">
             <p class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F95C04]">218%</p>
-            <p class="text-xs sm:text-sm lg:text-base font-normal mt-1">Crescita Fatturato<br/>Amazon</p>
+            <p class="text-sm sm:text-base lg:text-base font-medium mt-2 text-gray-600">Crescita Fatturato Amazon</p>
           </div>
           <div class="text-center">
             <p class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F95C04]">7.3 ROI</p>
-            <p class="text-xs sm:text-sm lg:text-base font-normal mt-1">Ritorno Investimento<br/>Campagne ADV</p>
+            <p class="text-sm sm:text-base lg:text-base font-medium mt-2 text-gray-600">Ritorno Investimento Campagne ADV</p>
           </div>
           <div class="text-center">
             <p class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F95C04]">2+</p>
-            <p class="text-xs sm:text-sm lg:text-base font-normal mt-1">Anni Collaborazione Lungo<br/>Termine</p>
+            <p class="text-sm sm:text-base lg:text-base font-medium mt-2 text-gray-600">Anni Collaborazione Lungo Termine</p>
           </div>
         </div>
       </div>
