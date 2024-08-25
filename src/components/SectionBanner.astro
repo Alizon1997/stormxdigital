@@ -1,0 +1,96 @@
+---
+import { Container } from "lucide-react";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from './types/services';
+
+
+// Ensure currentLocale is always 'en' or 'it'
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../public/locales/en/translation.json';
+import itTranslations from '../../public/locales/it/translation.json';
+
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
+
+
+---
+
+<Container className="px-4 sm:px-6 lg:px-20 max-w-[1200px] mx-auto">
+    <div class="max-w-[1300px] mx-auto">
+      <!-- Large screens (lg and xl) -->
+      <div class="hidden lg:block relative bg-[#E1E1E1] rounded-[2rem] my-2">
+        <div class="flex flex-row items-center justify-between p-8">
+          <div class="relative z-10 flex items-center w-1/2">
+            <img src="/woman.png" alt="Excited woman in red uniform" class="w-auto h-[500px] object-cover object-center" />
+          </div>
+          <div class="w-1/2 p-12 flex flex-col justify-center relative z-10">
+            <h2 class="text-4xl font-bold mb-4">{translations.banner.amazonMethodStormX}</h2>
+            <p class="mb-6 text-lg leading-snug">
+              {translations.banner.secretsRevealed}
+              {translations.banner.processesExplained}
+            </p>
+            <button class="bg-[#FF6600] text-white font-bold py-3 px-6 rounded-lg text-sm uppercase tracking-wide self-start">
+              {translations.banner.downloadFree}
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Small and medium screens (md, sm, and smaller) -->
+      <div class="lg:hidden bg-gradient-to-br from-[#E1E1E1] via-[#F0F0F0] to-white rounded-[2rem] my-2 overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-[#FF6600] rounded-bl-full opacity-20 z-0"></div>
+        <div class="absolute bottom-0 left-0 w-40 h-40 bg-[#FF6600] rounded-tr-full opacity-10 z-0"></div>
+        
+        <div class="relative z-10 p-4 sm:p-6 md:p-8">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#FF6600] to-[#FF9900]">
+            {translations.banner.amazonMethodStormX}
+          </h2>
+          
+          <div class="relative mb-6">
+            <img src="/woman.png" alt="Excited woman in red uniform" class="w-full h-48 sm:h-64 object-cover object-top rounded-lg shadow-lg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 rounded-lg"></div>
+            <p class="absolute bottom-0 left-0 right-0 text-white text-sm leading-snug p-4 text-shadow">
+              {translations.banner.discoverSecrets}
+            </p>
+          </div>
+          
+          <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg shadow-lg p-4 sm:p-6 mb-6">
+            <p class="text-sm leading-snug text-center mb-4">
+              {translations.banner.allProcesses}
+            </p>
+            <ul class="text-sm space-y-2 mb-4">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {translations.banner.optimizationStrategies}
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {translations.banner.advancedMarketing}
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {translations.banner.dataAnalysis}
+              </li>
+            </ul>
+          </div>
+          
+          <button class="bg-gradient-to-r from-[#FF6600] to-[#FF9900] text-white font-bold py-3 px-6 rounded-lg text-sm uppercase tracking-wide w-full transform transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FF6600] focus:ring-opacity-50">
+            {translations.banner.downloadNowFree}
+          </button>
+        </div>
+      </div>
+    </div>
+  </Container>
+  
+  <style>
+    .text-shadow {
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  </style>

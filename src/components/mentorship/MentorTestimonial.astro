@@ -5,37 +5,51 @@ import VideoIcon from "../Icons/VideoIcon.astro"
 import Topic from "../Topic.astro"
 import articlesData from '../../components//Data/articles.json';
 import TestimonialSlider from "../TestimonialSlider";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from '../types/services';
+
+// Ensure currentLocale is always 'en' or 'it'
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
+
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
+
+
 const testimonials = [
   {
-    name: "Daniel Gray - Sales Director",
-    company: "Powerplay Brands LTD",
+    name: translations.testimonials.daniel.name,
+    company: translations.testimonials.daniel.company,
     image: "/Container.png",
-    quote: "Siamo Cresciuti Del 56% In 1 Anno",
-    content: "Marcello e Storm X sono i nostri partner esclusivi in Italia per i marchi Lee, Wrangler, DKNY, Reebok e Ben Sherman.",
-    additionalContent: "Si occupano di organizzare e partecipare a incontri con catene sportive, aprendo nuove opportunità per noi, come ad esempio con Coop Italia e Amazon IT."
+    quote: translations.testimonials.daniel.quote,
+    content: translations.testimonials.daniel.content,
+    additionalContent: translations.testimonials.daniel.additionalContent
   },
   {
-    name: "Jimmy Chen - CEO MET Jeans",
-    company: "Powerplay Brands LTD",
+    name: translations.testimonials.jimmy.name,
+    company: translations.testimonials.jimmy.company,
     image: "/Container.png",
-    quote: "Siamo Cresciuti Del 56% In 1 Anno",
-    content: "Storm X ci ha supportato nel nostro primo approccio su Amazon, dimostrando di conoscere perfettamente la piattaforma.",
-    additionalContent: "Inoltre, hanno aperto nuove opportunità per noi, generando un fatturato di oltre 300K."
+    quote: translations.testimonials.jimmy.quote,
+    content: translations.testimonials.jimmy.content,
+    additionalContent: translations.testimonials.jimmy.additionalContent
   },
   {
-    name: "Tom Parr - E-Commerce Manager",
-    company: "Reliance Medical LTD",
+    name: translations.testimonials.tom.name,
+    company: translations.testimonials.tom.company,
     image: "/Container.png",
-    quote: "Da 1,5 Mln a 4 Mln in 2 Anni",
-    content: "Marcello e Storm X ci aiutano nella gestione completa del nostro Amazon Vendor in Europa. Il team Storm X parla diverse lingue il che ha reso possibile per noi espanderci in Europa.",
-    additionalContent: "Grazie a Storm X oggi il nostro business su Amazon sviluppa oltre i 4 Milioni di fatturato. Quando abbiamo iniziato eravamo a 1.5."
+    quote: translations.testimonials.tom.quote,
+    content: translations.testimonials.tom.content,
+    additionalContent: translations.testimonials.tom.additionalContent
   }
 ];
+
 ---
 
 <Container>
   <div class="relative flex flex-col items-center md:flex-row mb-8 sm:mb-12">
-    <Topic title="Cosa Dicono Di Noi" description="Alcuni feedback di nostri clienti che abbiamo aiutato a crescere su Amazon Seller Central e Vendor Central. Siamo una agenzia Amazon apprezzata in Europa" />
+    <Topic title={translations.testimonials.sectionTitle} description={translations.testimonials.sectionDescription2} />
   </div>
 
   <div class="mt-8">

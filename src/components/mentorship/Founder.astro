@@ -1,12 +1,22 @@
 ---
 import Container from "../Container.astro";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from '../types/services';  // Adjust the import path as needed
+
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
+
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
 
 const founderData = {
   name: "Marcello Di Pierro",
-  title: "Founder/Amazon Account Director",
+  title: translations.founder.title,
   image: "/team/c.png",
   linkedin: "https://linkedin.com/in/marcello-di-pierro",
-  experience: "10+ Anni di esperienza a gestire account Amazon Seller e Vendor. Ho costruito un business a 6 cifre su Amazon Seller nel mio periodo di vita in Cina, tra Shenzhen e Guangzhou."
+  experience: translations.founder.experience
 };
 ---
 <Container>
@@ -37,12 +47,12 @@ const founderData = {
       </div>
 
       <div class="w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:pl-8">
-        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Pianifica Una Call Per Conoscere Il Nostro Coach</h2>
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">  {translations.mentorFounder.title} </h2>
         <p class="text-sm sm:text-base">
-          Tutti i segreti del nostro team rivelati in questo playbook. Gli stessi processi che attuiamo per i nostri clienti li abbiamo trascritti e messi a disposizione in maniera gratuita per tutti i responsabili E-Commerce alle prese con Amazon
+          {translations.mentorFounder.description}
         </p>
         <button class="w-full sm:w-auto px-4 sm:px-6 py-3 bg-orange text-white rounded-lg font-bold text-sm sm:text-base uppercase">
-          Pianifica Call Gratuita
+            {translations.mentorFounder.call}
         </button>
       </div>
     </div>

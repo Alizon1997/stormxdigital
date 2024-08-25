@@ -2,54 +2,45 @@
 import Container from "../Container.astro";
 import Topic from "../Topic.astro";
 import { Carousel } from "../MentorCard";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
+
+const translations = currentLocale === 'en' ? enTranslations : itTranslations;
 
 const cards = [
   {
-    title: "GESTIONE COMPLETA DEL TUO ACCOUNT AMAZON",
-    content: "Assumi degli specialisti in Brand Growth; in questo modo potrai:",
-    listItems: [
-      "Migliorare le performance delle tue vendite e intercettare nuovi clienti.",
-      "Trasformare il tuo marchio e i tuoi prodotti in un'esperienza di acquisto coinvolgente per i tuoi clienti.",
-      "Creare contenuti fotografici e video che esaltano la storia del tuo marchio.",
-      "Usufruire degli annunci e delle promozioni di Amazon per incrementare le vendite.",
-    ],
+    title: translations.mentorService.card1.title,
+    content: translations.mentorService.card1.content,
+    listItems: translations.mentorService.card1.listItems,
     bgClass: "bg-white",
     textColor: "text-black",
     number: "1",
   },
   {
-    title: "OTTIMIZZAZIONE SEO DEI LISTINI AMAZON E DEI PRODOTTI",
-    content: "",
-    listItems: [
-      "Esporre i tuoi prodotti ai clienti più pertinenti, per aumentare le conversioni di vendita (ottimizzazione SEO dell'algoritmo del mercato).",
-      "Posizionarti su Amazon per parole chiave rilevanti.",
-      "Differenziarti dalla concorrenza grazie alla nostra analisi del mercato",
-      "Dominare il mercato con le nostre strategie SEO Amazon.",
-    ],
+    title: translations.mentorService.card2.title,
+    content: translations.mentorService.card2.content,
+    listItems: translations.mentorService.card2.listItems,
     bgClass: "bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82%",
     textColor: "text-white",
     number: "2",
   },
   {
-    title: "STRATEGIA PUBBLICITARIA DEI PRODOTTI E LANCIO CAMPAGNE",
-    content: "",
-    listItems: [
-      "Incrementare le vendite su Amazon grazie alle campagne Amazon PPC e annunci display su misura con cui potrai massimizzare il ROI.",
-      "Implementazione Campagne Sponsored Product, Sponsored Brand e Sponsored Display",
-      "Promuovere il tuo marchio con contenuti fotografici e video.",
-    ],
+    title: translations.mentorService.card3.title,
+    content: translations.mentorService.card3.content,
+    listItems: translations.mentorService.card3.listItems,
     bgClass: "bg-gray-900",
     textColor: "text-white",
     number: "3",
   },
   {
-    title: "OTTIMIZZAZIONE TASSO DI CONVERSIONE DEI PRODOTTI AMAZON",
-    content: "",
-    listItems: [
-      "Ottimizzare le conversioni su Amazon con il nostro servizio CRO.",
-      "Targeting del pubblico di riferimento ideale per il tuo marchio attraverso i nostri strumenti di analisi di mercato.",
-      "Massimizzare oggi la tua presenza su Amazon per promuovere una crescita esponenziale per la tua azienda domani.",
-    ],
+    title: translations.mentorService.card4.title,
+    content: translations.mentorService.card4.content,
+    listItems: translations.mentorService.card4.listItems,
     bgClass: "bg-white",
     textColor: "text-black",
     number: "4",
@@ -60,7 +51,7 @@ const cards = [
 <Container>
   <div class="relative flex flex-col items-center md:flex-row" id="services">
     <h2 class="text-orange text-3xl sm:text-4xl font-bold pb-6 text-center md:text-left">
-      4 Motivi Perchè Devi Utilizzare Il "Metodo Storm X
+      {translations.mentorService.mainTitle}
     </h2>
   </div>
 

@@ -1,5 +1,16 @@
 ---
 import Container from "./Container.astro"
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from './types/services';
+
+// Ensure currentLocale is always 'en' or 'it'
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../public/locales/en/translation.json';
+import itTranslations from '../../public/locales/it/translation.json';
+
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
 ---
 
 <footer class="text-white bg-white">
@@ -16,11 +27,11 @@ import Container from "./Container.astro"
                     <!-- Navigation Section -->
                     <nav class="flex-grow">
                         <ul class="flex flex-wrap justify-center text-sm sm:text-base md:text-lg lg:text-xl font-normal underline space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6">
-                            <li><a href="/" class="text-white">Home</a></li>
-                            <li><a href="/servizi" class="text-white">Servizi</a></li>
-                            <li><a href="/casi-studio" class="text-white">Casi Studio</a></li>
-                            <li><a href="/prezzi" class="text-white">Prezzi</a></li>
-                            <li><a href="/tutorial-best-practices" class="text-white">Tutorial & Best Practices</a></li>
+                            <li><a href="/" class="text-white">{translations.footer.home}</a></li>
+                            <li><a href="/servizi" class="text-white">{translations.footer.services}</a></li>
+                            <li><a href="/casi-studio" class="text-white">{translations.footer.caseStudies}</a></li>
+                            <li><a href="/prezzi" class="text-white">{translations.footer.pricing}</a></li>
+                            <li><a href="/tutorial-best-practices" class="text-white">{translations.footer.tutorialsBestPractices}</a></li>
                         </ul>
                     </nav>
               
@@ -50,26 +61,26 @@ import Container from "./Container.astro"
                 <div class="flex flex-col space-y-6 md:space-y-8 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center pb-8 sm:pb-10 md:pb-12">
                     <div class="space-y-2 text-center md:text-center">
                         <div class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% rounded-lg inline-block px-4 py-2 text-white text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">
-                            CONTATTACI ORA
+                            {translations.footer.contactUsNow}
                         </div>
-                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">Email: marcellodipierro@stormxdigital.com</p>
-                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">Phone: +39 3495375680</p>
-                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">Storm X Digital SRL</p>
-                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">P.IVA/VAT: 08789080721</p>
-                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">Indirizzo: Bisceglie</p>
-                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">Strada Del Carro 24, 76011, Italia</p>
+                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">{translations.footer.email}</p>
+                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">{translations.footer.phone}</p>
+                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">{translations.footer.companyName}</p>
+                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">{translations.footer.vatNumber}</p>
+                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">{translations.footer.address}</p>
+                        <p class="font-normal text-sm sm:text-base md:text-lg lg:text-xl">{translations.footer.fullAddress}</p>
                     </div>
                     <div class="flex flex-col space-y-4 sm:justify-center md:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 w-full lg:w-auto">  
-                        <input type="email" placeholder="Email" class="px-2 py-2 bg-transparent border border-white bg-black rounded-[18px] text-white w-full sm:w-64">
-                        <button class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white px-4 sm:px-6 py-2 sm:py-3 rounded-[18px] font-bold whitespace-nowrap text-sm sm:text-base">Subscribe to news</button>
+                        <input type="email" placeholder={translations.footer.subscribeEmail} class="px-2 py-2 bg-transparent border border-white bg-black rounded-[18px] text-white w-full sm:w-64">
+                        <button class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white px-4 sm:px-6 py-2 sm:py-3 rounded-[18px] font-bold whitespace-nowrap text-sm sm:text-base">{translations.footer.subscribeButton}</button>
                     </div>
                 </div>
     
-                        <!-- Third row -->
+                <!-- Third row -->
                 <div class="flex flex-col space-y-4 sm:space-y-6 md:space-y-0 md:flex-row md:justify-between md:items-center pt-4 border-t border-gray-700">
                     <div class="flex flex-col space-y-2 md:space-y-4 md:w-1/3">
-                        <p class="text-xs sm:text-sm md:text-base text-center md:text-left">&copy; 2024 Storm X Digital SRL. All Rights Reserved.</p>
-                        <a href="/privacy-policy" class="underline hover:text-gray-300 text-xs sm:text-sm md:text-base text-center md:text-left">Privacy Policy</a>
+                        <p class="text-xs sm:text-sm md:text-base text-center md:text-left">{translations.footer.allRightsReserved}</p>
+                        <a href="/privacy-policy" class="underline hover:text-gray-300 text-xs sm:text-sm md:text-base text-center md:text-left">{translations.footer.privacyPolicy}</a>
                     </div>
                     <div class="flex justify-center md:justify-end md:w-2/3">
                         <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">

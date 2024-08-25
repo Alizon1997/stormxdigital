@@ -1,0 +1,70 @@
+---
+import Hero from "@/components/mentorship/Hero.astro";
+import Container from "../../components/Container.astro"
+import Layout from '../../layouts/Layout.astro';
+import Who from "@/components/mentorship/Who.astro";
+import MentorService from "@/components/mentorship/MentorService.astro";
+import Founder from "@/components/mentorship/Founder.astro";
+import Story from "@/components/mentorship/Story.astro";
+import MentorTestimonial from "@/components/mentorship/MentorTestimonial.astro";
+import Process from "@/components/mentorship/Process.astro";
+import Podcast from "@/components/Podcast.astro";
+import Contact from "@/components/Contact.astro";
+import Blog from "@/components/mentorship/Blog.astro";
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const currentLocale = Astro.currentLocale || 'it';
+const translations = currentLocale === 'en' ? enTranslations : itTranslations;
+
+---
+
+<Layout title="Positivus - Pricing">
+	<main class="space-y-20">
+        <Hero/>
+		<Who/>
+        <MentorService/>
+        <Founder/>
+        <Story/>
+        <MentorTestimonial/>
+        <Process/>
+        <Container>
+            <div class="py-6 px-4 mx-auto max-w-screen-xl md:py-16 md:px-6">
+                <div class="mx-auto max-w-screen-md text-center mb-6 md:mb-12">
+                    <h2 class="mb-2 text-2xl sm:text-3xl md:text-4xl tracking-tight font-extrabold text-[#F95C04]">{translations.pricing.title}</h2>
+                    <p class="mb-4 font-light text-gray-500 text-sm sm:text-base md:text-xl">{translations.pricing.description}</p>
+                </div>
+                <div class="space-y-8 md:space-y-0">
+                    <!-- Pricing Card -->
+                    <div class="flex flex-col md:flex-row bg-white rounded-3xl border border-black shadow-card overflow-hidden">
+                        <!-- Left side (for sm screens) / Top (for md+ screens) -->
+                        <div class="w-full md:w-1/2 p-6 md:p-8 bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white">
+                            <h3 class="mb-2 md:mb-4 text-3xl md:text-4xl font-semibold">{translations.pricing.cardTitle}</h3>
+                            <p class="mb-4 text-sm md:text-base">{translations.pricing.cardDescription}</p>
+                            <div class="flex items-baseline mb-4 md:mb-6">
+                                <span class="text-4xl md:text-5xl font-extrabold">{translations.pricing.price}</span>                            
+                                <span class="ml-1 font-semibold">{translations.pricing.perMonth}</span>
+                            </div>
+                            <a href="#" class="inline-block w-full md:w-auto text-[#F95C04] hover:text-white bg-white hover:bg-black focus:ring-4 focus:ring-white font-bold rounded-lg text-base md:text-lg px-5 py-2.5 text-center transition duration-300 ease-in-out">{translations.pricing.ctaButton}</a>
+                        </div>
+                        <!-- Right side (for sm screens) / Bottom (for md+ screens) -->
+                        <div class="w-full md:w-1/2 p-6 md:p-8">
+                            <ul role="list" class="space-y-3 md:space-y-4 text-left">
+                                {translations.pricing.features.map((feature) => (
+                                    <li class="flex items-start space-x-3 text-base md:text-lg font-semibold md:font-bold">
+                                        <svg class="flex-shrink-0 w-5 h-5 mt-1 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Container>
+        <Blog/>
+        <Podcast/>
+        <Contact/>
+	</main>
+</Layout>

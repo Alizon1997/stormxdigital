@@ -6,27 +6,23 @@ import Topic from "../Topic.astro";
 import articlesData from '../../components//Data/articles.json';
 import PostCarousel from "../PostCard";
 import { fetchPosts } from "@/lib/fetchPosts";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from '../types/services';
 
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
 const posts = await fetchPosts();
 
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
 ---
 
 <Container>
+  <div class="relative flex flex-col items-center md:flex-row">
+    <Topic title={translations.blog.title} description={translations.blog.description} />
+  </div>
 
-    <div class="relative flex flex-col items-center md:flex-row">
-      <Topic title="Tutorials & Best Practices" description="Non il classico noioso Blog. In questa sezione troverai guide utili e pratiche per la risoluzione di tutti i tuoi grattacapo di Amazon Seller & Vendor" />
-    </div>
-  
-    <PostCarousel client:load posts={posts} />
-  </Container>
-
-
-
-
-
-
-
-
-
-
-  
+  <PostCarousel client:load posts={posts} translations={translations.blog} />
+</Container>

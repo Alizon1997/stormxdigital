@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name1": "AMAZON CATALOG",
+        "name2": "MANAGEMENT & OPTIMIZATION",
+        "description": "Creating a listing on Amazon is easy, but doing it right is not. A great product listing is crucial for achieving successful rankings on Amazon. We handle it on your behalf.",
+        "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
+        "arrow": "../services/ax.svg",
+        "link": "../",
+        "image": "../services/01.svg"
+    },
+    {
+        "id": 2,
+        "name1": "AMAZON ADVERTISING",
+        "name2": "CAMPAIGN MANAGEMENT",
+        "description": "Now you can connect with your ideal customers both on and off Amazon using the world's fastest-growing ads platform. Let our team of former Amazon experts take care of everything,",
+        "background": "h-[310px] p-12 rounded-[45px] shadow-card border border-black justify-between items-center flex text-white bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82%",
+        "arrow": "../services/aw.svg",
+        "link": "../",
+        "image": "../services/02.svg"
+    },
+    {
+        "id": 3,
+        "name1": "KEYWORD RESEARCH",
+        "name2": "SEO AMAZON",
+        "description": "Our Amazon Agency improve your product visibility and sales by optimizing listings for top search performance. We make your products rank higher, drive more traffic, and increase conversions.",
+        "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
+        "arrow": "../services/aw.svg",
+        "link": "../",
+        "image": "../services/03.svg"
+    },
+    {
+        "id": 4,
+        "name1": "AMAZON",
+        "name2": "BRAND REGISTRY",
+        "description": "Our Amazon agency's Brand Registry service safeguards your brand, securing your listings and preventing counterfeits. We enhance your brand's visibility and credibility, letting you focus on growth and customer satisfaction.",
+        "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
+        "arrow": "../services/ax.svg",
+        "link": "../",
+        "image": "../services/04.svg"
+    },
+    {
+        "id": 5,
+        "name1": "AMAZON CRO",
+        "name2": "LISTING OPTIMISATION",
+        "description": "As an Amazon agency, we boost sales, ROI, and customer engagement. We create Amazon storefronts, A+ Content, and product images that drive conversions.",
+        "background": "h-[310px] p-12 rounded-[45px] shadow-card border border-black justify-between items-center flex text-white bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82%",
+        "arrow": "../services/aw.svg",
+        "link": "../",
+        "image": "../services/05.svg"
+    },
+    {
+        "id": 6,
+        "name1": "REPORT & ANALYSIS",
+        "name2": "AMAZON DATA",
+        "description": "We visualize, analyze, and interpret data from your Amazon Seller Central and Vendor Central. Then, we create a customized action plan tailored to your needs.",
+        "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
+        "arrow": "../services/aw.svg",
+        "link": "../",
+        "image": "../services/06.svg"
+    }
+]

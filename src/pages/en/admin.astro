@@ -1,0 +1,79 @@
+---
+export const prerender = false;
+
+import AdminLayout from '../../layouts/AdminLayout.astro';
+
+let errorMessage = '';
+
+console.log('Login page accessed');
+console.log('Cookie value:', Astro.cookies.get('adminLoggedIn')?.value);
+
+// Check if user is already logged in
+if (Astro.cookies.get('adminLoggedIn')?.boolean()) {
+  console.log('User is logged in, redirecting to blog panel');
+  return Astro.redirect('../admin/blog-panel');
+}
+
+// Handle form submission
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    const username = formData.get('username');
+    const password = formData.get('password');
+
+    console.log('Login attempt:', username);
+
+    if (username === 'admin' && password === 'password') {
+      console.log('Login successful, setting cookie and redirecting');
+      Astro.cookies.set('adminLoggedIn', 'true', {
+        path: '/',
+        httpOnly: true,
+        secure: true,
+        sameSite: 'strict',
+        maxAge: 60 * 60 * 24 // 1 day
+      });
+      return Astro.redirect('../admin/blog-panel');
+    } else {
+      console.log('Login failed');
+      errorMessage = 'Invalid credentials. Please try again.';
+    }
+  } catch (error) {
+    console.error('Error processing form:', error);
+    errorMessage = 'An error occurred. Please try again.';
+  }
+}
+---
+
+<!-- Rest of your HTML remains the same -->
+
+<AdminLayout title="Admin Login">
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full space-y-8 p-12 border rounded-xl bg-orange">
+      <div>
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-white">Admin Login</h2>
+      </div>
+      <form class="rounded-md mt-8 space-y-6" method="POST">
+        <div class="shadow-sm -space-y-px">
+          <div class="py-2">
+            <label for="username" class="sr-only">Username</label>
+            <input id="username" name="username" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-white placeholder-black text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
+          </div>
+          <div>
+            <label for="password" class="sr-only">Password</label>
+            <input id="password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-white placeholder-black text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+          </div>
+        </div>
+
+        {errorMessage && (
+          <div class="text-red-500 text-sm text-center">{errorMessage}</div>
+        )}
+
+        <div>
+          <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+            Sign in
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</AdminLayout>

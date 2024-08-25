@@ -1,87 +1,64 @@
 ---
 import Container from "../Container.astro"
 import Topic from "../Topic.astro"
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
+
+const translations = currentLocale === 'en' ? enTranslations : itTranslations;
 ---
 
 <Container>
   <div class="relative flex flex-col items-center md:flex-row mb md:mb-12">
-    <Topic title="A chi è rivolto" description="Che tu sia Produttore, Azienda o Distributore, devi sapere che il desiderio di crescita su un marketplace cruciale come Amazon, da solo non basta." />
+    <Topic title={translations.audience.topicTitle} description={translations.audience.topicDescription} />
   </div>
 
   <div class="py-2 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 mb-8 lg:mb-12">
       <div class="lg:w-1/2 flex flex-col justify-center">
         <p class="text-base sm:text-lg mb-4 sm:mb-6">
-          <strong>Immagina di poter aumentare la visibilità e le vendite della tua attività su Amazon,</strong> di affrontare e risolvere problemi di cui non sapevi neanche l'esistenza, senza trovarti impreparato, ma seguito da professionisti qualificati che ti fanno da tutor.
+          <strong>{translations.audience.imagineText}</strong> {translations.audience.imagineDescription}
         </p>
         <p class="text-base sm:text-lg">
-          Noi di StormX Digital, a seguito delle esperienze dirette con i nostri partner, <strong>abbiamo individuato alcune delle difficoltà più rilevanti tipiche dell'e-commerce, sulle quali abbiamo voluto concentrare maggiormente il nostro contributo:</strong>
+          {translations.audience.stormXIntro} <strong>{translations.audience.stormXFocus}</strong>
         </p>
       </div>
       
       <div class="lg:w-1/2 bg-yellow-300 p-4 rounded-lg">
-        <img src="/mentorship/multidevice.png" alt="Amazon product listing example" class="w-full h-auto rounded-lg shadow-lg"/>
+        <img src="/mentorship/multidevice.png" alt={translations.audience.imageAlt} class="w-full h-auto rounded-lg shadow-lg"/>
       </div>
     </div>
 
     <div class="flex flex-col md:flex-row gap-6 md:gap-8">
       <ul class="space-y-3 sm:space-y-4 text-base sm:text-lg w-full md:w-1/2">
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Carenza di competenze interne</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Esigenza di training e workshop</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Mancanza di una strategia chiara</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Esigenza di supporto personalizzato</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Difficoltà nella gestione operativa</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Complessità delle politiche e regole di conformità Amazon</span>
-        </li>
+        {translations.audience.challenges.slice(0, 6).map((challenge) => (
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
+            <span class="flex-grow">{challenge}</span>
+          </li>
+        ))}
       </ul>
       <hr class="bg-black py-[0.6px]"/>
       <ul class="space-y-3 sm:space-y-4 text-base sm:text-lg w-full md:w-1/2">
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Necessità di analisi e reportistica dettagliata</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Problemi di visibilità e posizionamento</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Gestione delle recensioni e della reputazione</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Necessità di intervento rapido</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
-          <span class="flex-grow">Frustrazione di Listing soppresse e/o disattivate da Amazon per qualsiasi motivo</span>
-        </li>
+        {translations.audience.challenges.slice(6).map((challenge) => (
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></span>
+            <span class="flex-grow">{challenge}</span>
+          </li>
+        ))}
       </ul>
     </div>
 
     <div class="mt-8 sm:mt-12">
       <p class="text-xl sm:text-2xl font-bold mb-2">
-        In realtà, a queste incertezze, ne dobbiamo aggiungere una che le batte tutte:
+        {translations.audience.realityIntro}
       </p>
       <p class="text-xl sm:text-2xl font-bold uppercase">
-        L'ESPERIENZA NEGATIVA VISSUTA CON LE ALTRE AGENZIE.
+        {translations.audience.realityMain}
       </p>
     </div>
   </div>

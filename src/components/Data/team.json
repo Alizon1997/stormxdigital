@@ -1,53 +1,96 @@
 {
-    "team":
-    [
+    "en": {
+      "team": [
         {
-            "title": "Armand Ohoungnon",
-            "name": "PPC Specialist",
-            "description": "Verticale da 5 anni nel Performance Marketing su Amazon. Sono la persona che si occupa della Strategia e dell'operatività dell'Advertising del tuo account Seller / Vendor",
-            "profile": "/team/c1.png",
-            "link": "/"
-        },
-       
-        {
-            "title": "Francesco Monopoli",
-            "name": "Catalog Specialist",
-            "description": "6 anni di esperienza nella creazione di E-commerce e gestione a 360° di Amazon Seller e Vendor. Esperto in SEO, Analisi dati per il marketing e Project management",
-            "profile": "/team/c2.png",
-            "link": "/"
+          "title": "PPC Specialist",
+          "name": "Armand Ohoungnon",
+          "description": "5 years of vertical experience in Performance Marketing on Amazon. I'm the person who takes care of the Strategy and operations of your Seller / Vendor account Advertising.",
+          "profile": "/team/c1.png",
+          "link": "/"
         },
         {
-            "title": "Sali Leshi",
-            "name": "Design Specialist",
-            "description": "Oltre 5 anni di esperienza nella progettazione di Immagini Secondarie, Immagini Principali e Contenuti A+ per Account Seller e Vendor.",
-            "profile": "/team/c3.png",
-            "link": "/"
+          "title": "Catalog Specialist",
+          "name": "Francesco Monopoli",
+          "description": "6 years of experience in creating E-commerce and 360° management of Amazon Seller and Vendor. Expert in SEO, Data Analysis for marketing and Project management.",
+          "profile": "/team/c2.png",
+          "link": "/"
+        },
+        {
+          "title": "Design Specialist",
+          "name": "Sali Leshi",
+          "description": "Over 5 years of experience in designing Secondary Images, Main Images and A+ Content for Seller and Vendor Accounts.",
+          "profile": "/team/c3.png",
+          "link": "/"
         }
-
-    ], 
-    
-    "process":
-    [
+      ],
+      "process": [
         {
-            "label": "Audit Gratuito Account Amazon Seller o Vendor",
-            "content": "Offriamo un servizio di audit completo per venditori e vendor su Amazon, mirato a ottimizzare prestazioni e vendite. Analizziamo le prestazioni dell'account, l'ottimizzazione SEO e la qualità delle immagini dei prodotti. Verifichiamo i contenuti del marchio e l'efficacia delle campagne pubblicitarie, fornendo un report dettagliato con raccomandazioni pratiche per migliorare il tuo account e raggiungere il successo su Amazon. Senza il nostro supporto, potresti non sfruttare appieno il potenziale del tuo account, lasciando spazio a inefficienze e opportunità mancate che possono influire sulla crescita e sulle vendite."
+          "label": "Free Amazon Seller or Vendor Account Audit",
+          "content": "We offer a comprehensive audit service for Amazon sellers and vendors, aimed at optimizing performance and sales. We analyze account performance, SEO optimization, and product image quality. We verify brand content and advertising campaign effectiveness, providing a detailed report with practical recommendations to improve your account and achieve success on Amazon. Without our support, you might not fully exploit your account's potential, leaving room for inefficiencies and missed opportunities that can affect growth and sales."
         },
         {
-            "label": "Ottimizzazione Catalogo Amazon, Content A+, Brand Story A+ e Vetrina Del Brand",
-            "content": "Il nostro processo di ottimizzazione su Amazon massimizza le conversioni e le vendite del tuo account. Iniziamo con una ricerca approfondita delle parole chiave e un'analisi competitiva degli ASIN. Creiamo e regoliamo varianti di prodotto, ottimizziamo SEO degli annunci e miglioriamo le immagini delle inserzioni con il nostro team di grafici. Inoltre, perfezioniamo i contenuti del marchio per garantire descrizioni coinvolgenti. Su richiesta, collaboriamo con i grafici dell'azienda del brand. Questo approccio integrato assicura che ogni aspetto del tuo account sia ottimizzato per massimizzare visibilità, conversioni e vendite su Amazon."
+          "label": "Amazon Catalog Optimization, A+ Content, A+ Brand Story and Brand Store",
+          "content": "Our optimization process on Amazon maximizes conversions and sales for your account. We start with in-depth keyword research and competitive ASIN analysis. We create and adjust product variants, optimize listing SEO, and improve listing images with our team of graphic designers. Additionally, we refine brand content to ensure engaging descriptions. Upon request, we collaborate with the brand company's graphic designers. This integrated approach ensures that every aspect of your account is optimized to maximize visibility, conversions, and sales on Amazon."
         },
         {
-            "label": "Avvio e Ottimizzazione Campagne Pubblicitarie Amazon Awareness, Considerazione e Conversione",
-            "content": "Il nostro processo pubblicitario su Amazon massimizza le prestazioni delle campagne. Effettuiamo un'analisi dei concorrenti, ricerchiamo parole chiave e sviluppiamo una strategia di campagne personalizzata. Ottimizziamo e monitoriamo costantemente le campagne per raggiungere i target ACOS/TACOS, apportando aggiustamenti continui per garantire l'efficienza del budget e il massimo ritorno sull'investimento."
+          "label": "Launch and Optimization of Amazon Awareness, Consideration, and Conversion Advertising Campaigns",
+          "content": "Our advertising process on Amazon maximizes campaign performance. We conduct competitor analysis, research keywords, and develop a personalized campaign strategy. We continuously optimize and monitor campaigns to reach ACOS/TACOS targets, making ongoing adjustments to ensure budget efficiency and maximum return on investment."
         },
         {
-            "label": "Monitoraggio KPI & Analisi Dati Amazon",
-            "content": "Ottimizziamo e analizziamo ogni aspetto della vendita su Amazon per prendere decisioni informate che ottimizzano i tuoi annunci. Utilizzando tecniche basate sui dati, come il test A/B e il miglioramento dei dati di conversione, ti aiutamo a vendere di più su Amazon."
+          "label": "Amazon KPI Monitoring & Data Analysis",
+          "content": "We optimize and analyze every aspect of selling on Amazon to make informed decisions that optimize your listings. Using data-driven techniques such as A/B testing and conversion data improvement, we help you sell more on Amazon."
         },
         {
-            "label": "Gestione Pratiche Con Amazon Seller Support",
-            "content": "Ci occupiamo della completa gestione di Amazon Seller Central. Apriamo, monitoriamo e chiudiamo i ticket necessari al fine di risolvere eventuali problematiche o situazioni con Amazon Seller Support."
+          "label": "Management of Amazon Seller Support Practices",
+          "content": "We handle the complete management of Amazon Seller Central. We open, monitor, and close necessary tickets to resolve any issues or situations with Amazon Seller Support."
         }
-       
-    ]
-}
+      ]
+    },
+    "it": {
+      "team": [
+        {
+          "title": "PPC Specialist",
+          "name": "Armand Ohoungnon",
+          "description": "Verticale da 5 anni nel Performance Marketing su Amazon. Sono la persona che si occupa della Strategia e dell'operatività dell'Advertising del tuo account Seller / Vendor",
+          "profile": "/team/c1.png",
+          "link": "/"
+        },
+        {
+          "title": "Catalog Specialist",
+          "name": "Francesco Monopoli",
+          "description": "6 anni di esperienza nella creazione di E-commerce e gestione a 360° di Amazon Seller e Vendor. Esperto in SEO, Analisi dati per il marketing e Project management",
+          "profile": "/team/c2.png",
+          "link": "/"
+        },
+        {
+          "title": "Design Specialist",
+          "name": "Sali Leshi",
+          "description": "Oltre 5 anni di esperienza nella progettazione di Immagini Secondarie, Immagini Principali e Contenuti A+ per Account Seller e Vendor.",
+          "profile": "/team/c3.png",
+          "link": "/"
+        }
+      ],
+      "process": [
+        {
+          "label": "Audit Gratuito Account Amazon Seller o Vendor",
+          "content": "Offriamo un servizio di audit completo per venditori e vendor su Amazon, mirato a ottimizzare prestazioni e vendite. Analizziamo le prestazioni dell'account, l'ottimizzazione SEO e la qualità delle immagini dei prodotti. Verifichiamo i contenuti del marchio e l'efficacia delle campagne pubblicitarie, fornendo un report dettagliato con raccomandazioni pratiche per migliorare il tuo account e raggiungere il successo su Amazon. Senza il nostro supporto, potresti non sfruttare appieno il potenziale del tuo account, lasciando spazio a inefficienze e opportunità mancate che possono influire sulla crescita e sulle vendite."
+        },
+        {
+          "label": "Ottimizzazione Catalogo Amazon, Content A+, Brand Story A+ e Vetrina Del Brand",
+          "content": "Il nostro processo di ottimizzazione su Amazon massimizza le conversioni e le vendite del tuo account. Iniziamo con una ricerca approfondita delle parole chiave e un'analisi competitiva degli ASIN. Creiamo e regoliamo varianti di prodotto, ottimizziamo SEO degli annunci e miglioriamo le immagini delle inserzioni con il nostro team di grafici. Inoltre, perfezioniamo i contenuti del marchio per garantire descrizioni coinvolgenti. Su richiesta, collaboriamo con i grafici dell'azienda del brand. Questo approccio integrato assicura che ogni aspetto del tuo account sia ottimizzato per massimizzare visibilità, conversioni e vendite su Amazon."
+        },
+        {
+          "label": "Avvio e Ottimizzazione Campagne Pubblicitarie Amazon Awareness, Considerazione e Conversione",
+          "content": "Il nostro processo pubblicitario su Amazon massimizza le prestazioni delle campagne. Effettuiamo un'analisi dei concorrenti, ricerchiamo parole chiave e sviluppiamo una strategia di campagne personalizzata. Ottimizziamo e monitoriamo costantemente le campagne per raggiungere i target ACOS/TACOS, apportando aggiustamenti continui per garantire l'efficienza del budget e il massimo ritorno sull'investimento."
+        },
+        {
+          "label": "Monitoraggio KPI & Analisi Dati Amazon",
+          "content": "Ottimizziamo e analizziamo ogni aspetto della vendita su Amazon per prendere decisioni informate che ottimizzano i tuoi annunci. Utilizzando tecniche basate sui dati, come il test A/B e il miglioramento dei dati di conversione, ti aiutamo a vendere di più su Amazon."
+        },
+        {
+          "label": "Gestione Pratiche Con Amazon Seller Support",
+          "content": "Ci occupiamo della completa gestione di Amazon Seller Central. Apriamo, monitoriamo e chiudiamo i ticket necessari al fine di risolvere eventuali problematiche o situazioni con Amazon Seller Support."
+        }
+      ]
+    }
+  }

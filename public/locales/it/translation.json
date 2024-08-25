@@ -1,0 +1,373 @@
+{
+    "navbar": {
+        "services": "Amazon",
+        "useCases": "Use Cases",
+        "mentorship": "Mentorship",
+        "blog": "Blog",
+        "openMenu": "Open main menu",
+        "bookMeeting": "PIANIFICA CHIAMATA"
+      },
+    "site": {
+      "title": "StormX Digital",
+      "description": "Your Site description"
+    },
+    
+    "hero": {
+        "title1": "L' Unica Agenzia Amazon",
+        "title2": "Che Lavora Di Fianco a Te",
+        "title3": "Come Un Collega",
+        "description1": "Siamo un'agenzia Amazon specializzata nella gestione",
+        "description2": "professionale di Account Amazon Seller e Vendor.",
+        "description3": "A differenza delle grandi agenzie, offriamo attenzione",
+        "description4": "personalizzata e servizi su misura per garantire che il vostro",
+        "description5": "Amazon Account riceva la cura che merita.",
+        "ctaButton": "CONTATTACI ORA",
+        "feature1": "Nessun Contratto Vincolante",
+        "feature2": "Approccio Su Misura",
+        "feature3": "Processo di Espansione Europea"
+    },
+
+    "services": {
+        "title": "Cosa Facciamo Per Te",
+        "description": "Servizi su Misura per Incrementare le Tue Vendite e Garantire il Tuo Successo su Amazon.",
+        "learnMore": "Scopri di più"
+      },
+
+    "founder": {
+    "title": "Founder/Amazon Account Director",
+    "experience": "10+ Anni di esperienza a gestire account Amazon Seller e Vendor. Ho costruito un azienda a 6 cifre su Amazon Seller nel mio periodo di vita in China, tra Shenzhen e Guanghzou.",
+    "sectionTitle": "Due Parole Dal Fondatore",
+    "description": "Gestisco la strategia e la visione a medio-lungo termine degli Account Amazon dei nostri partner. Mi interfaccio con loro per delineare le attività necessarie a ottenere i massimi risultati nel minor tempo possibile.  Supervisiono il lavoro del nostro team interno di ADV, Design e Catalogo, coordinando quella che consideriamo ad oggi dopo anni di lavoro una “macchina perfetta” per la gestione dei canali Amazon Seller e Vendor.",
+    "stat1": "Anni Gestendo Account Amazon",
+    "stat2": "Più di 20 Milioni di euro di Budget Amazon PPC Investiti",
+    "stat3": "Più Grande Crescita di Fatturato Registrata in 1 Anno"
+  },
+  "team": {
+    "title": "Il Team Storm X",
+    "description": "Una parte del nostro Team di esperti Amazon. Migliaia di ore di esperienza su Amazon Seller Central e Vendor Central a disposizione della tua PMI",
+    "members": [
+      {
+        "title": "PPC Specialist",
+        "name": "Armand Ohoungnon",
+        "description": "Verticale da 5 anni nel Performance Marketing su Amazon. Sono la persona che si occupa della Strategia e dell'operatività dell'Advertising del tuo account Seller / Vendor",
+        "profile": "/team/c1.png",
+        "link": "/"
+      },
+      {
+        "title": "Catalog Specialist",
+        "name": "Francesco Monopoli",
+        "description": "6 anni di esperienza nella creazione di E-commerce e gestione a 360° di Amazon Seller e Vendor. Esperto in SEO, Analisi dati per il marketing e Project management",
+        "profile": "/team/c2.png",
+        "link": "/"
+      },
+      {
+        "title": "Design Specialist",
+        "name": "Sali Leshi",
+        "description": "Oltre 5 anni di esperienza nella progettazione di Immagini Secondarie, Immagini Principali e Contenuti A+ per Account Seller e Vendor.",
+        "profile": "/team/c3.png",
+        "link": "/"
+      }
+    ]
+  },
+ "process": {
+    "title": "Il Nostro Processo",
+    "description": "Aumentiamo costantemente la tua quota di mercato. Gestiamo ogni aspetto della tua presenza su Amazon, inclusi quelli che molte agenzie trascurano, come la gestione del catalogo e la SEO. Quando le campagne PPC funzionano in sinergia con la SEO e il Design, l'intero catalogo guadagna insieme quote di mercato.",
+    "description2": "Aumentiamo la tua quota di mercato. Continuamente.Gestiamo tutti i pilastri di Amazon. Anche quelli che la maggior parte delle agenzie ignora, come la gestione del catalogo e la SEO. Quando il PPC lavora con la SEO e la SEO lavora con il design, l'intero catalogo guadagna quota di mercato insieme.",
+    "repeatProcess": "Ripetizione Del Processo",
+    "items": [
+      {
+        "label": "Audit Gratuito Account Amazon Seller o Vendor",
+        "content": "Offriamo un servizio di audit completo per venditori e vendor su Amazon, mirato a ottimizzare prestazioni e vendite. Analizziamo le prestazioni dell'account, l'ottimizzazione SEO e la qualità delle immagini dei prodotti. Verifichiamo i contenuti del marchio e l'efficacia delle campagne pubblicitarie, fornendo un report dettagliato con raccomandazioni pratiche per migliorare il tuo account e raggiungere il successo su Amazon. Senza il nostro supporto, potresti non sfruttare appieno il potenziale del tuo account, lasciando spazio a inefficienze e opportunità mancate che possono influire sulla crescita e sulle vendite."
+      },
+      {
+        "label": "Ottimizzazione Catalogo Amazon, Content A+, Brand Story A+ e Vetrina Del Brand",
+        "content": "Il nostro processo di ottimizzazione su Amazon massimizza le conversioni e le vendite del tuo account. Iniziamo con una ricerca approfondita delle parole chiave e un'analisi competitiva degli ASIN. Creiamo e regoliamo varianti di prodotto, ottimizziamo SEO degli annunci e miglioriamo le immagini delle inserzioni con il nostro team di grafici. Inoltre, perfezioniamo i contenuti del marchio per garantire descrizioni coinvolgenti. Su richiesta, collaboriamo con i grafici dell'azienda del brand. Questo approccio integrato assicura che ogni aspetto del tuo account sia ottimizzato per massimizzare visibilità, conversioni e vendite su Amazon."
+      },
+      {
+        "label": "Avvio e Ottimizzazione Campagne Pubblicitarie Amazon Awareness, Considerazione e Conversione",
+        "content": "Il nostro processo pubblicitario su Amazon massimizza le prestazioni delle campagne. Effettuiamo un'analisi dei concorrenti, ricerchiamo parole chiave e sviluppiamo una strategia di campagne personalizzata. Ottimizziamo e monitoriamo costantemente le campagne per raggiungere i target ACOS/TACOS, apportando aggiustamenti continui per garantire l'efficienza del budget e il massimo ritorno sull'investimento."
+      },
+      {
+        "label": "Monitoraggio KPI & Analisi Dati Amazon",
+        "content": "Ottimizziamo e analizziamo ogni aspetto della vendita su Amazon per prendere decisioni informate che ottimizzano i tuoi annunci. Utilizzando tecniche basate sui dati, come il test A/B e il miglioramento dei dati di conversione, ti aiutamo a vendere di più su Amazon."
+      },
+      {
+        "label": "Gestione Pratiche Con Amazon Seller Support",
+        "content": "Ci occupiamo della completa gestione di Amazon Seller Central. Apriamo, monitoriamo e chiudiamo i ticket necessari al fine di risolvere eventuali problematiche o situazioni con Amazon Seller Support."
+      }
+   
+    ]
+  },
+ "table": {
+    "title": "Perché Lavorare con Noi",
+    "imageAlt": "Confronto delle caratteristiche",
+    "others": "Others",
+    "yesAlt": "Spunta",
+    "noAlt": "Croce",
+    "features": [
+      "Agenzia Amazon Multilingua (IT,EN,DE,FR,ES)",
+      "Gestione Amazon Seller e Amazon Vendor",
+      "Risposte Rapide con Chat Istantanea su Teams",
+      "Servizio Su Misura Per Il Tuo Business",
+      "4 Professionisti Dedicati Alla Crescita Del Tuo Account",
+      "Risoluzione Problematiche Amazon Seller Vendor",
+      "Monitoraggio Della Buy Box",
+      "Workshop & Training Amazon Seller Central e Vendor",
+      "Meeting e Supporto Illimitati",
+      "Supporto Nelle Negoziazioni Con Amazon Vendor"
+    ]
+  },
+ "successStories": {
+      "title": "Storie Di Successo",
+      "description": "Cosa consideriamo \"Un Successo\" quando parliamo di Amazon a Storm X Digital? Alcuni esempi qui sotto dove abbiamo aumentato del 218% il fatturato di Safe Industrial. Oppure come abbiamo trasformato il mercato dei Kit Di Primo Soccorso su Amazon raggiungendo olte 14 Mila unità vendute al mese per un solo prodotto in Amazon UK.",
+      "readMore": "Leggi Di Più",
+      "case1": {
+        "title": "RELIANCE MEDICAL LTD - Account Amazon Vendor",
+        "point1": {
+          "title": "Ottimizzazione Schede Prodotto:",
+          "description": "Miglioramento delle listinge per maggiore visibilità."
+        },
+        "point2": {
+          "title": "Content A+ Premium:",
+          "description": "Creazione e traduzione in FR, IT, DE, ES, EN."
+        },
+        "point3": {
+          "title": "Strategia Pubblicitaria:",
+          "description": "Implementazione di SP, SB e SD ADV."
+        },
+        "stat1": "Crescita Fatturato Amazon",
+        "stat2": "Incremento Margine Netto",
+        "stat3": "Incremento Tasso di Conversione"
+      },
+      "testimonial": {
+        "imageAlt": "Testimonianza",
+        "title": "Testimonianza del Cliente",
+        "quote": "Storm X ha trasformato la nostra presenza su Amazon, portando risultati straordinari e diventando parte integrante del nostro team.",
+        "author": "- Direttore Marketing, Reliance Medical Ltd"
+      },
+      "video": {
+        "title": "Video Testimonianza",
+        "url": "https://www.youtube.com/embed/aTzsHLqwN8s?si=ijdpqTprp7tYtGuB",
+        "description": "Guarda il video per scoprire come abbiamo aiutato i nostri clienti a raggiungere il successo su Amazon."
+      },
+      "case2": {
+        "title": "SAFE INDUSTRIAL LTD - Kirsty - Account Amazon Seller",
+        "point1": {
+          "title": "Collaborazione Duratura:",
+          "description": "Partnership di successo da oltre due anni."
+        },
+        "point2": {
+          "title": "Crescita Esplosiva:",
+          "description": "Incremento del fatturato del 218% su Amazon."
+        },
+        "point3": {
+          "title": "Approccio Personalizzato:",
+          "description": "Storm X è diventato parte essenziale del team."
+        },
+        "quote": "Storm X ha fatto una differenza enorme. Lavorare con loro è come avere dei colleghi piuttosto che un'agenzia esterna.",
+        "author": "- Kirsty Rogers | Sales Manager at Safe Industrial",
+        "stat1": "Crescita Fatturato Amazon",
+        "stat2": "Ritorno Investimento Campagne ADV",
+        "stat3": "Anni Collaborazione Lungo Termine"
+      }
+    },
+ "blog": {
+      "title": "Tutorials & Best Practices",
+      "description": "Non il classico noioso Blog. In questa sezione troverai guide utili e pratiche per la risoluzione di tutti i tuoi grattacapo di Amazon Seller & Vendor.",
+      "readMore": "Leggi Di Più"
+  },
+ "banner": {
+    "amazonMethodStormX": "Amazon Metodo Storm X",
+    "secretsRevealed": "Tutti i segreti del nostro team rivelati in questo playbook.",
+    "processesExplained": "Gli stessi processi che attuiamo per i nostri clienti li abbiamo trascritti e messi a disposizione in maniera gratuita per tutti i responsabili E-Commerce alle prese con Amazon",
+    "downloadFree": "SCARICALA GRATIS",
+    "discoverSecrets": "Scopri i segreti del nostro team in questo playbook gratuito!",
+    "allProcesses": "Tutti i processi che attuiamo per i nostri clienti, ora disponibili gratuitamente per tutti i responsabili E-Commerce alle prese con Amazon.",
+    "optimizationStrategies": "Strategie di ottimizzazione",
+    "advancedMarketing": "Tecniche di marketing avanzate",
+    "dataAnalysis": "Analisi dei dati e insights",
+    "downloadNowFree": "SCARICA ORA GRATUITAMENTE"
+},
+ "podcast": {
+  "title": "Il Nostro Amazon Podcast",
+  "description": "Che tu sia un Fondatore, un Imprenditore, un Direttore E-Commerce, un Manager di Marketplace o un Manager E-Commerce, puoi ascoltare tutto ciò di cui hai bisogno per gestire con successo Amazon Vendor & Seller dalla nostra Sezione Blog `How To` e dal nostro Podcast settimanale."
+},
+ "contact": {
+  "title": "Contattaci",
+  "description": "Mettiti in contatto con il nostro team per un'assistenza personalizzata.",
+  "meetingWithMarcello": "Riunione con Marcello",
+  "questions": "Hai domande su come iniziare a vendere su Amazon o sei già un venditore e non sei soddisfatto delle tue vendite e di com'è gestito il tuo account?",
+  "scheduleCall": "Pianifica Una Chiamata",
+  "getFreeAnalysis": "Ottieni Un Analisi Gratuita Del Tuo Prodotto",
+  "name": "Nome",
+  "contactNumber": "Numero di contatto",
+  "email": "Email",
+  "companyBrand": "Nome Azienda/Brand",
+  "message": "Messaggio",
+  "contactUsNow": "CONTATTACI ORA",
+  "scheduleFreeCall": "Pianifica Chiamata Gratuita",
+  "emailmarcello": "marcellodipierro@stormxdigital.com"
+},
+ "footer": {
+  "home": "Home",
+  "services": "Servizi",
+  "caseStudies": "Casi Studio",
+  "pricing": "Prezzi",
+  "tutorialsBestPractices": "Tutorial & Best Practices",
+  "contactUsNow": "CONTATTACI ORA",
+  "email": "Email: marcellodipierro@stormxdigital.com",
+  "phone": "Telefono: +39 3495375680",
+  "companyName": "Storm X Digital SRL",
+  "vatNumber": "P.IVA/VAT: 08789080721",
+  "address": "Indirizzo: Bisceglie",
+  "fullAddress": "Strada Del Carro 24, 76011, Italia",
+  "subscribeEmail": "Email",
+  "subscribeButton": "Iscriviti alle news",
+  "allRightsReserved": "© 2024 Storm X Digital SRL. Tutti i diritti riservati.",
+  "privacyPolicy": "Informativa sulla privacy"
+},
+ "testimonials": {
+    "sectionTitle": "Cosa Dicono Di Noi",
+    "sectionDescription": "Alcuni feedback di nostri clienti che abbiamo aiutato a crescere su Amazon Seller Central e Vendor Central.",
+    "sectionDescription2": "Alcuni feedback di nostri clienti che abbiamo aiutato a crescere su Amazon Seller Central e Vendor Central. Siamo una agenzia Amazon apprezzata in Europa",
+    "prevLabel": "Testimonianza precedente",
+    "nextLabel": "Testimonianza successiva",
+    "daniel": {
+      "name": "Daniel Gray - Sales Director",
+      "company": "Powerplay Brands LTD",
+      "quote": "Siamo Cresciuti Del 56% In 1 Anno",
+      "content": "Marcello e Storm X sono i nostri partner esclusivi in Italia per i marchi Lee, Wrangler, DKNY, Reebok e Ben Sherman.",
+      "additionalContent": "Si occupano di organizzare e partecipare a incontri con catene sportive, aprendo nuove opportunità per noi, come ad esempio con Coop Italia e Amazon IT."
+    },
+    "jimmy": {
+      "name": "Jimmy Chen - CEO MET Jeans",
+      "company": "Powerplay Brands LTD",
+      "quote": "Siamo Cresciuti Del 56% In 1 Anno",
+      "content": "Storm X ci ha supportato nel nostro primo approccio su Amazon, dimostrando di conoscere perfettamente la piattaforma.",
+      "additionalContent": "Inoltre, hanno aperto nuove opportunità per noi, generando un fatturato di oltre 300K."
+    },
+    "tom": {
+      "name": "Tom Parr - E-Commerce Manager",
+      "company": "Reliance Medical LTD",
+      "quote": "Da 1,5 Mln a 4 Mln in 2 Anni",
+      "content": "Marcello e Storm X ci aiutano nella gestione completa del nostro Amazon Vendor in Europa. Il team Storm X parla diverse lingue il che ha reso possibile per noi espanderci in Europa.",
+      "additionalContent": "Grazie a Storm X oggi il nostro business su Amazon sviluppa oltre i 4 Milioni di fatturato. Quando abbiamo iniziato eravamo a 1.5."
+    }
+  },
+"mentorhero": {
+    "title1": "Migliora le tue Vendite su",
+    "title2": "Amazon in 6 semplici passi con il “Metodo Storm”",
+    "title3": "Programma Mentorship",
+    "description1": "Ti affianchiamo con call strategiche e tecniche nella gestione del tuo ",
+    "description2": "Amazon Seller e Vendor Central.  Avrai accesso a due meeting mensili ",
+    "description3": "A differenza delle grandi agenzie, offriamo attenzione",
+    "description4": "dove potrai farci qualsiasi domanda e chiariremo qualsiasi tuo dubbio ",
+    "description5": "per il corretto funzionamento del tuo account Amazon.",
+    "ctaButton": "PRENOTA CALL GRATUITA",
+    "feature1": "Consulenze Strategiche e Pratiche",
+    "feature2": "Diventa un Esperto in Amazon Seller & Vendor"
+},
+"audience": {
+    "topicTitle": "A chi è rivolto",
+    "topicDescription": "Che tu sia Produttore, Azienda o Distributore, devi sapere che il desiderio di crescita su un marketplace cruciale come Amazon, da solo non basta.",
+    "imagineText": "Immagina di poter aumentare la visibilità e le vendite della tua attività su Amazon,",
+    "imagineDescription": "di affrontare e risolvere problemi di cui non sapevi neanche l'esistenza, senza trovarti impreparato, ma seguito da professionisti qualificati che ti fanno da tutor.",
+    "stormXIntro": "Noi di StormX Digital, a seguito delle esperienze dirette con i nostri partner,",
+    "stormXFocus": "abbiamo individuato alcune delle difficoltà più rilevanti tipiche dell'e-commerce, sulle quali abbiamo voluto concentrare maggiormente il nostro contributo:",
+    "imageAlt": "Amazon product listing example",
+    "challenges": [
+      "Carenza di competenze interne",
+      "Esigenza di training e workshop",
+      "Mancanza di una strategia chiara",
+      "Esigenza di supporto personalizzato",
+      "Difficoltà nella gestione operativa",
+      "Complessità delle politiche e regole di conformità Amazon",
+      "Necessità di analisi e reportistica dettagliata",
+      "Problemi di visibilità e posizionamento",
+      "Gestione delle recensioni e della reputazione",
+      "Necessità di intervento rapido",
+      "Frustrazione di Listing soppresse e/o disattivate da Amazon per qualsiasi motivo"
+    ],
+    "realityIntro": "In realtà, a queste incertezze, ne dobbiamo aggiungere una che le batte tutte:",
+    "realityMain": "L'ESPERIENZA NEGATIVA VISSUTA CON LE ALTRE AGENZIE."
+  },
+"mentorService": {
+    "mainTitle": "4 Motivi Perchè Devi Utilizzare Il \"Metodo Storm X\"",
+    "card1": {
+      "title": "GESTIONE COMPLETA DEL TUO ACCOUNT AMAZON",
+      "content": "Assumi degli specialisti in Brand Growth; in questo modo potrai:",
+      "listItems": [
+        "Migliorare le performance delle tue vendite e intercettare nuovi clienti.",
+        "Trasformare il tuo marchio e i tuoi prodotti in un'esperienza di acquisto coinvolgente per i tuoi clienti.",
+        "Creare contenuti fotografici e video che esaltano la storia del tuo marchio.",
+        "Usufruire degli annunci e delle promozioni di Amazon per incrementare le vendite."
+      ]
+    },
+    "card2": {
+      "title": "OTTIMIZZAZIONE SEO DEI LISTINI AMAZON E DEI PRODOTTI",
+      "content": "",
+      "listItems": [
+        "Esporre i tuoi prodotti ai clienti più pertinenti, per aumentare le conversioni di vendita (ottimizzazione SEO dell'algoritmo del mercato).",
+        "Posizionarti su Amazon per parole chiave rilevanti.",
+        "Differenziarti dalla concorrenza grazie alla nostra analisi del mercato",
+        "Dominare il mercato con le nostre strategie SEO Amazon."
+      ]
+    },
+    "card3": {
+      "title": "STRATEGIA PUBBLICITARIA DEI PRODOTTI E LANCIO CAMPAGNE",
+      "content": "",
+      "listItems": [
+        "Incrementare le vendite su Amazon grazie alle campagne Amazon PPC e annunci display su misura con cui potrai massimizzare il ROI.",
+        "Implementazione Campagne Sponsored Product, Sponsored Brand e Sponsored Display",
+        "Promuovere il tuo marchio con contenuti fotografici e video."
+      ]
+    },
+    "card4": {
+      "title": "OTTIMIZZAZIONE TASSO DI CONVERSIONE DEI PRODOTTI AMAZON",
+      "content": "",
+      "listItems": [
+        "Ottimizzare le conversioni su Amazon con il nostro servizio CRO.",
+        "Targeting del pubblico di riferimento ideale per il tuo marchio attraverso i nostri strumenti di analisi di mercato.",
+        "Massimizzare oggi la tua presenza su Amazon per promuovere una crescita esponenziale per la tua azienda domani."
+      ]
+    }
+  },
+"mentorFounder": {
+  "title": "Pianifica Una Call Per Conoscere Il Nostro Coach",
+  "description": "Tutti i segreti del nostro team rivelati in questo playbook. Gli stessi processi che attuiamo per i nostri clienti li abbiamo trascritti e messi a disposizione in maniera gratuita per tutti i responsabili E-Commerce alle prese con Amazon",
+  "call": "Pianifica Call Gratuita"
+},
+"story": {
+  "title": "Storie Di Successo",
+  "description": "Cosa consideriamo `Un Successo` quando parliamo di Amazon a Storm X Digital? Alcuni esempi qui sotto dove abbiamo aumentato del 218% il fatturato di Safe Industrial. Oppure come abbiamo trasformato il mercato dei Kit Di Primo Soccorso su Amazon raggiungendo olte 14 Mila unità al mese per un solo prodotto in Amazon UK",
+  "label1": "Crescita Fatturato Amazon",
+  "label2": "Incremento Margine Netto",
+  "label3": "Incremento Tasso di Conversione",
+  "h3title1": "Sintesi",
+  "h3title2": "Background",
+  "h3title3": "Sfida e Risultati",
+  "h3desc1": "Reliance Medical, fornitore leader di articoli di pronto soccorso, voleva migliorare la sua presenza sul mercato e incrementare le vendite in un panorama competitivo. Di fronte alla sfida di un ambiente di vendita al dettaglio in evoluzione e alle crescenti aspettative dei clienti, l'azienda ha intrapreso una revisione strategica delle operazioni di vendita e marketing.",
+  "h3desc2": "Reliance Medical, grazie alle sue forniture mediche di alta qualità, si è affermata negli anni, come azienda di fiducia nel settore sanitario. La sua vasta gamma di prodotti si rivolge a diversi settori, tra cui quello industriale, educativo e ricreativo. Tuttavia, la rapida trasformazione digitale del mercato ha reso necessario un approccio innovativo per mantenere e far crescere la propria quota di mercato.",
+  "h3desc3": "La sfida principale era quella di aumentare il volume delle vendite e i ricavi in un mercato saturo di concorrenti affermati. Reliance Medical voleva attirare nuovi clienti e fidelizzare quelli esistenti, il tutto migliorando l'efficienza operativa e gestendo le complessità della catena di fornitura."
+},
+"pricing": {
+  "title": "Diventa Un Esperto In Amazon Seller Central e Vendor Central Con Il Team Storm X Digital",
+  "description": "Aumenta subito il profitto del tuo account Amazon. Il team di Storm X Digital ti segue passo dopo passo, nel rispetto delle regole del marketplace n. 1 al mondo, delle metriche SEO e dell'etica del lavoro, grazie ad un metodo che ha già aiutato centinaia di aziende a differenziarsi in un mercato saturo di concorrenti affermati.",
+  "cardTitle": "Amazon Mentorship",
+  "cardDescription": "Affiancamento 1:1 per aiutarti nella gestione completa del tuo Amazon Seller e Vendor Central",
+  "price": "299€",
+  "perMonth": "/mese",
+  "ctaButton": "PRENOTA CALL GRATUITA",
+  "features": [
+    "2 chiamate mensili di 1 ora con il team Amazon di Storm X Digital",
+    "Workshop su richiesta e supporto nella risoluzione di problematiche relative all'account Amazon",
+    "Supporto premium email 5 giorni su 7",
+    "Team di esperti in ads, catalogo, SEO e ottimizzazione al tuo servizio",
+    "Politica di garanzia: 30 Giorni soddisfatto o rimborsato"
+  ]
+}
+
+}
+
+
+

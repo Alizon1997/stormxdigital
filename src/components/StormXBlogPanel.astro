@@ -31,7 +31,7 @@ const posts = await fetchPosts();
                             <div class="text-sm text-gray-500">{new Date(post.publish_date).toLocaleDateString()}</div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <a href={`/admin/edit-post/${post.$id}`} class="text-indigo-600 hover:text-indigo-900 mr-3">
+                            <a href={`./edit-post/${post.$id}`} class="text-indigo-600 hover:text-indigo-900 mr-3">
                                 <FiEdit2 className="inline-block w-5 h-5" />
                             </a>
                             <button class="text-red-600 hover:text-red-900 delete-post-btn" data-post-id={post.$id}>
@@ -46,7 +46,7 @@ const posts = await fetchPosts();
     <div class="justify-end item-center flex">
         <button 
         class="mt-4 py-4 px-6 bg-black font-semibold text-white rounded-md hover:bg-orange" 
-        onclick="window.location.href='/admin/post-editor'"
+        onclick="window.location.href='/en/admin/post-editor'"
     >
         Create Post
         </button>

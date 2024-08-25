@@ -5,9 +5,9 @@
         "name2": "CATALOGO AMAZON",
         "description":"Ti aiutiamo a creare, gestire e ottimizzare le schede prodotto del tuo intero catagolo.",
         "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
-        "arrow": "./services/ax.svg",
-        "link": "./",
-        "image": "./services/01.svg"
+        "arrow": "../services/ax.svg",
+        "link": "../",
+        "image": "../services/01.svg"
     },
     {
         "id": 2,
@@ -15,9 +15,9 @@
         "name2": "PUBBLICITARIE AMAZON",
         "description":"Creeremo e Gestiremo per te Strategie Pubblicitarie in modo da aumentare le venditecontrollando i costi di acquisizione.",
         "background": "h-[310px] p-12 rounded-[45px] shadow-card border border-black justify-between items-center flex text-white bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82%",
-        "arrow": "./services/aw.svg",
-        "link": "./",
-        "image": "./services/02.svg"
+        "arrow": "../services/aw.svg",
+        "link": "../",
+        "image": "../services/02.svg"
     },
     {
     
@@ -26,9 +26,9 @@
         "name2": "SEO AMAZON",
         "description":"Miglioriamo la visibilità dei tuoi prodotti in modo che si posizionino più in alto, attirino più traffico e quindi aumentino le conversioni.",
         "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
-        "arrow": "./services/aw.svg",
-        "link": "./",
-        "image": "./services/03.svg"
+        "arrow": "../services/aw.svg",
+        "link": "../",
+        "image": "../services/03.svg"
     },
     {
         "id": 4, 
@@ -36,9 +36,9 @@
         "name2": "BRAND REGISTRY",
         "description":"Con il Brand Registry della nostra Agenzia Amazon protegge il tuo marchio, mettendo al sicuro le tue inserzioni e prevenendo contraffazioni.  Miglioriamo la visibilità e la credibilità del tuo brand.",
         "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
-        "arrow": "./services/ax.svg",
-        "link": "./",
-        "image": "./services/04.svg"
+        "arrow": "../services/ax.svg",
+        "link": "../",
+        "image": "../services/04.svg"
     },
     {
         "id": 5,
@@ -46,9 +46,9 @@
         "name2": "OTTIMIZZAZIONE LISTING",
         "description": "Aumentiamo le vendite, il ROI e incrementiamo per te il coinvolgimento dei clienti. Realizziamo per te vetrine Amazon, Content A+ e Immagini Prodotto che convertono.",
         "background": "h-[310px] p-12 rounded-[45px] shadow-card border border-black justify-between items-center flex text-white bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82%",
-        "arrow": "./services/aw.svg",
-        "link": "./",
-        "image": "./services/05.svg"
+        "arrow": "../services/aw.svg",
+        "link": "../",
+        "image": "../services/05.svg"
     },
     {
         "id": 6,
@@ -56,8 +56,8 @@
         "name2": "DATI AMAZON",
         "description": "Visualizziamo, analizziamo e interpretiamo i dati del tuo Amazon Seller Central e Vendor Central. Creamo un piano d' azione personalizzato.",
         "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
-        "arrow": "./services/aw.svg",
-        "link": "./",
-        "image": "./services/06.svg"
+        "arrow": "../services/aw.svg",
+        "link": "../",
+        "image": "../services/06.svg"
     }
 ]

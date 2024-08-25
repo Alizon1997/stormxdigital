@@ -5,76 +5,77 @@ import teamData from './Data/team.json';
 import Collapse from "./Collapse.astro";
 import FounderSection from "./FounderSection.astro";
 import ResponsiveTeamComponent from "./TeamCarousel";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from './types/services';
 
+// Ensure currentLocale is always 'en' or 'it'
+const currentLocale = (Astro.currentLocale || 'it') as keyof typeof teamData;
+
+// Import translations
+import enTranslations from '../../public/locales/en/translation.json';
+import itTranslations from '../../public/locales/it/translation.json';
+
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
 ---
+
 <Container>
-<div class="relative flex flex-col items-center md:flex-row">
-    <Topic title="Il Team Storm X" description="Una parte del nostro Team di esperti Amazon. Migliaia di ore di esperienza su Amazon Seller Central e Vendor Central a disposizione della tua PMI"/>
-</div>
+  <div class="relative flex flex-col items-center md:flex-row">
+    <Topic title={translations.team.title} description={translations.team.description}/>
+  </div>
 
-<FounderSection />
+  <FounderSection />
 
-<ResponsiveTeamComponent teamData={teamData} client:load />
+  <ResponsiveTeamComponent teamData={teamData} currentLocale={currentLocale} client:load />
 
+  <div class="pt-20 relative flex flex-col items-center md:flex-row">
+    <Topic title={translations.process.title} description={translations.process.description}/>
+  </div>
 
-
-
-<div class="pt-20 relative flex flex-col items-center md:flex-row">
-    <Topic title="Il Nostro Processo" description="Aumentiamo costantemente la tua quota di mercato. Gestiamo ogni aspetto della tua presenza su Amazon, inclusi quelli che molte agenzie trascurano, come la gestione del catalogo e la SEO. Quando le campagne PPC funzionano in sinergia con la SEO e il Design, l'intero catalogo guadagna insieme quote di mercato."/>
-</div>
-
-<div class="my-6 mx-2">
+  <div class="my-6 mx-2">
     <div class="space-y-10">
-        {
-        teamData.process.map((process, key) => (
-            <Collapse label={process.label} index={key + 1}>
+      {
+        teamData[currentLocale].process.map((process, key) => (
+          <Collapse label={process.label} index={key + 1}>
             {process.content}
-            </Collapse>
+          </Collapse>
         ))
-        }
-        <div class="group outline-none accordion-section" tabindex="1">
-            <div class="group group-focus:bg-[#F95C04] group-focus:shadow-none shadow-card bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% group-focus:rounded-b-none group-focus:rounded-t-3xl rounded-[60px] md:rounded-3xl  flex justify-between px-4 py-3 items-center transition-colors ease duration-500 cursor-pointer pr-10 relative">
-              <div class="flex items-center group-focus:text-white px-10 pt-10 w-full transition ease duration-500">
-                <div class="flex pb-10 gap-5 w-full items-center">
-                  <div class="flex justify-between w-full items-center rouded-full">
-                    <div class="flex items-center gap-5">
-                      {
-                        6 && (
-                          <>
-                            <p class="text-6xl font-medium text-white  flex items-center">
-                              0{6}
-                            </p>
-                            <p class="lg:text-3xl text-lg text-white ">{'Ripetizione Del Processo'}</p>
-                          </>
-                        )
-                      }
-                    </div>
-
-                  </div>
+      }
+      <div class="group outline-none accordion-section" tabindex="1">
+        <div class="group group-focus:bg-[#F95C04] group-focus:shadow-none shadow-card bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% group-focus:rounded-b-none group-focus:rounded-t-3xl rounded-[60px] md:rounded-3xl  flex justify-between px-4 py-3 items-center transition-colors ease duration-500 cursor-pointer pr-10 relative">
+          <div class="flex items-center group-focus:text-white px-10 pt-10 w-full transition ease duration-500">
+            <div class="flex pb-10 gap-5 w-full items-center">
+              <div class="flex justify-between w-full items-center rouded-full">
+                <div class="flex items-center gap-5">
+                  {
+                    6 && (
+                      <>
+                        <p class="text-6xl font-medium text-white  flex items-center">
+                          0{6}
+                        </p>
+                        <p class="lg:text-3xl text-lg text-white ">{translations.process.repeatProcess}</p>
+                      </>
+                    )
+                  }
                 </div>
               </div>
             </div>
-
           </div>
+        </div>
+      </div>
     </div>
-</div>
-
-
-
-
-  
-  <style>
-      .accodion-chevron::after{
-          content: "";
-          @apply h-[70%] w-[8px] transform transition-transform bg-black absolute left-1/2 -translate-x-1/2;
-      }
-      .accodion-chevron::before{
-          content: "";
-          @apply h-[70%] w-[8px] rotate-90 transform bg-black absolute left-1/2 -translate-x-1/2;
-      }
-      .group:focus-within .accodion-chevron::after {
-          @apply rotate-90;
-      }
-  </style>
-
+  </div>
 </Container>
+
+<style>
+  .accodion-chevron::after{
+    content: "";
+    @apply h-[70%] w-[8px] transform transition-transform bg-black absolute left-1/2 -translate-x-1/2;
+  }
+  .accodion-chevron::before{
+    content: "";
+    @apply h-[70%] w-[8px] rotate-90 transform bg-black absolute left-1/2 -translate-x-1/2;
+  }
+  .group:focus-within .accodion-chevron::after {
+    @apply rotate-90;
+  }
+</style>

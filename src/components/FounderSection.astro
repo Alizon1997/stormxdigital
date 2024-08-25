@@ -1,10 +1,21 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from './types/services';  // Adjust the import path as needed
+
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../public/locales/en/translation.json';
+import itTranslations from '../../public/locales/it/translation.json';
+
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
+
 const founderData = {
   name: "Marcello Di Pierro",
-  title: "Founder/Amazon Account Director",
+  title: translations.founder.title,
   image: "/team/c.png",
   linkedin: "https://linkedin.com/in/marcello-di-pierro",
-  experience: "10+ Anni di esperienza a gestire account Amazon Seller e Vendor. Ho costruito un business a 6 cifre su Amazon Seller nel mio periodo di vita in Cina, tra Shenzhen e Guangzhou."
+  experience: translations.founder.experience
 };
 ---
 
@@ -31,22 +42,22 @@ const founderData = {
   </div>
 
   <div class="w-full md:w-2/3 p-3 sm:p-4 md:p-5 lg:p-6">
-    <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 md:mb-4">Due Parole Dal Fondatore</h2>
+    <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 md:mb-4">{translations.founder.sectionTitle}</h2>
     <p class="text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-relaxed">
-      Gestisco la strategia e la visione a medio-lungo termine degli Account Amazon dei nostri partner. Mi interfaccio con loro per delineare le attività necessarie a ottenere i massimi risultati nel minor tempo possibile. Supervisiono il lavoro del nostro team interno di ADV, Design e Catalogo, coordinando quella che consideriamo ad oggi dopo anni di lavoro una "macchina perfetta" per la gestione dei canali Amazon Seller e Vendor.
+      {translations.founder.description}
     </p>
     <div class="flex justify-between items-end">
       <div class="text-center">
         <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#F95C04]">10+</p>
-        <p class="text-[10px] sm:text-xs md:text-sm lg:text-base font-normal mt-1">Anni Gestendo<br/>Account Amazon</p>
+        <p class="text-[10px] sm:text-xs md:text-sm lg:text-base font-normal mt-1">{translations.founder.stat1}</p>
       </div>
       <div class="text-center">
         <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#F95C04]">20MLN+</p>
-        <p class="text-[10px] sm:text-xs md:text-sm lg:text-base font-normal mt-1">Più di 20 Milioni di euro di<br/>Budget Amazon PPC Investiti</p>
+        <p class="text-[10px] sm:text-xs md:text-sm lg:text-base font-normal mt-1">{translations.founder.stat2}</p>
       </div>
       <div class="text-center">
         <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#F95C04]">231%</p>
-        <p class="text-[10px] sm:text-xs md:text-sm lg:text-base font-normal mt-1">Più Grande Crescita di<br/>Fatturato Registrata in 1 Anno</p>
+        <p class="text-[10px] sm:text-xs md:text-sm lg:text-base font-normal mt-1">{translations.founder.stat3}</p>
       </div>
     </div>
   </div>

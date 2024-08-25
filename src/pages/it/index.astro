@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import Services from "../../components/Services.astro"
+import Team from '../../components/Team.astro';
+import Testimonial from '../../components/Testimonial.astro';
+import Contact from '../../components/Contact.astro';
+import Case from '../../components/Case.astro';
+import Table from '../../components/Table.astro';
+import Podcast from '../../components/Podcast.astro';
+import Blog from '@/components/mentorship/Blog.astro';
+import SectionBanner from '@/components/SectionBanner.astro';
+---
+
+<Layout title="Positivus">
+	<main class="space-y-20">
+		<Hero/>
+		<Services/>
+		<Team/>
+		<Table/>
+		<Case/>
+		<Blog/>
+		<Testimonial/>
+		<SectionBanner/>
+		<Podcast/>
+		<Contact/>
+	</main>
+</Layout>

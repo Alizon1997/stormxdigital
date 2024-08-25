@@ -30,22 +30,23 @@ const TeamMember = ({ title, description, name, link, profile }) => (
   </div>
 );
 
-const TeamCarousel = ({ teamData }) => {
+const TeamCarousel = ({ teamData, currentLocale }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const localizedTeamData = teamData[currentLocale].team;
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % teamData.team.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % localizedTeamData.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + teamData.team.length) % teamData.team.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + localizedTeamData.length) % localizedTeamData.length);
   };
 
   return (
     <div className="relative w-full px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:hidden">
       <div className="overflow-hidden">
         <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-          {teamData.team.map((member, index) => (
+          {localizedTeamData.map((member, index) => (
             <div key={index} className="w-full flex-shrink-0 flex justify-center">
               <TeamMember {...member} />
             </div>
@@ -62,18 +63,18 @@ const TeamCarousel = ({ teamData }) => {
   );
 };
 
-const TeamGrid = ({ teamData }) => (
+const TeamGrid = ({ teamData, currentLocale }) => (
   <div className="hidden xl:grid grid-cols-3 gap-8 px-10">
-    {teamData.team.map((member, index) => (
+    {teamData[currentLocale].team.map((member, index) => (
       <TeamMember key={index} {...member} />
     ))}
   </div>
 );
 
-const ResponsiveTeamComponent = ({ teamData }) => (
+const ResponsiveTeamComponent = ({ teamData, currentLocale }) => (
   <div className="flex-col items-center py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14" id="team">
-    <TeamCarousel teamData={teamData} />
-    <TeamGrid teamData={teamData} />
+    <TeamCarousel teamData={teamData} currentLocale={currentLocale} />
+    <TeamGrid teamData={teamData} currentLocale={currentLocale} />
   </div>
 );
 

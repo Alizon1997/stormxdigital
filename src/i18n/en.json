@@ -1,0 +1,16 @@
+{
+    "common": {
+    "pageTitle": "StormX Digital"
+  },
+    "hero": {
+      "title": "The Only Amazon Agency",
+      "subtitle": "That Works Alongside You",
+      "titleSpan": "Like a Colleague",
+      "description1": "We are <b>an Amazon agency specializing</b> in professional<br class='hidden sm:inline'/> management of <b>Amazon Seller and Vendor Accounts.</b>",
+      "description2": "Unlike large agencies, we offer <b>personalized attention</b><br class='hidden sm:inline'/> and <b>tailored services</b> to ensure your Amazon Account<br class='hidden sm:inline'/> receives the care it deserves.",
+      "ctaButton": "CONTACT US NOW",
+      "feature1": "No Binding Contract",
+      "feature2": "Tailored Approach",
+      "feature3": "European Expansion Process"
+    }
+  }

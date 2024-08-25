@@ -3,19 +3,31 @@ import Container from "../Container.astro"
 import Topic from "../Topic.astro";
 import teamData from '../Data/team.json';
 import Collapse from "../Collapse.astro";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from '../types/services';
+
+// Ensure currentLocale is always 'en' or 'it'
+const currentLocale = (Astro.currentLocale || 'it') as keyof typeof teamData;
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
+
+// Import translations
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
+import { Translation } from "react-i18next";
+
 ---
 <Container>
 <div class="pt-20 relative flex flex-col items-center md:flex-row">
-    <Topic title="Il Nostro Processo" description="Aumentiamo la tua quota di mercato. Continuamente.Gestiamo tutti i pilastri di Amazon. Anche quelli che la maggior parte delle agenzie ignora, come la gestione del catalogo e la SEO. Quando il PPC lavora con la SEO e la SEO lavora con il design, l'intero catalogo guadagna quota di mercato insieme."/>
+    <Topic title={translations.process.title} description={translations.process.description2}/>
 </div>
-
+ 
 <div class="my-6">
     <div class="space-y-10">
         {
-        teamData.process.map((process, key) => (
-            <Collapse label={process.label} index={key + 1}>
+        teamData[currentLocale].process.map((process, key) => (
+          <Collapse label={process.label} index={key + 1}>
             {process.content}
-            </Collapse>
+          </Collapse>
         ))
         }
     </div>

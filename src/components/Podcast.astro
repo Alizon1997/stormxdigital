@@ -2,13 +2,24 @@
 import Container from "./Container.astro"
 import Topic from "./Topic.astro"
 import IframeCarousel from "./IframeCarousel.jsx"
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from './types/services';
+
+// Ensure currentLocale is always 'en' or 'it'
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../public/locales/en/translation.json';
+import itTranslations from '../../public/locales/it/translation.json';
+
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
 ---
 
 <Container>
   <div class="relative flex flex-col items-center md:flex-row mb-8 sm:mb-12">
     <Topic 
-      title="Amazon Podcast" 
-      description="Che tu sia un Fondatore, un Imprenditore, un Direttore E-Commerce, un Manager di Marketplace o un Manager E-Commerce, puoi ascoltare tutto ciò di cui hai bisogno per gestire con successo Amazon Vendor & Seller dalla nostra Sezione Blog 'How To' e dal nostro Podcast settimanale." 
+      title={translations.podcast.title}
+      description={translations.podcast.description}
     />
   </div>
 

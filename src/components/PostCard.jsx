@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, Video, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const PostCard = ({ $id, type, title, publish_date, brief }) => (
+const PostCard = ({ $id, type, title, publish_date, brief, translations }) => (
   <article className="bg-white rounded-3xl border border-black shadow-card m-2 p-3 sm:p-4 lg:p-6 flex flex-col h-full w-full">
     <div className="flex justify-between items-center mb-2 sm:mb-3 lg:mb-5 text-gray-500">
       <span className="bg-[#F95C04] text-white text-xs font-medium inline-flex items-center px-1.5 sm:px-2.5 py-0.5 rounded">
@@ -16,14 +16,14 @@ const PostCard = ({ $id, type, title, publish_date, brief }) => (
     </p>
     <div className="flex justify-end items-end mt-auto">
       <a href={`/blogs/${$id}`} className="inline-flex items-center font-bold text-[#F95C04] hover:text-black text-sm sm:text-base lg:text-lg">
-        Leggi Di Più
+        {translations.readMore}
         <ChevronRight className="ml-1 sm:ml-2" size={18} />
       </a>
     </div>
   </article>
 );
 
-const PostCarousel = ({ posts }) => {
+const PostCarousel = ({ posts, translations }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(1);
 
@@ -64,7 +64,7 @@ const PostCarousel = ({ posts }) => {
           {limitedPosts.map((post, index) => (
             <div key={post.id} className="w-full xl:w-1/2 flex-shrink-0 px-2 xl:px-4">
               <div className="max-w-xs sm:max-w-sm md:max-w-md mx-auto xl:mx-0">
-                <PostCard {...post} />
+                <PostCard {...post} translations={translations} />
               </div>
             </div>
           ))}

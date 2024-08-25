@@ -1,20 +1,36 @@
 ---
-// Define your navigation links here
-const navLinks = [
-  { href: '/about', label: 'About us' },
-  { href: '/#services', label: 'Services' },
-  { href: '/#projects', label: 'Use Cases' },
-  { href: '/mentorship', label: 'Mentorship' },
-  { href: '/blog', label: 'Blog' },
-];
-
 import Container from "./Container.astro"
+import LanguageSwitcher from './LanguageSwitcher';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  currentLocale: string;
+}
+// Get the current locale from the URL
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../public/locales/en/translation.json';
+import itTranslations from '../../public/locales/it/translation.json';
+
+const translations = currentLocale === 'en' ? enTranslations : itTranslations;
+
+// Define a type for the navbar keys
+type NavbarKey = keyof typeof translations.navbar;
+
+// Define your navigation links here
+const navLinks: { href: string; label: NavbarKey }[] = [
+  { href: '/#services', label: 'services' },
+  { href: '/#projects', label: 'useCases' },
+  { href: '/mentorship', label: 'mentorship' },
+  { href: '/blog', label: 'blog' },
+];
 ---
 
 <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
   <Container>
     <nav class="flex items-center justify-between py-4">
-      <a href="/" class="flex-shrink-0">
+      <a href={getRelativeLocaleUrl(currentLocale, '')} class="flex-shrink-0">
         <img src="/StormXLogo.svg" class="h-8 sm:h-10 lg:h-12" alt="StormX Digital Logo" />
       </a>
       
@@ -25,7 +41,7 @@ import Container from "./Container.astro"
         aria-controls="navbar-default"
         aria-expanded="false"
       >
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only">{translations.navbar.openMenu}</span>
         <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -36,10 +52,10 @@ import Container from "./Container.astro"
           {navLinks.map((link) => (
             <li>
               <a
-                href={link.href}
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 lg:p-0"
+                href={getRelativeLocaleUrl(currentLocale, link.href)}
+                class="block py-2 px-3 underline text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 lg:p-0"
               >
-                {link.label}
+                {translations.navbar[link.label]}
               </a>
             </li>
           ))}
@@ -50,7 +66,7 @@ import Container from "./Container.astro"
               rel="noopener noreferrer"
               class="inline-flex px-4 py-2 text-sm rounded-2xl bg-gradient-to-r from-[#FF8E0A] via-[#FF8E0A] to-[#F95C04] text-white hover:from-[#F95C04] hover:to-[#FF8E0A] transition duration-300 ease-in-out whitespace-nowrap justify-center w-full"
             >
-              <span class="font-bold">PRENOTA UNA RIUNIONE</span>
+              <span class="font-bold">{translations.navbar.bookMeeting}</span>
             </a>
           </li>
         </ul>
@@ -62,8 +78,10 @@ import Container from "./Container.astro"
         rel="noopener noreferrer"
         class="hidden lg:inline-flex px-4 py-2 text-sm xl:px-6 xl:py-2 xl:text-base rounded-2xl bg-gradient-to-r from-[#FF8E0A] via-[#FF8E0A] to-[#F95C04] text-white hover:from-[#F95C04] hover:to-[#FF8E0A] transition duration-300 ease-in-out whitespace-nowrap"
       >
-        <span class="font-bold">PRENOTA UNA RIUNIONE</span>
+        <span class="font-bold">{translations.navbar.bookMeeting}</span>
       </a>
+      
+      <LanguageSwitcher client:load />
     </nav>
   </Container>
 </header>
