@@ -45,7 +45,7 @@
 
   "team": {
     "title": "Storm X Team",
-    "description": "Part of our team of Amazon experts. Thousands of hours of experience on Amazon Seller Central and Vendor Central at the disposal of your SME",
+    "description": "As an Amazon agency, our team of experts brings thousands of hours of experience on Amazon Seller Central and Vendor Central to support your small, medium and large sized business.",
     "members": [
       {
         "title": "PPC Specialist",
@@ -72,7 +72,7 @@
   },
   "process": {
     "title": "Our Process",
-    "description": "We constantly increase your market share. We manage every aspect of your presence on Amazon, including those that many agencies neglect, such as catalog management and SEO. When PPC campaigns work in synergy with SEO and Design, the entire catalog gains market share together.",
+    "description": "As an Amazon agency, we continuously increase your market share. We manage all aspects of Amazon, including those that most agencies overlook, like catalogue management and SEO. When PPC works seamlessly with SEO, and SEO aligns with design, your entire catalogue gains market share together.",
     "description2": "We increase your market share. Continuously.We manage all the pillars of Amazon. Even the ones that most agencies ignore, such as catalog management and SEO. When PPC works with SEO and SEO works with design, the entire catalog gains market share together.",
     "repeatProcess": "Process Repetition",
     "items": [
@@ -164,7 +164,7 @@
           "title": "Personalized Approach:",
           "description": "Storm X has become an essential part of the team."
         },
-        "quote": "Storm X has made a huge difference. Working with them is like having colleagues rather than an external agency.",
+        "quote": "I've worked with Storm X for over two years, and they've been a real game-changer for our Amazon business, increasing our revenue by 218%. Their expertise and personalized approach have made a tremendous difference. Working with Storm X feels like having colleagues rather than an external agency, and they are now an essential part of our team.",
         "author": "- Kirsty Rogers | Sales Manager at Safe Industrial",
         "stat1": "Amazon Revenue Growth",
         "stat2": "Return on Investment for ADV Campaigns",
@@ -172,7 +172,7 @@
       }
     },
     "blog": {
-      "title": "Tutorials & Best Practices",
+      "title": "Blog & How to",
       "description": "Not your typical boring blog. In this section, you'll find useful and practical guides to solve all your Amazon Seller & Vendor headaches.",
       "readMore": "Read More"
   },
@@ -189,7 +189,7 @@
     "downloadNowFree": "DOWNLOAD NOW FOR FREE"
 },
 "podcast": {
-  "title": "Our Amazon Podcast",
+  "title": "Amazon Podcast",
   "description": "Whether you're a Founder, Entrepreneur, E-Commerce Director, Marketplace Manager, or E-Commerce Manager, you can learn everything you need to successfully manage Amazon Vendor & Seller from our `How To` Blog Section and our weekly Podcast."
 },
 "contact": {
@@ -210,11 +210,11 @@
 },  
 
 "footer": {
-  "home": "Home",
-  "services": "Services",
-  "caseStudies": "Case Studies",
-  "pricing": "Pricing",
-  "tutorialsBestPractices": "Tutorials & Best Practices",
+  "home": "Amazon",
+  "services": "Mentorship",
+  "caseStudies": "Blog & How To",
+  "pricing": "About Us",
+  "tutorialsBestPractices": "Method Storm X",
   "contactUsNow": "CONTACT US NOW",
   "email": "Email: marcellodipierro@stormxdigital.com",
   "phone": "Phone: +39 3495375680",
@@ -242,11 +242,11 @@
       "additionalContent": "They organize and participate in meetings with sports chains, opening new opportunities for us, such as with Coop Italia and Amazon IT."
     },
     "jimmy": {
-      "name": "Jimmy Chen - CEO MET Jeans",
-      "company": "Powerplay Brands LTD",
-      "quote": "We Grew 56% In 1 Year",
-      "content": "Storm X supported us in our first approach on Amazon, demonstrating perfect knowledge of the platform.",
-      "additionalContent": "Furthermore, they opened new opportunities for us, generating a turnover of over 300K."
+      "name": "Kirsty Rogers - Sales Manager",
+      "company": "Safe Industrial LTD",
+      "quote": "“We Boost Sales by 218% In 18 Months”",
+      "content": "In just over two years with Storm Digital, their support on Amazon has boosted our revenue by 218%.",
+      "additionalContent": "In just over two years with Storm Digital, their support on Amazon has boosted our revenue by 218%. Their tailored strategies, keyword optimization, and personal attention make them an essential partner."
     },
     "tom": {
       "name": "Tom Parr - E-Commerce Manager",
@@ -340,7 +340,7 @@
 },
 "story": {
   "title": "Success Stories",
-  "description": "What do we consider `A Success` when we talk about Amazon at Storm X Digital? Some examples below where we increased Safe Industrial's revenue by 218%. Or how we transformed the First Aid Kit market on Amazon, reaching over 14,000 units per month for a single product on Amazon UK.",
+  "description": "What do we consider 'Success' when we talk about Amazon at Storm X Digital? Here are some examples: we increased Safe Industrial's revenue by 218%, and we transformed the first aid kit market on Amazon, reaching over 14,000 units per month for a single product in Amazon UK.",
   "label1": "Amazon Revenue Growth",
   "label2": "Net Margin Increase",
   "label3": "Conversion Rate Increase",

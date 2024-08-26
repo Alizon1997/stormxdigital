@@ -19,15 +19,16 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
 ---
 
 <Container>
+<section id="about">
   <div class="relative flex flex-col items-center md:flex-row">
     <Topic title={translations.team.title} description={translations.team.description}/>
   </div>
-
+</section>
   <FounderSection />
 
   <ResponsiveTeamComponent teamData={teamData} currentLocale={currentLocale} client:load />
 
-  <div class="pt-20 relative flex flex-col items-center md:flex-row">
+  <div class="pt-20 relative flex flex-col items-center md:flex-row" id="about">
     <Topic title={translations.process.title} description={translations.process.description}/>
   </div>
 

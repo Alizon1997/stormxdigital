@@ -21,9 +21,11 @@ const servicesData: ServiceItem[] = currentLocale === 'en' ? enServicesData : it
 ---
 
 <Container>
+<section id="method">
   <div class="relative flex flex-col items-center md:flex-row" id="services">
     <Topic title={translations.services.title} description={translations.services.description}>
   </div>
+</section>
   <div class="flex-row items-center py-5">
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
       {servicesData.map(({ background, name1, name2, arrow, link, image, description }: ServiceItem) => (

@@ -21,20 +21,17 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
       description={translations.successStories.description}
     />
     
-    <div class="mt-4 sm:mt-6 lg:mt-8 space-y-8 sm:space-y-12 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8">
+    <div class="mt-4 sm:mt-6 lg:mt-8 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8">
       <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
         <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">{translations.successStories.case1.title}</h3>
-        <div class="space-y-4 sm:space-y-6">
-          <div class="flex items-start">
-            <FaCheckCircle className="w-6 h-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+        <div>
+          <div class="flex items-start mb-2">
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case1.point1.title}</span> {translations.successStories.case1.point1.description}</p>
           </div>
-          <div class="flex items-start">
-            <FaLanguage className="w-6 h-6 text-blue-500 mr-2 flex-shrink-0 mt-1" />
+          <div class="flex items-start mb-2">
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case1.point2.title}</span> {translations.successStories.case1.point2.description}</p>
           </div>
           <div class="flex items-start">
-            <FaChartLine className="w-6 h-6 text-purple-500 mr-2 flex-shrink-0 mt-1" />
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case1.point3.title}</span> {translations.successStories.case1.point3.description}</p>
           </div>
         </div>
@@ -42,7 +39,6 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
           {translations.successStories.readMore} 
           <FaArrowRight className="w-5 h-5 ml-1" />
         </a>
-
         <div class="mt-8 flex justify-between items-center bg-white rounded-lg p-4 shadow-inner">
           <div class="text-center">
             <p class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F95C04]">78%</p>
@@ -58,9 +54,8 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
           </div>
         </div>
       </div>
-      
       <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <img src="/amazon_img.png" alt={translations.successStories.testimonial.imageAlt} class="w-full rounded-lg mb-6 shadow-md">
+        <img src="/amazon_img.png" alt={translations.successStories.testimonial.imageAlt} class="w-full rounded-lg mb-6 shadow-md" />
         <div class="bg-white rounded-lg p-4 shadow-inner">
           <h4 class="text-lg sm:text-xl font-semibold mb-2 text-gray-800">{translations.successStories.testimonial.title}</h4>
           <p class="text-base sm:text-lg italic text-gray-700">{translations.successStories.testimonial.quote}</p>
@@ -89,24 +84,19 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
       
       <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
         <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">{translations.successStories.case2.title}</h3>
-        <div class="space-y-4 sm:space-y-6">
-          <div class="flex items-start">
-            <FaUserCheck className="w-6 h-6 text-teal-500 mr-2 flex-shrink-0 mt-1" />
+        <div>
+          <div class="flex items-start mb-2">
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case2.point1.title}</span> {translations.successStories.case2.point1.description}</p>
           </div>
-          <div class="flex items-start">
-            <FaRocket className="w-6 h-6 text-red-500 mr-2 flex-shrink-0 mt-1" />
+          <div class="flex items-start mb-2">
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case2.point2.title}</span> {translations.successStories.case2.point2.description}</p>
           </div>
           <div class="flex items-start">
-            <FaHandshake className="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-1" />
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case2.point3.title}</span> {translations.successStories.case2.point3.description}</p>
           </div>
         </div>
-
         <blockquote class="mt-6 italic text-base sm:text-lg text-gray-700">{translations.successStories.case2.quote}</blockquote>
         <p class="mt-2 font-semibold text-sm sm:text-base text-gray-600">{translations.successStories.case2.author}</p>
-        
         <div class="mt-8 flex justify-between items-center bg-white rounded-lg p-4 shadow-inner">
           <div class="text-center">
             <p class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F95C04]">218%</p>

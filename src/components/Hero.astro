@@ -12,10 +12,10 @@ const translations = currentLocale === 'en' ? enTranslations : itTranslations;
 ---
 
 <Container>
-  <div class="pt-10 flex flex-col-reverse lg:flex-row items-center" id="hero">
-    <div class="w-full lg:w-1/2 py-4 sm:py-5 md:py-10 lg:py-20">
+  <div class="pt-10 flex flex-col-reverse lg:flex-row justify-center items-center" id="hero">
+    <div class="w-auto py-4 sm:py-5 md:py-10 lg:py-20">
       <div class="text-left space-y-2 sm:space-y-3 md:space-y-4">
-        <h1 class="mt-10 md:mt-0 text-[28px] font-semibold sm:text-[36px] md:text-[38px] lg:text-[40px] xl:text-[48px] leading-tight">
+        <h1 class=" mt-10 md:mt-0 text-[28px] font-semibold sm:text-[36px] md:text-[38px] lg:text-[40px] xl:text-[48px] leading-tight">
           {translations.hero.title1}<br/>
           {translations.hero.title2}<br/>
           <span class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white px-2 py-1 inline-block mt-2 rounded-lg">{translations.hero.title3}</span>
@@ -28,9 +28,7 @@ const translations = currentLocale === 'en' ? enTranslations : itTranslations;
         </div>
         <p class="text-base sm:text-lg text-gray-700 mt-4 sm:mt-5 md:mt-6 mb-2 sm:mb-3 md:mb-4">
           {translations.hero.description1}<br class="hidden sm:inline"/>
-          {translations.hero.description2}
-        </p>
-        <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 md:mb-8">
+          {translations.hero.description2}<br class="hidden sm:inline"/> 
           {translations.hero.description3}<br class="hidden sm:inline"/> 
           {translations.hero.description4}<br class="hidden sm:inline"/>
           {translations.hero.description5}
@@ -64,7 +62,7 @@ const translations = currentLocale === 'en' ? enTranslations : itTranslations;
       </div>
     </div>
     <!-- Hero image for large screens -->
-    <div class="hidden lg:flex w-full lg:w-1/2 py-12 sm:py-4 md:py-10 flex-col items-center lg:items-end">
+    <div class="hidden px-4 lg:flex w-full lg:w-1/2 py-12 sm:py-4 md:py-10 flex-col items-center lg:items-center">
       <div class="relative w-full max-w-sm sm:max-w-md">
         <img src="/hero_img.png" alt="Amazon Dashboard" class="w-full h-[616px] object-cover" />
       </div>

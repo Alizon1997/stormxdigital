@@ -10,6 +10,23 @@ import Table from '../../components/Table.astro';
 import Podcast from '../../components/Podcast.astro';
 import Blog from '@/components/mentorship/Blog.astro';
 import SectionBanner from '@/components/SectionBanner.astro';
+
+function makePhrasesBold(text: string) {
+    const phrasesToBold = [
+        'bespoke Amazon agency',
+        'management of Amazon Seller and Vendor accounts.',
+        'personalized attention',
+        'your Amazon account gets the care it deserves.'
+    ];
+
+    let result = text;
+    phrasesToBold.forEach(phrase => {
+        const regex = new RegExp(`(${phrase})`, 'gi');
+        result = result.replace(regex, '<strong>$1</strong>');
+    });
+
+    return result;
+}
 ---
 
 <Layout title="Positivus">
