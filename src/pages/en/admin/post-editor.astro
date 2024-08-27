@@ -1,7 +1,6 @@
 ---
 export const prerender = false;
 
-import RichTextEditorWrapper from '@/components/RichTextEditorWrapper.astro';
 import AdminLayout from '@/layouts/AdminLayout.astro';
 import TinyMCEEditor from '@/components/RichTextEditor';
 
@@ -58,9 +57,6 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
       </div>
       
       <div class="flex justify-end mt-8 space-x-4">
-        <button type="button" id="saveButton" class="px-6 py-3 bg-gray-900 text-white text-lg rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition duration-150 ease-in-out">
-          Source Code
-        </button>
         <button type="submit" class="px-6 py-3 bg-indigo-600 text-white text-lg rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
           Publish Post
         </button>
@@ -70,109 +66,94 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
 </AdminLayout>
 
 <script>
-  let editor: any = null;
+  let editorInitialized = false;
+  let initializationAttempts = 0;
+  const maxAttempts = 10;
 
-  function initializeTinyMCE(): Promise<void> {
-    return new Promise((resolve) => {
-      const initInterval = setInterval(() => {
-        if (window.tinymce && window.tinymce.get('description')) {
-          editor = window.tinymce.get('description');
-          clearInterval(initInterval);
-          console.log('TinyMCE editor initialized');
-          resolve();
-        }
-      }, 100);
-    });
-  }
-
-  async function getTinyMCEContent(): Promise<string> {
-    if (!editor) {
-      await initializeTinyMCE();
+  function checkEditorInitialization() {
+    if (window.tinymce && window.tinymce.get('description')) {
+      editorInitialized = true;
+      console.log('TinyMCE editor initialized');
+    } else if (initializationAttempts < maxAttempts) {
+      initializationAttempts++;
+      setTimeout(checkEditorInitialization, 500);
+    } else {
+      console.error('TinyMCE editor failed to initialize');
     }
-    return editor.getContent();
   }
 
-  const postForm = document.getElementById('postForm');
-  if (postForm) {
-    postForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+  document.addEventListener('DOMContentLoaded', () => {
+    checkEditorInitialization();
 
-      const typeElement = document.getElementById('type') as HTMLSelectElement;
-      const titleElement = document.getElementById('title') as HTMLInputElement;
-      const briefElement = document.getElementById('brief') as HTMLTextAreaElement;
-      const authorElement = document.getElementById('author') as HTMLInputElement;
-      const authorImageElement = document.getElementById('authorImage') as HTMLInputElement;
+    const form = document.getElementById('postForm');
 
-      if (!typeElement || !titleElement || !briefElement || !authorElement || !authorImageElement) {
-        console.error('One or more form elements are missing');
-        return;
-      }
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-      const type = typeElement.value;
-      const title = titleElement.value;
-      const brief = briefElement.value;
-      const author = authorElement.value;
-      const authorImage = authorImageElement.value;
-
-      try {
-        const description = await getTinyMCEContent();
-
-        const response = await fetch('/api/createPost', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            type,
-            title,
-            brief,
-            author,
-            authorImage,
-            description,
-            publish_date: new Date().toISOString(),
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to publish post');
+        if (!editorInitialized) {
+          alert('The editor is not yet initialized. Please wait a moment and try again.');
+          return;
         }
 
-        const result = await response.json();
-        console.log('Post published successfully:', result);
-        alert('Post published successfully!');
-        // Optionally, reset the form or redirect to a new page
-        // postForm.reset();
-        // window.location.href = '/admin/posts';
-      } catch (error) {
-        console.error('Error publishing post:', error);
-        alert('Error publishing post. Please try again.');
-      }
-    });
-  } else {
-    console.error('Form element not found');
-  }
+        const typeElement = document.getElementById('type') as HTMLSelectElement;
+        const titleElement = document.getElementById('title') as HTMLInputElement;
+        const briefElement = document.getElementById('brief') as HTMLTextAreaElement;
+        const authorElement = document.getElementById('author') as HTMLInputElement;
+        const authorImageElement = document.getElementById('authorImage') as HTMLInputElement;
 
-  const saveButton = document.getElementById('saveButton');
-  if (saveButton) {
-    saveButton.addEventListener('click', async () => {
-      try {
-        const description = await getTinyMCEContent();
-        console.log('Draft content:', description);
-        alert('Draft saved!');
-      } catch (error) {
-        console.error('Error saving draft:', error);
-        alert('Error saving draft. Please try again.');
-      }
-    });
-  } else {
-    console.error('Save button not found');
-  }
+        if (!typeElement || !titleElement || !briefElement || !authorElement || !authorImageElement) {
+          console.error('One or more form elements not found');
+          return;
+        }
 
-  // Initialize TinyMCE when the page loads
-  window.addEventListener('load', () => {
-    initializeTinyMCE().catch(error => {
-      console.error('Error initializing TinyMCE:', error);
-    });
+        const type = typeElement.value;
+        const title = titleElement.value;
+        const brief = briefElement.value;
+        const author = authorElement.value;
+        const authorImage = authorImageElement.value;
+
+        // Get content from TinyMCE
+        const description = window.tinymce.get('description').getContent();
+
+        try {
+          const response = await fetch('/api/createPost', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              type,
+              title,
+              brief,
+              author,
+              authorImage,
+              description,
+              publish_date: new Date().toISOString(),
+            }),
+          });
+
+          if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+          }
+
+          const result = await response.json();
+
+          if (result.success) {
+            alert('Post created successfully');
+            window.location.href = '/admin/blog-panel';
+          } else {
+            throw new Error(result.error || 'Failed to create post');
+          }
+        } catch (error) {
+          console.error('Error creating post:', error);
+          alert(`Failed to create post. Error:`);
+        }
+      });
+    } else {
+      console.error('Form not found');
+    }
   });
 
   // TypeScript declaration for tinymce on window object
