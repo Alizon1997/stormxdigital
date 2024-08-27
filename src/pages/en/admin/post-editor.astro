@@ -2,7 +2,7 @@
 export const prerender = false;
 
 import AdminLayout from '@/layouts/AdminLayout.astro';
-import TinyMCEEditor from '@/components/RichTextEditor';
+import TinyMCEEditor from '@/components/RichTextEditorEdit';
 
 // Check if user is logged in
 if (!Astro.cookies.get('adminLoggedIn')?.boolean()) {
@@ -57,8 +57,8 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
       </div>
       
       <div class="flex justify-end mt-8 space-x-4">
-        <button type="submit" class="px-6 py-3 bg-indigo-600 text-white text-lg rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
-          Publish Post
+        <button type="submit" class="px-6 py-3 bg-indigo-600 text-white text-lg rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+          Initializing Editor...
         </button>
       </div>
     </form>
@@ -68,24 +68,43 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
 <script>
   let editorInitialized = false;
   let initializationAttempts = 0;
-  const maxAttempts = 10;
+  const maxAttempts = 20;
+  const checkInterval = 500;
 
   function checkEditorInitialization() {
     if (window.tinymce && window.tinymce.get('description')) {
       editorInitialized = true;
       console.log('TinyMCE editor initialized');
+      enableSubmitButton();
     } else if (initializationAttempts < maxAttempts) {
       initializationAttempts++;
-      setTimeout(checkEditorInitialization, 500);
+      setTimeout(checkEditorInitialization, checkInterval);
     } else {
       console.error('TinyMCE editor failed to initialize');
+      alert('Failed to initialize the editor. Please refresh the page and try again.');
+    }
+  }
+
+  function enableSubmitButton() {
+    const submitButton = document.querySelector('button[type="submit"]') as HTMLButtonElement;
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Publish Post';
+      submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
     }
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    checkEditorInitialization();
-
     const form = document.getElementById('postForm');
+    const submitButton = document.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Initializing Editor...';
+      submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+    }
+
+    checkEditorInitialization();
 
     if (form) {
       form.addEventListener('submit', async (e) => {
@@ -114,7 +133,13 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
         const authorImage = authorImageElement.value;
 
         // Get content from TinyMCE
-        const description = window.tinymce.get('description').getContent();
+        const tinymce = (window as any).tinymce;
+        const editor = tinymce?.get('description');
+        if (!editor) {
+          console.error('TinyMCE editor not found');
+          return;
+        }
+        const description = editor.getContent();
 
         try {
           const response = await fetch('/api/createPost', {
@@ -148,18 +173,11 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
           }
         } catch (error) {
           console.error('Error creating post:', error);
-          alert(`Failed to create post. Error:`);
+          alert(`Failed to create post. Error: ${error instanceof Error ? error.message : String(error)}`);
         }
       });
     } else {
       console.error('Form not found');
     }
   });
-
-  // TypeScript declaration for tinymce on window object
-  declare global {
-    interface Window {
-      tinymce?: any;
-    }
-  }
 </script>
