@@ -2,8 +2,8 @@
 export const prerender = false;
 
 import RichTextEditorWrapper from '@/components/RichTextEditorWrapper.astro';
-import AdminLayout from '../../../layouts/AdminLayout.astro';
-import TinyMCEEditor from '../../../components/RichTextEditor';
+import AdminLayout from '@/layouts/AdminLayout.astro';
+import TinyMCEEditor from '@/components/RichTextEditor';
 import { Editor } from '@tinymce/tinymce-react';
 
 // Check if user is logged in
@@ -107,7 +107,7 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
       const description = getTinyMCEContent();
 
       try {
-        const response = await fetch('/api/createPost', {
+        const response = await fetch('@/api/createPost', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

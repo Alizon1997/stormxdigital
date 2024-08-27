@@ -6,60 +6,63 @@ import { fetchPosts } from '../lib/fetchPosts';
 const posts = await fetchPosts();
 ---
 
-<div class="max-w-4xl mx-auto px-4 py-8">
-    <h1 class="text-2xl font-bold mb-6">Blog Posts</h1>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-3xl font-bold mb-6">Blog Posts</h1>
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-gray-50">
-                <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Author</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Publish Date</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200" id="postsTableBody">
-                {posts.map((post) => (
-                    <tr id={`post-row-${post.$id}`}>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm font-medium text-gray-900">{post.title}</div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-500">{post.author}</div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-500">{new Date(post.publish_date).toLocaleDateString()}</div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <a href={`./edit-post/${post.$id}`} class="text-indigo-600 hover:text-indigo-900 mr-3">
-                                <FiEdit2 className="inline-block w-5 h-5" />
-                            </a>
-                            <button class="text-red-600 hover:text-red-900 delete-post-btn" data-post-id={post.$id}>
-                                <FiTrash2 className="inline-block w-5 h-5" />
-                            </button>
-                        </td>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">Author</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">Publish Date</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200" id="postsTableBody">
+                    {posts.map((post) => (
+                        <tr id={`post-row-${post.$id}`}>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm font-medium text-gray-900">{post.title}</div>
+                                <div class="text-sm text-gray-500 sm:hidden">{post.author}</div>
+                                <div class="text-sm text-gray-500 sm:hidden md:hidden">{new Date(post.publish_date).toLocaleDateString()}</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap hidden sm:table-cell">
+                                <div class="text-sm text-gray-500">{post.author}</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap hidden md:table-cell">
+                                <div class="text-sm text-gray-500">{new Date(post.publish_date).toLocaleDateString()}</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <div class="flex items-center space-x-4">
+                                    <a href={`./edit-post/${post.$id}`} class="text-indigo-600 hover:text-indigo-900">
+                                        <FiEdit2 className="inline-block w-5 h-5" />
+                                        <span class="sr-only">Edit</span>
+                                    </a>
+                                    <button class="text-red-600 hover:text-red-900 delete-post-btn" data-post-id={post.$id}>
+                                        <FiTrash2 className="inline-block w-5 h-5" />
+                                        <span class="sr-only">Delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="justify-end item-center flex">
-        <button 
-        class="mt-4 py-4 px-6 bg-black font-semibold text-white rounded-md hover:bg-orange" 
-        onclick="window.location.href='/en/admin/post-editor'"
-    >
-        Create Post
-        </button>
+    <div class="mt-6 flex justify-end">
+        <a 
+            href="/en/admin/post-editor"
+            class="py-2 px-4 bg-black hover:bg-gray-800 text-white font-semibold rounded-md transition duration-300 ease-in-out"
+        >
+            Create Post
+        </a>
     </div>
 </div>
 
-
-
 <script>
-    console.log('Script started');
-
     function deletePost(documentId: string): void {
-        console.log('deletePost function called with ID:', documentId);
         if (confirm('Are you sure you want to delete this post?')) {
             fetch('/api/deletePost', {
                 method: 'POST',
@@ -76,7 +79,6 @@ const posts = await fetchPosts();
             })
             .then(result => {
                 if (result.success) {
-                    console.log('Post deleted successfully');
                     const postRow = document.getElementById(`post-row-${documentId}`);
                     if (postRow) {
                         postRow.remove();
@@ -94,12 +96,9 @@ const posts = await fetchPosts();
     }
 
     function setupDeleteButtons(): void {
-        console.log('Setting up delete buttons');
         const deleteButtons = document.querySelectorAll('.delete-post-btn');
-        console.log('Found', deleteButtons.length, 'delete buttons');
         deleteButtons.forEach(button => {
             button.addEventListener('click', (event: Event) => {
-                console.log('Delete button clicked');
                 const target = event.currentTarget as HTMLElement;
                 const postId = target.getAttribute('data-post-id');
                 if (postId) {
@@ -111,12 +110,9 @@ const posts = await fetchPosts();
         });
     }
 
-    // Use different event listeners for different environments
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', setupDeleteButtons);
     } else {
         setupDeleteButtons();
     }
-
-    console.log('Script ended');
 </script>
