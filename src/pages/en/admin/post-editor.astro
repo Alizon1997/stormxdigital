@@ -107,7 +107,7 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
       const description = getTinyMCEContent();
 
       try {
-        const response = await fetch('api/createPost', {
+        const response = await fetch('/api/createPost', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
