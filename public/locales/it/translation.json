@@ -365,6 +365,14 @@
     "Team di esperti in ads, catalogo, SEO e ottimizzazione al tuo servizio",
     "Politica di garanzia: 30 Giorni soddisfatto o rimborsato"
   ]
+},
+
+  "errorPage": {
+    "title": "404 - Pagina Non Trovata",
+    "description": "Siamo spiacenti, la pagina che state cercando non esiste o è stata spostata.",
+    "homeButton": "Vai alla pagina iniziale",
+    "contactButton": "Contatto con Noi"
+
 }
 
 }

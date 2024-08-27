@@ -366,7 +366,14 @@
     "Team of experts in ads, catalog, SEO, and optimization at your service",
     "Guarantee policy: 30-day satisfaction or money back"
   ]
-}
+},
+
+  "errorPage": {
+    "title": "404 - Page Not Found",
+    "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
+    "homeButton": "Go to Homepage",
+    "contactButton": "Contact Us"
+  }
 
 }
 

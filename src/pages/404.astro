@@ -1,0 +1,50 @@
+---
+import Container from "@/components/Container.astro"
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+// Determine the language from the URL or default to Italian
+const lang = Astro.url.pathname.startsWith('/en') ? 'en' : 'it';
+
+// Import translations
+import enTranslations from '../../public/locales/en/translation.json';
+import itTranslations from '../../public/locales/it/translation.json';
+
+const translations = lang === 'en' ? enTranslations : itTranslations;
+
+// Set the correct content type
+Astro.response.headers.set('Content-Type', 'text/html');
+---
+
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{translations.errorPage.title}</title>
+</head>
+<body>
+    <Container>
+        <div class="pt-10 flex flex-col justify-center items-center" id="error-404">
+            <div class="w-full max-w-2xl py-4 sm:py-5 md:py-10 lg:py-20">
+                <div class="text-center space-y-4 md:space-y-6">
+                    <h1 class="text-[36px] sm:text-[48px] md:text-[56px] font-semibold leading-tight">
+                        <span class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white px-2 py-1 inline-block rounded-lg">
+                            {translations.errorPage.title}
+                        </span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-gray-700">
+                        {translations.errorPage.description}
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a 
+                            href={getRelativeLocaleUrl(lang, '')}
+                            class="inline-block text-center w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white font-bold text-base sm:text-lg rounded-xl hover:bg-orange-700 transition duration-300"
+                        >
+                            {translations.errorPage.homeButton}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Container>
+</body>
+</html>

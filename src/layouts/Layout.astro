@@ -13,28 +13,46 @@ import enTranslations from '../../public/locales/en/translation.json';
 import itTranslations from '../../public/locales/it/translation.json';
 
 const translations = currentLocale === 'en' ? enTranslations : itTranslations;
+
+// Define default values for social media meta tags
+const {
+  title = translations.site.title,
+  description = translations.site.description,
+  image = '/StormXLogo.svg', // Replace with your actual default image path
+  url = Astro.url,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{translations.site.title}</title>
-    <meta
-      name="description"
-      content={translations.site.description}
-    />
+    <title>{title}</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, url)} />
+
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <ViewTransitions />
   </head>
-  <body class="bg-white font-SpaceGrotesk ">
+  <body class="bg-white font-SpaceGrotesk">
     <Navbar currentLocale={currentLocale} />
     <slot />
     <Footer/>
-
   </body>
 </html>
