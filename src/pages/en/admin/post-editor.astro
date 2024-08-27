@@ -72,31 +72,41 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
 </AdminLayout>
 
 <script>
+  let editorInitialized = false;
+
   // Function to get TinyMCE content
   function getTinyMCEContent() {
-    return new Promise((resolve, reject) => {
-      const maxAttempts = 10;
-      let attempts = 0;
-
-      const checkEditor = () => {
-        if (typeof window.tinymce !== 'undefined' && window.tinymce.get('description')) {
-          resolve(window.tinymce.get('description').getContent());
-        } else if (attempts < maxAttempts) {
-          attempts++;
-          setTimeout(checkEditor, 500);
-        } else {
-          reject(new Error('TinyMCE editor not found after multiple attempts'));
-        }
-      };
-
-      checkEditor();
-    });
+    if (editorInitialized && window.tinymce && window.tinymce.get('description')) {
+      return window.tinymce.get('description').getContent();
+    } else {
+      throw new Error('TinyMCE editor not initialized or not found');
+    }
   }
+
+  // Wait for TinyMCE to be loaded
+  window.addEventListener('load', () => {
+    if (window.tinymce) {
+      window.tinymce.on('addeditor', (e: { editor: { id: string; }; }) => {
+        if (e.editor.id === 'description') {
+          editorInitialized = true;
+          console.log('TinyMCE editor initialized');
+        }
+      });
+    } else {
+      console.error('TinyMCE not found on window object');
+    }
+  });
 
   const postForm = document.getElementById('postForm');
   if (postForm) {
     postForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      if (!editorInitialized) {
+        console.error('TinyMCE editor not initialized');
+        alert('Editor not ready. Please try again in a few seconds.');
+        return;
+      }
 
       const typeElement = document.getElementById('type') as HTMLSelectElement;
       const titleElement = document.getElementById('title') as HTMLInputElement;
@@ -117,7 +127,7 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
 
       try {
         // Get TinyMCE content
-        const description = await getTinyMCEContent();
+        const description = getTinyMCEContent();
 
         const response = await fetch('/api/createPost', {
           method: 'POST',
@@ -156,9 +166,15 @@ const defaultAuthorImage = "https://i.ibb.co/dMhXy8D/marcello.png";
 
   const saveButton = document.getElementById('saveButton');
   if (saveButton) {
-    saveButton.addEventListener('click', async () => {
+    saveButton.addEventListener('click', () => {
+      if (!editorInitialized) {
+        console.error('TinyMCE editor not initialized');
+        alert('Editor not ready. Please try again in a few seconds.');
+        return;
+      }
+
       try {
-        const description = await getTinyMCEContent();
+        const description = getTinyMCEContent();
         console.log('Draft content:', description);
         alert('Draft saved!');
       } catch (error) {
