@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://www.stormxdigital.com/sitemap-index.xml
+Sitemap: https://www.stormxdigital.vercel.app/sitemap-index.xml

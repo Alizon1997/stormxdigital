@@ -27,7 +27,7 @@ export default defineConfig({
       },
       serialize: (item) => {
         // Customize the priority for different types of pages
-        if (item.url === 'https://www.stormxdigital.com') {
+        if (item.url === 'https://www.stormxdigital.vercel.app') {
           item.priority = 1.0;
         } else if (item.url.includes('/blog/')) {
           item.changefreq = 'daily';
@@ -37,7 +37,7 @@ export default defineConfig({
       },
     })
   ],  
-  site: 'https://www.stormxdigital.com',  
+  site: 'https://www.stormxdigital.vercel.app',  
   i18n: {
     defaultLocale: "it",
     locales: ["en", "it"],
