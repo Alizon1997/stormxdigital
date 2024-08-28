@@ -17,16 +17,17 @@ export const Carousel = ({ cards }) => {
   return (
     <div className="relative w-full px-4 sm:px-28">
       <div className={`p-4 rounded-[20px] shadow-card border border-black flex flex-col ${card.bgClass} ${card.textColor} relative overflow-hidden`}>
-        <div className="z-10">
-          <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-          {card.content && <p className="text-xs mb-2">{card.content}</p>}
-          <ul className="list-disc pl-4 text-xs space-y-1">
+        <div className="z-10 w-full">
+          <div className="flex items-start mb-4">
+            <div className={`text-xl sm:text-4xl font-bold ${card.textColor} mr-2 leading-none`}>{card.number}</div>
+            <h3 className="pr-2 text-lg sm:text-base font-bold leading-tight flex-1">{card.title}</h3>
+          </div>
+          <ul className="list-disc pl-4 text-sm space-y-1">
             {card.listItems.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
         </div>
-        <div className={`absolute bottom-0 right-6 text-4xl font-bold ${card.textColor} z-0`}>{card.number}</div>
       </div>
       <button
         onClick={prevSlide}

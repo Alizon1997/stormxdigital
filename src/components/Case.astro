@@ -23,7 +23,7 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
     
     <div class="mt-4 sm:mt-6 lg:mt-8 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8">
       <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">{translations.successStories.case1.title}</h3>
+        <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">{translations.successStories.case1.title} <br/> {translations.successStories.case1.subtitle}</h3>
         <div>
           <div class="flex items-start mb-2">
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case1.point1.title}</span> {translations.successStories.case1.point1.description}</p>
@@ -33,6 +33,9 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
           </div>
           <div class="flex items-start">
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case1.point3.title}</span> {translations.successStories.case1.point3.description}</p>
+          </div>
+          <div class="flex items-start mt-2">
+            <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case1.point4.title}</span> {translations.successStories.case1.point4.description}</p>
           </div>
         </div>
         <a href="#" class="mt-6 inline-flex items-center text-[#F95C04] font-bold text-lg sm:text-xl hover:underline">
@@ -55,7 +58,7 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
         </div>
       </div>
       <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <img src="/amazon_img.png" alt={translations.successStories.testimonial.imageAlt} class="w-full rounded-lg mb-6 shadow-md" />
+        <img src="/mentorship/multidevice.png" alt={translations.successStories.testimonial.imageAlt} class="w-full rounded-lg mb-6 shadow-md" />
         <div class="bg-white rounded-lg p-4 shadow-inner">
           <h4 class="text-lg sm:text-xl font-semibold mb-2 text-gray-800">{translations.successStories.testimonial.title}</h4>
           <p class="text-base sm:text-lg italic text-gray-700">{translations.successStories.testimonial.quote}</p>
@@ -83,7 +86,7 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
       </div>
       
       <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">{translations.successStories.case2.title}</h3>
+        <h3 class="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">{translations.successStories.case2.title}<br/>{translations.successStories.case2.subtitle}</h3>
         <div>
           <div class="flex items-start mb-2">
             <p class="text-base sm:text-lg lg:text-lg text-gray-700"><span class="font-semibold">{translations.successStories.case2.point1.title}</span> {translations.successStories.case2.point1.description}</p>

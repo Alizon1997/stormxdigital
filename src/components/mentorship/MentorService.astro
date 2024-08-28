@@ -58,17 +58,18 @@ const cards = [
   <div class="flex-row items-center py-5">
     <div class="hidden md:grid md:grid-cols-2 gap-4">
       {cards.map((card, index) => (
-        <div class={`min-h-[310px] p-4 sm:p-6 md:p-8 rounded-[20px] sm:rounded-[45px] shadow-card border border-black justify-between items-start flex flex-col ${card.bgClass} ${card.textColor} relative overflow-hidden`}>
-          <div class="z-10">
-            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">{card.title}</h3>
-            {card.content && <p class="text-xs md:text-base mb-2 sm:mb-4">{card.content}</p>}
+        <div class={`min-h-[310px] p-4 sm:p-6 md:p-8 rounded-[20px] sm:rounded-[45px] shadow-card border border-black flex flex-col ${card.bgClass} ${card.textColor} relative overflow-hidden`}>
+          <div class="z-10 w-full">
+            <div class="flex items-start mb-4">
+              <div class={`text-5xl sm:text-6xl md:text-7xl font-bold ${card.textColor} mr-4 leading-none`}>{card.number}</div>
+              <h3 class="text-xl sm:text-2xl font-bold leading-tight flex-1">{card.title}</h3>
+            </div>
             <ul class="list-disc pl-4 sm:pl-5 text-xs md:text-base space-y-1 sm:space-y-2">
               {card.listItems.map((item) => (
                 <li>{item}</li>
               ))}
             </ul>
           </div>
-          <div class={`absolute bottom-2 right-6 text-4xl sm:text-5xl md:text-6xl font-bold ${card.textColor} z-0`}>{card.number}</div>
         </div>
       ))}
     </div>

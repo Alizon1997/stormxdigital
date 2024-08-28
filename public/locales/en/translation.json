@@ -4,6 +4,8 @@
         "mentorship": "Mentorship",
         "useCases": "Method Storm X",
         "blog": "Blog & How To",
+        "about": "About",
+        "contact": "Contact",
         "openMenu": "Open main menu",
         "bookMeeting": "BOOK A MEETING"
       },
@@ -122,7 +124,8 @@
       "description": "What do we consider \"A Success\" when talking about Amazon at Storm X Digital? Some examples below where we increased Safe Industrial's revenue by 218%. Or how we transformed the First Aid Kit market on Amazon, reaching over 14,000 units sold per month for a single product on Amazon UK.",
       "readMore": "Read More",
       "case1": {
-        "title": "RELIANCE MEDICAL LTD - Amazon Vendor Account",
+        "title": "RELIANCE MEDICAL LTD",
+        "subtitle": "Account Amazon Vendor",
         "point1": {
           "title": "Product Listing Optimization:",
           "description": "Improved listings for greater visibility."
@@ -134,6 +137,10 @@
         "point3": {
           "title": "Advertising Strategy:",
           "description": "Implementation of SP, SB, and SD ADV."
+        },
+        "point4": {
+          "title": "Results Obtained:",
+          "description": "from 1.5 mln to 4mln in 18 months."
         },
         "stat1": "Amazon Revenue Growth",
         "stat2": "Net Margin Increase",
@@ -151,7 +158,8 @@
         "description": "Watch the video to discover how we've helped our clients achieve success on Amazon."
       },
       "case2": {
-        "title": "SAFE INDUSTRIAL LTD - Kirsty - Amazon Seller Account",
+        "title": "SAFE INDUSTRIAL LTD",
+        "subtitle": "Account Amazon Seller",
         "point1": {
           "title": "Long-term Collaboration:",
           "description": "Successful partnership for over two years."

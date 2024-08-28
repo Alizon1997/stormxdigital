@@ -77,6 +77,7 @@ export interface ServiceItem {
       readMore: string;
       case1: {
         title: string;
+        subtitle: string;
         point1: {
           title: string;
           description: string;
@@ -86,6 +87,10 @@ export interface ServiceItem {
           description: string;
         };
         point3: {
+          title: string;
+          description: string;
+        };
+        point4: {
           title: string;
           description: string;
         };
@@ -105,6 +110,7 @@ export interface ServiceItem {
         description: string;
       };
       case2: {
+        subtitle: string;
         title: string;
         point1: {
           title: string;

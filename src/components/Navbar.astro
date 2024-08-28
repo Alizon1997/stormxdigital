@@ -6,6 +6,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 interface Props {
   currentLocale: string;
 }
+
 // Get the current locale from the URL
 const currentLocale = Astro.currentLocale || 'it';
 
@@ -22,8 +23,14 @@ type NavbarKey = keyof typeof translations.navbar;
 const navLinks: { href: string; label: NavbarKey; isScroll?: boolean }[] = [
   { href: '/#method', label: 'services', isScroll: true },
   { href: '/mentorship', label: 'mentorship' },
+  { href: '/#about', label: 'about' },
+  { href: '/#contact', label: 'contact', isScroll: true },
   { href: '/blog', label: 'blog' },
 ];
+
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === '/' || currentPath === `/${currentLocale}` || currentPath === `/${currentLocale}/`;
+
 ---
 
 <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
@@ -48,17 +55,33 @@ const navLinks: { href: string; label: NavbarKey; isScroll?: boolean }[] = [
 
       <div id="navbar-default" class="hidden w-full lg:flex lg:w-auto lg:order-0">
         <ul class="flex flex-col p-4 mt-4 font-medium lg:flex-row lg:space-x-4 xl:space-x-8 lg:mt-0 lg:border-0 lg:p-0">
-          {navLinks.map((link) => (
-            <li>
-              <a
-                href={getRelativeLocaleUrl(currentLocale, link.href)}
-                class={`block py-2 px-3 underline text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 lg:p-0 ${link.isScroll ? 'scroll-link' : ''}`}
-                data-scroll={link.isScroll ? 'true' : 'false'}
-              >
-                {translations.navbar[link.label]}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            let href: string;
+            let isScrollLink = link.isScroll && isHomePage;
+
+            if (link.label === 'contact' && !isHomePage) {
+              href = `/${currentLocale}/#contact`;
+              isScrollLink = false;
+            } else if (link.href.startsWith('/#')) {
+              href = `/${currentLocale}${link.href}`;
+            } else if (link.href === '/mentorship' || link.href === '/blog') {
+              href = getRelativeLocaleUrl(currentLocale, link.href);
+            } else {
+              href = getRelativeLocaleUrl(currentLocale, link.href);
+            }
+
+            return (
+              <li>
+                <a
+                  href={href}
+                  class={`block py-2 px-3 underline text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 lg:p-0 ${isScrollLink ? 'scroll-link' : ''}`}
+                  data-scroll={isScrollLink ? 'true' : 'false'}
+                >
+                  {translations.navbar[link.label]}
+                </a>
+              </li>
+            );
+          })}
           <li class="lg:hidden mt-4">
             <a
               href="https://cal.com/marcello-di-pierro/amazon-growth-session"
@@ -117,8 +140,8 @@ const navLinks: { href: string; label: NavbarKey; isScroll?: boolean }[] = [
     window.addEventListener('resize', toggleMenuVisibility);
   }
 
-  // Smooth scrolling for navbar links
-  document.querySelectorAll('.scroll-link').forEach((anchor: Element) => {
+   // Smooth scrolling for navbar links
+   document.querySelectorAll('.scroll-link').forEach((anchor: Element) => {
     anchor.addEventListener('click', (e: Event) => {
       e.preventDefault();
 

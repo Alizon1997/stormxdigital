@@ -4,6 +4,8 @@
         "blog": "Blog & How To",
         "useCases": "Metodo Storm X",
         "mentorship": "Mentorship",
+        "about": "About",
+        "contact": "Contact",
         "openMenu": "Open main menu",
         "bookMeeting": "PIANIFICA CHIAMATA"
       },
@@ -122,7 +124,8 @@
       "description": "Cosa consideriamo \"Un Successo\" quando parliamo di Amazon a Storm X Digital? Alcuni esempi qui sotto dove abbiamo aumentato del 218% il fatturato di Safe Industrial. Oppure come abbiamo trasformato il mercato dei Kit Di Primo Soccorso su Amazon raggiungendo olte 14 Mila unità vendute al mese per un solo prodotto in Amazon UK.",
       "readMore": "Leggi Di Più",
       "case1": {
-        "title": "RELIANCE MEDICAL LTD - Account Amazon Vendor",
+        "title": "RELIANCE MEDICAL LTD",
+        "subtitle": "Account Amazon Vendor",
         "point1": {
           "title": "Ottimizzazione Schede Prodotto:",
           "description": "Miglioramento delle listinge per maggiore visibilità."
@@ -134,6 +137,10 @@
         "point3": {
           "title": "Strategia Pubblicitaria:",
           "description": "Implementazione di SP, SB e SD ADV."
+        },
+        "point4": {
+          "title": "Risultati Ottenuti:",
+          "description": "da 1.5 mln a 4mln in 18 mesi."
         },
         "stat1": "Crescita Fatturato Amazon",
         "stat2": "Incremento Margine Netto",
@@ -151,7 +158,8 @@
         "description": "Guarda il video per scoprire come abbiamo aiutato i nostri clienti a raggiungere il successo su Amazon."
       },
       "case2": {
-        "title": "SAFE INDUSTRIAL LTD - Kirsty - Account Amazon Seller",
+        "title": "SAFE INDUSTRIAL LTD",
+        "subtitle": "Account Amazon Seller",
         "point1": {
           "title": "Collaborazione Duratura:",
           "description": "Partnership di successo da oltre due anni."

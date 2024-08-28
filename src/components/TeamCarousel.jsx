@@ -25,7 +25,7 @@ const TeamMember = ({ title, description, name, link, profile }) => (
         </a>
       </div>
       <hr className="w-full border border-zinc-200"/>
-      <p className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg line-clamp-3 sm:line-clamp-4">{description}</p>
+      <p className="text-[10px] xs:text-xs sm:text-[13px] sm:font-semibold md:text-[14px] md:font-semibold lg:text-[14px] lg:font-medium line-clamp-3 sm:line-clamp-4">{description}</p>
     </div>
   </div>
 );

@@ -20,12 +20,14 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
 const servicesData: ServiceItem[] = currentLocale === 'en' ? enServicesData : itServicesData;
 ---
 
+
 <Container>
-<section id="method">
-  <div class="relative flex flex-col items-center md:flex-row" id="services">
-    <Topic title={translations.services.title} description={translations.services.description}>
-  </div>
-</section>
+  <section id="method">
+    <div class="relative flex flex-col items-center md:flex-row" id="services">
+      <Topic title={translations.services.title} description={translations.services.description}>
+    </div>
+  </section>
+
   <div class="flex-row items-center py-5">
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
       {servicesData.map(({ background, name1, name2, arrow, link, image, description }: ServiceItem) => (
@@ -42,7 +44,7 @@ const servicesData: ServiceItem[] = currentLocale === 'en' ? enServicesData : it
             <p class="text-lg md:text-lg font-normal mb-4">
               {description}
             </p>
-            <a class="justify-start items-center gap-[15px] inline-flex" href={getRelativeLocaleUrl(currentLocale, link)}>
+            <a class="justify-start items-center gap-[15px] inline-flex" href="#contact">
               <div class="w-[41px] h-[41px] relative">
                 <img class="w-[41px] h-[41px] left-0 top-0 absolute" src={arrow} alt="Arrow" />
               </div>
