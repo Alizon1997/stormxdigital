@@ -19,9 +19,8 @@ const translations = currentLocale === 'en' ? enTranslations : itTranslations;
 type NavbarKey = keyof typeof translations.navbar;
 
 // Define your navigation links here
-const navLinks: { href: string; label: NavbarKey }[] = [
-  { href: '/#services', label: 'services' },
-  { href: '/#projects', label: 'useCases' },
+const navLinks: { href: string; label: NavbarKey; isScroll?: boolean }[] = [
+  { href: '/#method', label: 'services', isScroll: true },
   { href: '/mentorship', label: 'mentorship' },
   { href: '/blog', label: 'blog' },
 ];
@@ -53,7 +52,8 @@ const navLinks: { href: string; label: NavbarKey }[] = [
             <li>
               <a
                 href={getRelativeLocaleUrl(currentLocale, link.href)}
-                class="block py-2 px-3 underline text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 lg:p-0"
+                class={`block py-2 px-3 underline text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-700 lg:p-0 ${link.isScroll ? 'scroll-link' : ''}`}
+                data-scroll={link.isScroll ? 'true' : 'false'}
               >
                 {translations.navbar[link.label]}
               </a>
@@ -116,6 +116,24 @@ const navLinks: { href: string; label: NavbarKey }[] = [
     toggleMenuVisibility();
     window.addEventListener('resize', toggleMenuVisibility);
   }
+
+  // Smooth scrolling for navbar links
+  document.querySelectorAll('.scroll-link').forEach((anchor: Element) => {
+    anchor.addEventListener('click', (e: Event) => {
+      e.preventDefault();
+
+      const href = (anchor as HTMLAnchorElement).getAttribute('href');
+      if (href) {
+        const targetId = href.split('#')[1];
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
 </script>
 
 <style>

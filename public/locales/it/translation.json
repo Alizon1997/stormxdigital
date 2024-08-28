@@ -1,9 +1,9 @@
 {
     "navbar": {
         "services": "Amazon",
-        "useCases": "Use Cases",
+        "blog": "Blog & How To",
+        "useCases": "Metodo Storm X",
         "mentorship": "Mentorship",
-        "blog": "Blog",
         "openMenu": "Open main menu",
         "bookMeeting": "PIANIFICA CHIAMATA"
       },
