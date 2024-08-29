@@ -15,9 +15,9 @@
     },
 
     "hero": {
-        "title1": "THE ONLY AMAZON AGENCY",
-        "title2": "THAT WORKS WITH YOU",
-        "title3": "LIKE A COLLEAGUE",
+        "title1": "The Only Amazon Agency",
+        "title2": "That Works Alongside You",
+        "title3": "Like a Colleague",
         "description1": "We are a bespoke Amazon agency, specializing in the",
         "description2": "professional management of Amazon Seller and Vendor accounts.",
         "description3": "Unlike large agencies, we offer personalized attention and tailored",
@@ -265,9 +265,9 @@
     }
 },
 "mentorhero": {
-  "title1": "BOOST YOUR AMAZON BUSINESS",
-  "title2": "IN 6 EASY STEPS WITH THE",
-  "title3": "“STORM X METHOD”",
+  "title1": "Boost Your Amazon Business",
+  "title2": "In 6 Simple Steps With",
+  "title3": "“Storm X Method”",
   "description1": "We support you with strategic and technical calls in managing your",
   "description2": "Amazon Seller and Vendor Central. You'll have access to two monthly meetings",
   "description3": "where you can ask us any questions and we'll clarify any doubts",
@@ -342,7 +342,7 @@
   }
 },
 "mentorFounder": {
-  "title": "Schedule A Call To Meet Our Coach",
+  "title": "Schedule A Call and Meet Our Coach",
   "description": "All the secrets of our team revealed in this playbook. The same processes we implement for our clients we have transcribed and made available free of charge for all E-Commerce managers struggling with Amazon",
   "call": "Schedule Free Call"
 },
