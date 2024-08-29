@@ -29,7 +29,9 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
         {translations.contact.questions}
       </p>
       <button class="text-base lg:text-base text-white underline flex items-center">
+        <a href="https://cal.com/marcello-di-pierro/amazon-growth-session">
         <span class="mr-2 flex flex-row justify-center items-center"><svg width="16px" height="16px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#ffffff"></path></g></svg>&nbsp;{translations.contact.scheduleCall}</span>
+      </a>
       </button>
     </div>
     
@@ -46,19 +48,11 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
         <!-- Flex container to align textarea and button -->
         <div class="flex flex-col lg:flex-row gap-4 lg:gap-0 justify-center lg:items-center">
             <textarea placeholder={translations.contact.message} class="w-full bg-black border border-[#343434] rounded-xl p-2 text-sm text-white lg:mr-4" rows="4"></textarea>
-            <button type="submit" class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white py-1 px-12 rounded-xl w-full lg:w-auto text-base justify-center items-center mt-2 lg:mt-0">{translations.contact.contactUsNow}</button>
+            <button type="submit" class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% text-white py-1 px-2 rounded-xl w-full lg:w-auto text-base justify-center items-center mt-2 lg:mt-0">{translations.contact.contactUsNow}</button>
           </div>
 
       </form>
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 text-sm text-white border border-[#343434] rounded-3xl p-4">
-        <div class="flex items-center mb-2 sm:mb-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <span class="text-base lg:text-lg text-orange">{translations.contact.scheduleFreeCall}</span>
-        </div>
-        <span class="text-base lg:text-lg break-all">{translations.contact.emailmarcello}</span>
-      </div>
+
     </div>
   </div>
 </Container>
