@@ -200,6 +200,11 @@
   "title": "Amazon Podcast",
   "description": "Che tu sia un Fondatore, un Imprenditore, un Direttore E-Commerce, un Manager di Marketplace o un Manager E-Commerce, puoi ascoltare tutto ciò di cui hai bisogno per gestire con successo Amazon Vendor & Seller dalla nostra Sezione Blog `How To` e dal nostro Podcast settimanale."
 },
+"notFound":{
+  "title": "404: Page Not Found",
+  "message": "We're sorry, but the page you're looking for doesn't exist or has been moved.",
+  "homeLink": "Go back to homepage"
+},
  "contact": {
   "title": "Contattaci",
   "description": "Mettiti in contatto con il nostro team per un'assistenza personalizzata.",

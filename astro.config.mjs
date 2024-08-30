@@ -2,14 +2,14 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel/serverless';
-import sitemap from '@astrojs/sitemap';  
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   output: 'server',
-  adapter: vercel({edgeMiddleware: true, }),
+  adapter: vercel({edgeMiddleware: true}),
   integrations: [
-    tailwind(), 
-    react(), 
+    tailwind(),
+    react(),
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
@@ -22,12 +22,12 @@ export default defineConfig({
         }
       },
       filter: (page) => {
-        // Exclude admin pages or any other pages you don't want in the sitemap
-        return !page.includes('/admin');
+        // Exclude admin pages and 404 page from the sitemap
+        return !page.includes('/admin') && !page.includes('404');
       },
       serialize: (item) => {
         // Customize the priority for different types of pages
-        if (item.url === 'https://www.stormxdigital.vercel.app') {
+        if (item.url === 'https://www.stormxdigital.com') {
           item.priority = 1.0;
         } else if (item.url.includes('/blog/')) {
           item.changefreq = 'daily';
@@ -36,13 +36,13 @@ export default defineConfig({
         return item;
       },
     })
-  ],  
-  site: 'https://www.stormxdigital.vercel.app',  
+  ],
+  site: 'https://www.stormxdigital.com',
   i18n: {
     defaultLocale: "it",
     locales: ["en", "it"],
     routing: {
-      prefixDefaultLocale: true
+      prefixDefaultLocale: false
     }
   },
   vite: {

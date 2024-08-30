@@ -11,7 +11,7 @@
       },
     "site": {
         "title": "StormX Digital",
-        "description": "Boost your Amazon sessions with Storm X Digital! Our team of experts select the best organic keywords to optimize your listings' search engine."
+        "description": "Boost your Amazon account and listing sessions with Storm X Digital! Our team of experts select the best organic keywords to optimize your listings' search engine."
     },
 
     "hero": {
@@ -263,6 +263,11 @@
       "content": "Marcello and Storm X help us in the complete management of our Amazon Vendor in Europe. The Storm X team speaks several languages which has made it possible for us to expand in Europe.",
       "additionalContent": "Thanks to Storm X, our Amazon business now generates over 4 Million in turnover. When we started we were at 1.5."
     }
+},
+"notFound":{
+  "title": "404: Page Not Found",
+  "message": "We're sorry, but the page you're looking for doesn't exist or has been moved.",
+  "homeLink": "Go back to homepage"
 },
 "mentorhero": {
   "title1": "Boost Your Amazon Business",
