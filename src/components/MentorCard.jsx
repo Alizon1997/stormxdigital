@@ -30,6 +30,7 @@ export const Carousel = ({ cards }) => {
         </div>
       </div>
       <button
+        name='Previous mentor'
         onClick={prevSlide}
         className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full"
         aria-label="Previous slide"
@@ -37,6 +38,7 @@ export const Carousel = ({ cards }) => {
         <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
       <button
+        name='Next mentor'
         onClick={nextSlide}
         className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full"
         aria-label="Next slide"

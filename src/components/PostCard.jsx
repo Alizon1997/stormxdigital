@@ -84,12 +84,14 @@ const PostCarousel = ({ posts, translations, currentLocale }) => {
       {limitedPosts.length > slidesPerView && (
         <>
           <button
+            name='previous blog'
             onClick={prevSlide}
             className="absolute left-0 xl:-left-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-1 sm:p-2 shadow-md z-10"
           >
             <ChevronLeft size={20} />
           </button>
           <button
+            name='next post'
             onClick={nextSlide}
             className="absolute right-0 xl:-right-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-1 sm:p-2 shadow-md z-10"
           >

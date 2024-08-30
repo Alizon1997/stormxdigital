@@ -46,6 +46,7 @@ const IframeCarousel = () => {
                 style={{ borderRadius: '12px' }}
                 src={src}
                 frameBorder="0"
+                name="stormxdigital amazon podcasts"
                 allowFullScreen={false}
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
@@ -56,6 +57,7 @@ const IframeCarousel = () => {
       </Swiper>
       <div className="flex justify-center mt-4 space-x-4">
         <button
+          name='Previous podcast'
           onClick={() => swiperRef.current?.slidePrev()}
           className="bg-gray-300 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
           aria-label="Previous slide"
@@ -63,6 +65,7 @@ const IframeCarousel = () => {
           <ChevronLeft className="w-5 h-5 text-gray-700" />
         </button>
         <button
+          name='Next podcast'
           onClick={() => swiperRef.current?.slideNext()}
           className="bg-gray-300 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
           aria-label="Next slide"
