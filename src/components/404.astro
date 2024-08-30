@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "404: Page Not Found";
+const heading = "Oops! Page Not Found";
+const message = "We're sorry, but the page you're looking for doesn't exist or has been moved.";
+const homeLink = "Go back to homepage";
+
+// Function to determine the correct language prefix
+function getLanguagePrefix(pathname: string) {
+  const segments = pathname.split('/').filter(Boolean);
+  return segments[0] === 'en' || segments[0] === 'it' ? `/${segments[0]}` : '';
+}
+
+// Get the current URL path
+const currentPath = Astro.url.pathname;
+const languagePrefix = getLanguagePrefix(currentPath);
+
+// Redirect logic
+if (currentPath !== '/404' && currentPath !== '/en/404' && currentPath !== '/it/404') {
+  return Astro.redirect(`${languagePrefix}/404`);
+}
+---
+
+<Layout title={title}>
+  <main class="flex flex-col items-center justify-center min-h-screen text-center px-4">
+    <h1 class="text-4xl font-bold mb-4">{heading}</h1>
+    <p class="text-xl mb-8">{message}</p>
+    <a href={languagePrefix || '/'} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      {homeLink}
+    </a>
+  </main>
+</Layout>

@@ -23,7 +23,7 @@ export default defineConfig({
       },
       filter: (page) => {
         // Exclude admin pages and 404 page from the sitemap
-        return !page.includes('/admin') && !page.includes('404');
+       return !page.includes('/admin') && !page.endsWith('404.astro');
       },
       serialize: (item) => {
         // Customize the priority for different types of pages
@@ -42,7 +42,7 @@ export default defineConfig({
     defaultLocale: "it",
     locales: ["en", "it"],
     routing: {
-      prefixDefaultLocale: false
+      prefixDefaultLocale: true
     }
   },
   vite: {
