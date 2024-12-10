@@ -2,259 +2,108 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/components/Container.astro';
 import Process from "@/components/outreach/Process.astro";
+import Contact from '@/components/Contact.astro';
+import HeroSection from '@/components/outreach/HeroSection.astro';
+import PartnersSection from '@/components/outreach/PartnersSection.astro';
+import Step from '@/components/outreach/Step.astro';
+import type { OutreachTranslations } from '@/components/types/outreach';
 
 const currentLocale = Astro.currentLocale || 'it';
 
 // Import translations
-import enTranslations from '@/../../public/locales/en/translation.json';
-import itTranslations from '@/../../public/locales/it/translation.json';
-import Contact from '@/components/Contact.astro';
+import enTranslations from '../../public/locales/en/translation.json';
+import itTranslations from '../../public/locales/it/translation.json';
 
-const translations = currentLocale === 'en' ? enTranslations : itTranslations;
+const translations = (currentLocale === 'en' ? enTranslations : itTranslations) as OutreachTranslations;
 ---
 
-<Layout title="Outreach Multicanale - Storm X Digital"
-description="Acquisisci nuovi clienti con il nostro servizio di outreach multicanale. Raggiungi i decision maker dei tuoi potenziali clienti attraverso email, chiamate e LinkedIn."
-image="/StormXLogo.svg">
-  <main class="pt-32 pb-16">
+<Layout 
+  title="Outreach Multicanale - Storm X Digital"
+  description="Acquisisci nuovi clienti con il nostro servizio di outreach multicanale. Raggiungi i decision maker dei tuoi potenziali clienti attraverso email, chiamate e LinkedIn."
+  image="/StormXLogo.svg"
+>
+  <main class="pt-32 pb-16 overflow-hidden">
     <Container>
-      <div class="pb-8 flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-24">
-        <!-- Left Content -->
-        <div class="w-full lg:w-1/2 space-y-6 lg:max-w-2xl">
-          <h1 class="text-4xl sm:text-5xl font-bold leading-tight">
-            {translations.outreach.hero.mainTitle}<br/>
-            <span class="text-3xl sm:text-4xl">{translations.outreach.hero.subTitle}</span><br/>
-            <span class="bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-white px-4 py-2 inline-block mt-2 rounded-lg">{translations.outreach.hero.highlightedTitle}</span>
-          </h1>
-          
-          <div class="space-y-4 mt-4">
-            <div class="flex items-start gap-3">
-              <span class="text-[#FF4D00] text-2xl">👉</span>
-              <p class="text-lg">{translations.outreach.hero.bulletPoints.point1}</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="text-[#FF4D00] text-2xl">👉</span>
-              <p class="text-lg">{translations.outreach.hero.bulletPoints.point2}</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="text-[#FF4D00] text-2xl">👉</span>
-              <p class="text-lg">{translations.outreach.hero.bulletPoints.point3}</p>
-            </div>
-          </div>
+      <HeroSection translations={translations} />
+      <PartnersSection />
 
-          <a 
-            href="https://cal.com/marcello-di-pierro/amazon-growth-session"
-            class="inline-block mt-8 px-8 py-4 bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-white font-bold text-lg rounded-lg hover:opacity-90 transition-opacity duration-300"
-          >
-            {translations.outreach.hero.ctaButton}
-          </a>
-        </div>
+      <div class="pt-28 text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-3xl mx-auto mb-8 animate-on-scroll">
+          {translations.outreach.process.mainTitle}
+        </h2>
+        <p class="mt-4 sm:mt-8 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-[1200px] mx-auto text-gray-700">
+          {translations.outreach.process.description}
+        </p>
 
-        <!-- Right Image -->
-        <div class="w-full lg:w-2/5 flex justify-center">
-          <img
-            src="https://i.ibb.co/G76DvwR/image-1.png"
-            alt="Outreach Image"
-            class="w-3/4 h-auto"
+        <div class="mt-16 sm:mt-20 space-y-16 sm:space-y-24 max-w-[1200px] mx-auto px-4">
+          <Step 
+            step={translations.outreach.process.steps.step1} 
+            stepNumber={1} 
+            imagePosition="right"
+          />
+          <Step 
+            step={translations.outreach.process.steps.step2} 
+            stepNumber={2} 
+            imagePosition="left"
+          />
+          <Step 
+            step={translations.outreach.process.steps.step3} 
+            stepNumber={3} 
+            imagePosition="right"
+          />
+          <Step 
+            step={translations.outreach.process.steps.step4} 
+            stepNumber={4} 
+            imagePosition="left"
           />
         </div>
+      </div>
+
+      <Process />
+      
+      <div id="contact" class="pt-20">
+        <Contact />
       </div>
     </Container>
-
-    <div class="mt-32 px-4">
-      <div class="max-w-9xl mx-auto">
-        <div class="flex flex-wrap justify-center items-center gap-16 md:gap-20">
-          <img src="/a.png" alt="Partner Logo" class="h-20 w-auto object-contain px-4" />
-          <img src="/b.png" alt="Partner Logo" class="h-20 w-auto object-contain px-4" />
-          <img src="/c.png" alt="Partner Logo" class="h-20 w-auto object-contain px-4" />
-          <img src="/d.png" alt="Partner Logo" class="h-20 w-auto object-contain px-4" />
-          <img src="/e.png" alt="Partner Logo" class="h-20 w-auto object-contain px-4" />
-          <img src="/f.png" alt="Partner Logo" class="h-20 w-auto object-contain px-4" />
-        </div>
-      </div>
-    </div>
-
-    <div class="pt-28 text-center mt-28">
-      <h2 class="text-5xl font-bold leading-tight">
-        {translations.outreach.process.mainTitle}
-      </h2>
-      <p class="mt-8 text-2xl leading-relaxed max-w-[1200px] mx-auto">
-        {translations.outreach.process.description}
-      </p>
-
-      <!-- Steps Section -->
-      <div class="mt-20 space-y-24 max-w-[1200px] mx-auto px-4">
-        <!-- Step 1 -->
-        <div class="pb-4 flex flex-col md:flex-row items-center gap-8 md:gap-32">
-          <div class="w-full md:w-3/4 bg-white rounded-2xl p-8 shadow-lg">
-            <div class=" text-white text-4xl font-extrabold rounded-lg text-left mb-6">
-             <span class="bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-4xl rounded-md px-4">Step 1</span>
-            </div>
-            <h3 class="text-left text-3xl font-bold mb-6">{translations.outreach.process.steps.step1.title}</h3>
-            <p class="text-left text-xl font-bold mb-4">{translations.outreach.process.steps.step1.subtitle}</p>
-            <ul class="text-left space-y-3 mb-6 px-8">
-              {translations.outreach.process.steps.step1.points.map((point) => (
-                <li class="text-md">• {point}</li>
-              ))}
-            </ul>
-            <p class="text-left text-[16px] font-extrabold"><span class="font-extrabold text-orange">{translations.outreach.process.steps.step1.purpose.label}</span> {translations.outreach.process.steps.step1.purpose.text}</p>
-          </div>
-          <div class="w-full md:w-[454px]">
-            <img src="/step-1.png" alt="Assessment Process" class="w-full rounded-lg"/>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="pb-4 flex flex-col md:flex-row items-center gap-8 md:gap-32">
-          <div class="w-full md:w-1/2">
-            <img src="/step-2.png" alt="Decision Makers" class="w-full rounded-lg"/>
-          </div>
-          <div class="w-full md:w-3/4 bg-white rounded-2xl p-8 shadow-lg ml-8 pb-8">
-            <div class="text-white text-4xl font-extrabold rounded-lg text-left mb-6">
-              <span class="bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-4xl rounded-md px-4">Step 2</span>
-            </div>
-            <h3 class="text-left text-3xl font-bold mb-6">{translations.outreach.process.steps.step2.title}</h3>
-            <p class="text-left text-xl font-bold mb-4">{translations.outreach.process.steps.step2.subtitle}</p>
-            <ul class="text-left space-y-3 mb-6 px-8">
-              {translations.outreach.process.steps.step2.points.map((point) => (
-                <li class="text-md">• {point}</li>
-              ))}
-            </ul>
-            <p class="text-left text-[16px] font-extrabold"><span class="font-extrabold text-orange">{translations.outreach.process.steps.step2.purpose.label}</span> {translations.outreach.process.steps.step2.purpose.text}</p>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="pb-4 flex flex-col md:flex-row items-center gap-8 md:gap-32">
-          <div class="w-full md:w-3/4 bg-white rounded-2xl p-8 shadow-lg">
-            <div class="text-white text-4xl font-extrabold rounded-lg text-left mb-6">
-              <span class="bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-4xl rounded-md px-4">Step 3</span>
-            </div>
-            <h3 class="text-left text-3xl font-bold mb-6">{translations.outreach.process.steps.step3.title}</h3>
-            <p class="text-left text-xl font-bold mb-4">{translations.outreach.process.steps.step3.subtitle}</p>
-            <ul class="text-left space-y-3 mb-6 px-8">
-              {translations.outreach.process.steps.step3.points.map((point) => (
-                <li class="text-md">• {point}</li>
-              ))}
-            </ul>
-            <p class="text-left text-[16px] font-extrabold"><span class="font-extrabold text-orange">{translations.outreach.process.steps.step3.purpose.label}</span> {translations.outreach.process.steps.step3.purpose.text}</p>
-          </div>
-          <div class="w-full md:w-1/2">
-            <img src="/step-3.png" alt="Personalized Messages" class="w-full rounded-lg"/>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="pb-8 flex flex-col md:flex-row items-center gap-8 md:gap-32">
-          <div class="w-full md:w-1/2">
-            <img src="/step-4.png" alt="Follow Up Process" class="w-full rounded-lg"/>
-          </div>
-          <div class="w-full md:w-3/4 bg-white rounded-2xl p-8 shadow-lg ml-8 pb-8">
-            <div class="text-white text-4xl font-extrabold rounded-lg text-left mb-6">
-              <span class="bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-4xl rounded-md px-4">Step 4</span>
-            </div>
-            <h3 class="text-left text-3xl font-bold mb-6">{translations.outreach.process.steps.step4.title}</h3>
-            <p class="text-left text-xl font-bold mb-4">{translations.outreach.process.steps.step4.subtitle}</p>
-            <ul class="text-left space-y-3 mb-6 px-8">
-              {translations.outreach.process.steps.step4.points.map((point) => (
-                <li class="text-md">• {point}</li>
-              ))}
-            </ul>
-            <p class="text-left text-[16px] font-extrabold"><span class="font-extrabold text-orange">{translations.outreach.process.steps.step4.purpose.label}</span> {translations.outreach.process.steps.step4.purpose.text}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="max-w-[1200px] mx-auto px-4 py-16">
-      <h2 class="text-center text-4xl font-bold mb-4">{translations.outreach.comparison.title}</h2>
-      <p class="text-xl text-center mb-12">{translations.outreach.comparison.subtitle}</p>
-
-      <h3 class="text-3xl font-bold mb-8">{translations.outreach.comparison.featuresTitle}</h3>
-
-      <div class="bg-[#E5E5E5] rounded-xl shadow-lg overflow-hidden">
-        <table class="w-full border-collapse border border-[#E5E5E5]">
-          <thead>
-            <tr class="bg-[#E5E5E5] text-black">
-              <th class="p-8 text-left text-2xl font-bold w-[60%] border-b border-gray-400">{translations.outreach.comparison.tableHeaders.benefits}</th>
-              <th class="p-8 text-center text-2xl font-bold w-[20%] border-b border-gray-400">{translations.outreach.comparison.tableHeaders.stormX}</th>
-              <th class="p-8 text-center text-2xl font-bold w-[20%] border-b border-gray-400">{translations.outreach.comparison.tableHeaders.traditional}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {translations.outreach.comparison.features.map((feature) => (
-              <tr class="border-b border-gray-400 hover:bg-gray-50 transition-colors duration-150">
-                <td class="p-8 border-gray-400">
-                  <p class="text-lg max-w-xl">{feature}</p>
-                </td>
-                <td class="p-8 text-2xl text-center text-black font-bold border-gray-400">✓</td>
-                <td class="p-8 text-2xl text-center text-gray-600">X</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="max-w-[1200px] mx-auto px-4 py-16">
-      <h2 class="text-center text-4xl font-bold mb-4">{translations.outreach.successStory.title}</h2>
-      <p class="text-xl text-center mb-12">{translations.outreach.successStory.subtitle}</p>
-
-      <div class="flex flex-col lg:flex-row items-start gap-12 bg-white rounded-2xl p-8 shadow-lg justify-between">
-        <div class="w-full lg:w-1/2">
-          <h3 class="text-3xl font-bold mb-4">{translations.outreach.successStory.company.name}</h3>
-          <h4 class="text-3xl text-black font-bold mb-4">{translations.outreach.successStory.company.type}</h4>
-          
-          <p class="text-gray-700 mb-8">
-            {translations.outreach.successStory.company.description1}
-          </p>
-          <p class="text-gray-700 mb-8">
-            {translations.outreach.successStory.company.description2}
-          </p>
-
-          <div class="flex justify-between items-center mt-8">
-            <div class="text-center">
-              <div class="text-5xl font-bold text-[#FF6B00]">{translations.outreach.successStory.company.stats.growth.value}</div>
-              <div class="pt-2 font-medium text-sm text-left">{translations.outreach.successStory.company.stats.growth.label}</div>
-            </div>
-            <div class="text-center">
-              <div class="text-5xl font-bold text-[#FF6B00]">{translations.outreach.successStory.company.stats.meetings.value}</div>
-              <div class="pt-2 font-medium text-sm text-left">{translations.outreach.successStory.company.stats.meetings.label}</div>
-            </div>
-            <div class="text-center">
-              <div class="text-5xl font-bold text-[#FF6B00]">{translations.outreach.successStory.company.stats.margin.value}</div>
-              <div class="pt-2 font-medium text-sm text-left">{translations.outreach.successStory.company.stats.margin.label}</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="w-full lg:w-2/5">
-          <img 
-            src="/success_story.png" 
-            alt="Success Story Screenshot" 
-            class="w-full rounded-lg shadow-md"
-          />
-        </div>
-      </div>
-
-      <div class="pl-6 mt-32 flex items-center justify-between">
-        <p class="text-lg max-w-2xl text-left">
-          {translations.outreach.cta.description}
-        </p>
-        <a 
-          href="#" 
-          class="inline-block text-3xl text-white font-bold p-2 rounded-lg hover:opacity-90 transition-all duration-300 bg-gradient-to-r from-[#FF8E0A] via-[#F95C04] to-[#F95C04] bg-[length:200%_100%] bg-left hover:bg-right"
-        >
-          {translations.outreach.cta.button}
-        </a>
-      </div>
-    </div>
-
-    <Process/>
-    
-    <div id="contact" class="pt-20">
-			<Contact/>
-		</div>
-
   </main>
 </Layout>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
