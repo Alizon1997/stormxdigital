@@ -10,7 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "nodemailer": "^6.9.9",
+    "@types/nodemailer": "^6.4.14",
     "@astrojs/check": "^0.5.10",
+    "@astrojs/partytown": "^2.0.4",
     "@astrojs/react": "^3.6.2",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",

@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel/serverless';
-import sitemap from '@astrojs/sitemap';  
+import sitemap from '@astrojs/sitemap';
+import partytown from '@astrojs/partytown';
 
 export default defineConfig({
   output: 'server',
@@ -22,11 +23,9 @@ export default defineConfig({
         }
       },
       filter: (page) => {
-        // Exclude admin pages or any other pages you don't want in the sitemap
         return !page.includes('/admin');
       },
       serialize: (item) => {
-        // Customize the priority for different types of pages
         if (item.url === 'https://www.stormxdigital.com') {
           item.priority = 1.0;
         } else if (item.url.includes('/blog/')) {
@@ -35,6 +34,11 @@ export default defineConfig({
         }
         return item;
       },
+    }),
+    partytown({
+      config: {
+        forward: ['fbq', 'gtag', 'dataLayer']
+      }
     })
   ],  
   site: 'https://www.stormxdigital.com',  

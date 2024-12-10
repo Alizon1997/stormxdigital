@@ -1,0 +1,109 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/components/Container.astro';
+import Process from "@/components/outreach/Process.astro";
+import Contact from '@/components/Contact.astro';
+import HeroSection from '@/components/outreach/HeroSection.astro';
+import PartnersSection from '@/components/outreach/PartnersSection.astro';
+import Step from '@/components/outreach/Step.astro';
+import type { OutreachTranslations } from '@/components/types/outreach';
+
+const currentLocale = Astro.currentLocale || 'it';
+
+// Import translations
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
+
+const translations = (currentLocale === 'en' ? enTranslations : itTranslations) as OutreachTranslations;
+---
+
+<Layout 
+  title="Outreach Multicanale - Storm X Digital"
+  description="Acquisisci nuovi clienti con il nostro servizio di outreach multicanale. Raggiungi i decision maker dei tuoi potenziali clienti attraverso email, chiamate e LinkedIn."
+  image="/StormXLogo.svg"
+>
+  <main class="pt-32 pb-16 overflow-hidden">
+    <Container>
+      <HeroSection translations={translations} />
+      <PartnersSection />
+
+      <div class="pt-28 text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-3xl mx-auto mb-8 animate-on-scroll">
+          {translations.outreach.process.mainTitle}
+        </h2>
+        <p class="mt-4 sm:mt-8 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-[1200px] mx-auto text-gray-700">
+          {translations.outreach.process.description}
+        </p>
+
+        <div class="mt-16 sm:mt-20 space-y-16 sm:space-y-24 max-w-[1200px] mx-auto px-4">
+          <Step 
+            step={translations.outreach.process.steps.step1} 
+            stepNumber={1} 
+            imagePosition="right"
+          />
+          <Step 
+            step={translations.outreach.process.steps.step2} 
+            stepNumber={2} 
+            imagePosition="left"
+          />
+          <Step 
+            step={translations.outreach.process.steps.step3} 
+            stepNumber={3} 
+            imagePosition="right"
+          />
+          <Step 
+            step={translations.outreach.process.steps.step4} 
+            stepNumber={4} 
+            imagePosition="left"
+          />
+        </div>
+      </div>
+
+      <Process />
+      
+      <div id="contact" class="pt-20">
+        <Contact />
+      </div>
+    </Container>
+  </main>
+</Layout>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => observer.observe(el));
+  });
+</script>

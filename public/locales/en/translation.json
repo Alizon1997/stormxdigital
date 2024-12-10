@@ -2,6 +2,7 @@
     "navbar": {
         "services": "Amazon",
         "mentorship": "Mentorship",
+        "outreach": "Outreach",
         "useCases": "Method Storm X",
         "blog": "Blog & How To",
         "about": "About",
@@ -204,8 +205,8 @@
   "title": "Contact Us",
   "description": "Get in touch with our team for personalized assistance.",
   "meetingWithMarcello": "Meeting with Marcello",
-  "questions": "Do you have questions about how to start selling on Amazon or are you already a seller and not satisfied with your sales and how your account is managed?",
-  "scheduleCall": "Schedule a Call",
+  "questions": "Do you have questions about how to acquire new customers or do you have a sales process that is not bringing the desired results?",
+  "scheduleCall": "Schedule a Meeting with us and let's figure out together how to help you",
   "getFreeAnalysis": "Get a Free Analysis of Your Product",
   "name": "Name",
   "contactNumber": "Contact number",
@@ -216,7 +217,131 @@
   "scheduleFreeCall": "Schedule Free Call",
   "emailmarcello": "marcellodipierro@stormxdigital.com"
 },  
-
+"outreach": {
+  "hero": {
+    "mainTitle": "ARE YOU A PRODUCER?",
+    "subTitle": "ACQUIRE NEW CLIENTS WITH",
+    "highlightedTitle": "MULTICHANNEL OUTREACH",
+    "bulletPoints": {
+      "point1": "We find the direct contact of the Decision Maker for potential clients",
+      "point2": "We initiate a Multichannel contact strategy (email, LinkedIn, WhatsApp, Calls) until we get a response",
+      "point3": "We organize sales meetings with interested prospects"
+    },
+    "ctaButton": "LEARN MORE"
+  },
+  "process": {
+    "mainTitle": "We Research, Find, and Contact Your New Client",
+    "description": "We initiate conversations with the Key Decision Makers of new potential clients. Regardless of the sector you operate in, we can obtain the email address, LinkedIn profile, and WhatsApp number of your prospects.",
+    "steps": {
+      "step1": {
+        "title": "Company Assessment & Specific Market Research",
+        "subtitle": "We begin with an in-depth analysis of your company:",
+        "points": [
+          "Identify your unique strengths",
+          "Define the ICP (Ideal Customer Profile) to direct resources toward the most promising markets",
+          "Create a solid foundation for all subsequent outreach activities",
+          "Analyze sectors with the greatest opportunities",
+          "Explore high-potential niches to expand your reach"
+        ],
+        "purpose": {
+          "label": "The Goal?",
+          "text": "To analyze the untapped opportunities within your company."
+        }
+      },
+      "step2": {
+        "title": "Identification of Decision Makers",
+        "subtitle": "Thanks to our expertise and tools:",
+        "points": [
+          "We identify key decision-makers (CEOs, buyer managers, owners)",
+          "We find verified direct contacts (email, phone)",
+          "We bypass gatekeepers to reach the real decision-makers"
+        ],
+        "purpose": {
+          "label": "The Goal?",
+          "text": "To find the Decision Makers"
+        }
+      },
+      "step3": {
+        "title": "Creation of Personalized Messages",
+        "subtitle": "We customize every message to hit the mark:",
+        "points": [
+          "Multichannel message sequences (Email, LinkedIn, WhatsApp, Cold Calling)",
+          "Adapt tone and content to each market vertical",
+          "Create immediate and professional engagement"
+        ],
+        "purpose": {
+          "label": "The Goal?",
+          "text": "To create the best content to secure a meeting."
+        }
+      },
+      "step4": {
+        "title": "Targeted Follow-Ups & Continuous Optimization",
+        "subtitle": "We precisely identify target markets:",
+        "points": [
+          "Scheduled follow-ups to maximize responses",
+          "Increase engagement with targeted strategies for each type of prospect",
+          "A/B testing to identify what works best",
+          "Dynamic adjustments to sequences and messages based on collected data",
+          "Retargeting to stay in touch with prospects who haven't yet converted"
+        ],
+        "purpose": {
+          "label": "The Goal?",
+          "text": "To optimize the process and scale sales."
+        }
+      }
+    }
+  },
+  "comparison": {
+    "title": "Why the MULTICHANNEL OUTREACH Method is Different",
+    "subtitle": "Thanks to the process: we find buyers and distributors interested in your product, you close the deal.",
+    "featuresTitle": "Features",
+    "tableHeaders": {
+      "benefits": "Benefits",
+      "stormX": "StormX Method",
+      "traditional": "Traditional Method"
+    },
+    "features": [
+      "Personalized and Multichannel Approach: Email, LinkedIn, WhatsApp, Cold Calling, Follow up",
+      "Identification of verified Decision Makers from 18 different databases",
+      "Multilingual Team: Italian, English, French, Spanish, and Albanian",
+      "AI Automation, Advanced Engagement Strategies",
+      "Qualified Leads and Interested Prospects",
+      "Speed and quality in reaching thousands of companies",
+      "Instant Contact Chat, Weekly Reports, Pipeline Measurement, Weekly Optimization"
+    ]
+  },
+  "successStory": {
+    "title": "Success Stories",
+    "subtitle": "Some of the Meetings and Sales we've created for our Partners",
+    "company": {
+      "name": "RELIANCE MEDICAL LTD",
+      "type": "A Company Operating in the Medical Sector",
+      "description1": "Reliance Medical has been our client since 2022. Their need was to find an Amazon Agency to help them expand their product offerings in the EU. Later, they expressed the need to increase their market share in B2B in Italy and Europe.",
+      "description2": "From 2022 to today, we have helped them grow from £1 million to £4 million.",
+      "stats": {
+        "growth": {
+          "value": "78%",
+          "label": "Amazon Revenue Growth"
+        },
+        "meetings": {
+          "value": "1245",
+          "label": "Meetings Created in the Last 2 Years"
+        },
+        "margin": {
+          "value": "57%",
+          "label": "Margin Increase"
+        }
+      }
+    }
+  },
+  "cta": {
+    "description": "Book a free consultation now to discover how our MULTICHANNEL OUTREACH process can help you reach new clients in Italy and abroad while optimizing costs and resources",
+    "button": "REQUEST A FREE CONSULTATION NOW"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions (FAQ)"    
+}
+},
 "footer": {
   "home": "Amazon",
   "services": "Mentorship",
@@ -381,15 +506,90 @@
   ]
 },
 
+  "privacy": {
+    "title": "Privacy Policy",
+    "generalInfo": {
+      "title": "1. General Information",
+      "content": "StormX Digital SRL is committed to protecting the privacy of its website visitors and clients, in compliance with the General Data Protection Regulation (GDPR - EU Regulation 2016/679). This privacy policy outlines how we collect, use, store, and share personal information collected through https://www.stormxdigital.com ('Website')."
+    },
+    "dataController": {
+      "title": "2. Data Controller",
+      "companyName": "The Data Controller is: StormX Digital SRL",
+      "vat": "VAT Number: 08789080721",
+      "address": "Address: Strada Del Carro 24, 76011 Bisceglie, Italy",  
+      "email": "Email: marcellodipierro@stormxdigital.com",
+      "phone": "Phone: +39 349 537 5680"
+    },
+    "dataTypes": {
+      "title": "3. Types of Data Collected", 
+      "intro": "StormX Digital collects various types of personal data, including:",
+      "contact": "Contact Information: such as name, email address, phone number, etc.",
+      "usage": "Usage Data: information on website use, IP address, browser type, operating system, and browsing session details.",
+      "cookies": "Cookies and Tracking Tools: used to improve user experience and for analytical and marketing purposes."
+    },
+    "legalBasis": {
+      "title": "4. Legal Basis for Data Processing",
+      "intro": "StormX Digital SRL processes personal data only where there is a legal basis, as required by GDPR:",
+      "contract": "Execution of a contract or pre-contractual measures (Art. 6.1(b) GDPR).",
+      "consent": "Explicit user consent for marketing or promotional activities (Art. 6.1(a) GDPR).",
+      "interest": "Legitimate interest for website analysis and improvement (Art. 6.1(f) GDPR)."
+    },
+    "purposes": {
+      "title": "5. Purpose of Data Processing",
+      "intro": "Collected data will be processed for:",
+      "items": [
+        "Enabling browsing and use of the Website's functionalities",
+        "Providing the services requested by users",
+        "Conducting marketing activities and profiling only with user authorization",
+        "Managing and responding to support or information requests",
+        "Conducting anonymous statistical analysis on site usage"
+      ]
+    },
+    "security": {
+      "title": "6. Data Processing Methods and Security",
+      "content": "Personal data is processed both manually and electronically, with appropriate security measures in place to protect data from unauthorized access, disclosure, modification, or destruction. Only authorized personnel have access to personal data."
+    },
+    "retention": {
+      "title": "7. Data Retention Period",
+      "content": "Personal data will be retained for the period necessary to fulfill the purposes for which it was collected or to comply with legal obligations. For marketing purposes, data will be retained until the user withdraws consent."
+    },
+    "sharing": {
+      "title": "8. Data Sharing and Transfers",
+      "content": "Personal data will not be shared with third parties without user consent, except as required by law. Some data may be shared with service providers (such as hosting or analytics providers) who act as data processors and are bound to protect user data.",
+      "thirdCountries": "Transfer to Third Countries: If data is transferred outside the EU, this will occur only with adequate safeguards in place as required by GDPR (e.g., adequacy decisions or standard contractual clauses)."
+    },
+    "userRights": {
+      "title": "9. User Rights",
+      "intro": "In accordance with GDPR, users may exercise the following rights:",
+      "rights": {
+        "access": "Right of access: obtain confirmation of whether personal data is being processed and receive a copy of the data",
+        "rectification": "Right of rectification: request the correction of inaccurate or incomplete data",
+        "erasure": "Right to erasure: request the deletion of personal data under certain conditions",
+        "restriction": "Right to restriction of processing: request restriction of data processing under certain conditions", 
+        "portability": "Right to data portability: receive data in a structured, machine-readable format and transfer it to another controller",
+        "objection": "Right to object: object to data processing based on legitimate interests, including profiling",
+        "withdrawal": "Right to withdraw consent: withdraw consent at any time for processing based on consent"
+      },
+      "contact": "To exercise these rights, users may contact StormX Digital SRL by email at marcellodipierro@stormxdigital.com",
+      "complaint": "Users also have the right to file a complaint with the relevant supervisory authority (Data Protection Authority in Italy)"
+    },
+    "cookies": {
+      "title": "10. Cookie Policy", 
+      "content": "StormX Digital SRL uses cookies and similar technologies to collect data for improving user experience and for marketing purposes. Users can manage cookie preferences through their browser settings."
+    },
+    "changes": {
+      "title": "11. Changes to the Privacy Policy",
+      "content": "StormX Digital SRL reserves the right to modify this privacy policy. Any changes will be communicated via notices on the Website. Users are encouraged to check this page periodically for updates."
+    }
+  },
+
   "errorPage": {
     "title": "404 - Page Not Found",
     "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
     "homeButton": "Go to Homepage",
     "contactButton": "Contact Us"
   }
-
 }
-
 
   
      

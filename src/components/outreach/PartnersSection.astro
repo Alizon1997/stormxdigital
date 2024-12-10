@@ -1,0 +1,27 @@
+---
+const partners = [
+  { src: "/a.png", alt: "Partner Logo" },
+  { src: "/b.png", alt: "Partner Logo" },
+  { src: "/c.png", alt: "Partner Logo" },
+  { src: "/d.png", alt: "Partner Logo" },
+  { src: "/e.png", alt: "Partner Logo" },
+  { src: "/f.png", alt: "Partner Logo" },
+];
+---
+
+<div class="mt-16 sm:mt-24 lg:mt-32 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center">
+      {partners.map((partner) => (
+        <div class="w-full flex justify-center transform hover:scale-110 transition-transform duration-300">
+          <img 
+            src={partner.src} 
+            alt={partner.alt} 
+            class="h-12 sm:h-16 lg:h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

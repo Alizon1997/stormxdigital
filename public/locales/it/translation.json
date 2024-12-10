@@ -4,6 +4,7 @@
         "blog": "Blog & How To",
         "useCases": "Metodo Storm X",
         "mentorship": "Mentorship",
+        "outreach": "Outreach",
         "about": "About",
         "contact": "Contact",
         "openMenu": "Open main menu",
@@ -209,8 +210,8 @@
   "title": "Contattaci",
   "description": "Mettiti in contatto con il nostro team per un'assistenza personalizzata.",
   "meetingWithMarcello": "Riunione con Marcello",
-  "questions": "Hai domande su come iniziare a vendere su Amazon o sei già un venditore e non sei soddisfatto delle tue vendite e di com'è gestito il tuo account?",
-  "scheduleCall": "Pianifica Una Chiamata",
+  "questions": "Hai domande su come acquisire nuovi clienti o hai un processo di vendita che non sta portando i risultati desiderati?",
+  "scheduleCall": "Pianifica una Meeting con noi e capiamo insieme come aiutarti",
   "getFreeAnalysis": "Ottieni Un Analisi Gratuita Del Tuo Prodotto",
   "name": "Nome",
   "contactNumber": "Numero di contatto",
@@ -221,6 +222,131 @@
   "scheduleFreeCall": "Pianifica Chiamata Gratuita",
   "emailmarcello": "marcellodipierro@stormxdigital.com"
 },
+  "outreach": {
+    "hero": {
+      "mainTitle": "SEI UN PRODUTTORE?",
+      "subTitle": "ACQUISISCI NUOVI CLIENTI CON",
+      "highlightedTitle": "OUTREACH MULTICANALE",
+      "bulletPoints": {
+        "point1": "Troviamo il contatto diretto dei Decision Maker dei potenziali clienti",
+        "point2": "Iniziamo una strategia di contatto Multicanale (mail-linkedin-whatsapp-Chiamate) fino ad avere una risposta",
+        "point3": "Organizziamo meeting di vendita con i prospect interessanti"
+      },
+      "ctaButton": "SCOPRI DI PIÙ"
+    },
+    "process": {
+      "mainTitle": "Ricerchiamo, Troviamo e Contattiamo Il Tuo Nuovo Cliente",
+      "description": "Iniziamo conversazioni con i Key Decision Makers di nuovi potenziali clienti. Indipendentemente dal settore in cui operi, riusciamo ad ottenere indirizzo email, Linkedin e numero Whatsapp dei tuoi prospects.",
+      "steps": {
+        "step1": {
+          "title": "Assessment Aziendale & Ricerca di Mercato Specifica",
+          "subtitle": "Iniziamo con un'analisi approfondita della tua azienda:",
+          "points": [
+            "Identifichiamo i tuoi punti di forza unici",
+            "Definiamo l'ICP (Cliente Ideale) per indirizzare le risorse verso i mercati più promettenti",
+            "Creiamo una base solida per tutte le attività di outreach successive",
+            "Analizziamo i settori di maggiore opportunità",
+            "Esploriamo nicchie ad alto potenziale per espandere il tuo raggio d'azione"
+          ],
+          "purpose": {
+            "label": "Lo Scopo?",
+            "text": "Analizzare le opportunità inespressa dell'azienda."
+          }
+        },
+        "step2": {
+          "title": "Identificazione Decision Makers",
+          "subtitle": "Grazie alla nostra competenza e ai nostri strumenti:",
+          "points": [
+            "Identifichiamo i decisori chiave (CEO, buyer manager, proprietari)",
+            "Troviamo i contatti diretti verificati (email, telefono)",
+            "Superiamo il filtro della segreteria per raggiungere chi conta davvero"
+          ],
+          "purpose": {
+            "label": "Lo Scopo?",
+            "text": "Trovare i Decision Makers"
+          }
+        },
+        "step3": {
+          "title": "Creazione di Messaggi Personalizzati",
+          "subtitle": "Personalizziamo ogni messaggio per colpire nel segno:",
+          "points": [
+            "Sequenze di messaggi multicanale (Email, LinkedIn, WhatsApp, Cold Calling)",
+            "Adattiamo il tono e il contenuto a ciascun verticale di mercato",
+            "Creiamo engagement immediato e professionale"
+          ],
+          "purpose": {
+            "label": "Lo Scopo?",
+            "text": "Creare il miglior contenuto per poter ottenere un meeting."
+          }
+        },
+        "step4": {
+          "title": "Follow Up Mirati & Ottimizzazione Continua",
+          "subtitle": "Individuiamo i mercati target con la massima precisione:",
+          "points": [
+            "Follow-up programmati per massimizzare le risposte",
+            "Aumentiamo il coinvolgimento con strategie mirate per ogni tipo di prospect",
+            "Test A/B per identificare cosa funziona meglio",
+            "Adattamenti dinamici delle sequenze e dei messaggi in base ai dati raccolti",
+            "Retargeting per rimanere in contatto con i prospect non ancora convertiti"
+          ],
+          "purpose": {
+            "label": "Lo Scopo?",
+            "text": "Ottimizzazione del processo e scalare le vendite"
+          }
+        }
+      }
+    },
+    "comparison": {
+      "title": "Perché il Metodo OUTREACH MULTICANALE è Diverso",
+      "subtitle": "Grazie al processo: noi troviamo buyer e distributori interessati al tuo prodotto, tu chiudi la trattativa.",
+      "featuresTitle": "Caratteristiche",
+      "tableHeaders": {
+        "benefits": "Benefici",
+        "stormX": "Metodo StormX",
+        "traditional": "Metodo Tradizionale"
+      },
+      "features": [
+        "Approccio Personalizzato e Multicanale: Email, LinkedIn, WhatsApp, Cold Calling, Follow up",
+        "Identificazione Decision Makers verificati attinti da 18 diversi database",
+        "Team Multilingua: Italiano, Inglese, Francese, Spagnolo e Albanese",
+        "Automazioni tramite AI, Strategie di Engagement Avanzate",
+        "Lead Qualificati e Prospect interessati",
+        "Velocità e qualità nel raggiungere migliaia aziende",
+        "Chat istantanea di Contatto, Report Settimanali, Misurazione Pipeline, Ottimizzazione Settimanale"
+      ]
+    },
+    "successStory": {
+      "title": "Storie di Successo",
+      "subtitle": "Alcuni dei Meeting e delle Vendite create per i nostri Partner",
+      "company": {
+        "name": "RELIANCE MEDICAL LTD",
+        "type": "Azienda Operante nel Medicale",
+        "description1": "Reliance Medical è un nostro cliente ormai dal 2022. La loro necessità era quella di trovare una Agenzia Amazon potesse aiutarli nella espansione in EU dei propri prodotti. In seguito hanno palesato di aver bisognoso incrementare le loro quote di mercato nel B2B Italia e in Europa.",
+        "description2": "Dal 2022 ad oggi li abbiamo aiutati passando da 1 milione a 4 milioni di sterline.",
+        "stats": {
+          "growth": {
+            "value": "78%",
+            "label": "Crescita Fatturato Amazon"
+          },
+          "meetings": {
+            "value": "1245",
+            "label": "Meeting Creati negli ultimi 2 anni"
+          },
+          "margin": {
+            "value": "57%",
+            "label": "Incremento margine"
+          }
+        }
+      }
+    },
+    "cta": {
+      "description": "Prenota ora una consulenza gratuita per scoprire come il nostro processo di OUTREACH MULTICANALE può aiutarti a raggiungere nuovi clienti in Italia e all'estero, ottimizzando costi e risorse",
+      "button": "RICHIEDI ORA UNA CONSULENZA GRATUITA"
+    },
+    "faq": {
+      "title": "Domande Frequenti (FAQ)"
+    }
+  },
  "footer": {
   "home": "Amazon",
   "services": "Mentorship",
@@ -380,6 +506,84 @@
   ]
 },
 
+  "privacy": {
+    "title": "Informativa sulla Privacy",
+    "generalInfo": {
+      "title": "1. Informazioni Generali",
+      "content": "StormX Digital SRL si impegna a proteggere la privacy degli utenti del sito web e dei clienti, in conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR - Regolamento UE 2016/679). Questa privacy policy descrive come raccogliamo, utilizziamo, conserviamo e condividiamo le informazioni personali raccolte su https://www.stormxdigital.com ('Sito')."
+    },
+    "dataController": {
+      "title": "2. Titolare del Trattamento dei Dati",
+      "companyName": "Il Titolare del Trattamento è: StormX Digital SRL",
+      "vat": "P.IVA/VAT: 08789080721",
+      "address": "Indirizzo: Strada Del Carro 24, 76011 Bisceglie, Italia",
+      "email": "Email: marcellodipierro@stormxdigital.com",
+      "phone": "Telefono: +39 349 537 5680"
+    },
+    "dataTypes": {
+      "title": "3. Tipologie di Dati Raccolti",
+      "intro": "StormX Digital raccoglie diversi tipi di informazioni personali, tra cui:",
+      "contact": "Dati di Contatto: come nome, indirizzo email, numero di telefono, ecc.",
+      "usage": "Dati di Utilizzo: informazioni sull'utilizzo del sito, indirizzo IP, tipo di browser, sistema operativo, e dettagli sulle sessioni di navigazione.",
+      "cookies": "Cookie e Strumenti di Tracciamento: usati per migliorare l'esperienza utente, per scopi analitici e di marketing."
+    },
+    "legalBasis": {
+      "title": "4. Base Giuridica del Trattamento dei Dati",
+      "intro": "StormX Digital SRL tratta i dati personali solo quando esiste una base giuridica, come previsto dal GDPR:",
+      "contract": "Esecuzione di un contratto o misure precontrattuali (Art. 6.1(b) GDPR).",
+      "consent": "Consenso esplicito dell'utente per attività di marketing o promozione (Art. 6.1(a) GDPR).",
+      "interest": "Legittimo interesse per analisi e miglioramento del sito web (Art. 6.1(f) GDPR)."
+    },
+    "purposes": {
+      "title": "5. Finalità del Trattamento dei Dati",
+      "intro": "I dati raccolti saranno trattati per:",
+      "items": [
+        "Consentire la navigazione e l'utilizzo delle funzionalità del Sito",
+        "Fornire i servizi richiesti dagli utenti",
+        "Effettuare attività di marketing e profilazione solo previa autorizzazione dell'utente",
+        "Gestire e rispondere a richieste di assistenza o informazioni",
+        "Condurre analisi statistiche anonime sull'uso del sito"
+      ]
+    },
+    "security": {
+      "title": "6. Modalità di Trattamento e Sicurezza dei Dati",
+      "content": "I dati personali vengono trattati sia manualmente sia con mezzi elettronici, adottando misure di sicurezza adeguate per proteggere i dati da accessi, divulgazioni, modifiche o distruzioni non autorizzate. Solo il personale autorizzato ha accesso ai dati personali."
+    },
+    "retention": {
+      "title": "7. Periodo di Conservazione dei Dati",
+      "content": "I dati personali saranno conservati per il periodo necessario per adempiere alle finalità per cui sono stati raccolti o per soddisfare obblighi legali. Nel caso di marketing, i dati saranno conservati finché l'utente non revocherà il consenso."
+    },
+    "sharing": {
+      "title": "8. Condivisione e Trasferimento dei Dati",
+      "content": "I dati personali non saranno ceduti a terzi senza il consenso dell'utente, salvo obblighi legali. Alcuni dati potranno essere condivisi con fornitori di servizi (come fornitori di hosting o strumenti di analisi) che operano in qualità di responsabili del trattamento e sono vincolati a proteggere i dati degli utenti.",
+      "thirdCountries": "Trasferimento verso Paesi Terzi: Se i dati devono essere trasferiti fuori dall'UE, questo avverrà solo in presenza di adeguate garanzie come richiesto dal GDPR (ad esempio, decisioni di adeguatezza o clausole contrattuali standard)."
+    },
+    "userRights": {
+      "title": "9. Diritti dell'Utente",
+      "intro": "In conformità con il GDPR, l'utente può esercitare i seguenti diritti:",
+      "rights": {
+        "access": "Diritto di accesso: ottenere conferma che sia o meno in corso un trattamento di dati personali e ricevere una copia dei dati trattati",
+        "rectification": "Diritto di rettifica: richiedere la correzione di dati inesatti o l'integrazione di dati incompleti",
+        "deletion": "Diritto di cancellazione: richiedere la cancellazione dei propri dati nei casi previsti dalla normativa",
+        "restriction": "Diritto di limitazione del trattamento: richiedere la limitazione del trattamento dei dati nei casi previsti dal GDPR",
+        "portability": "Diritto alla portabilità dei dati: ricevere i dati in un formato strutturato e leggibile, e trasferirli a un altro titolare",
+        "opposition": "Diritto di opposizione: opporsi al trattamento dei dati basato su interessi legittimi, compresa la profilazione",
+        "withdrawal": "Diritto di revoca del consenso: revocare il consenso in qualsiasi momento per i trattamenti basati sul consenso"
+      },
+      "contact": "Per esercitare questi diritti, l'utente può contattare StormX Digital SRL tramite email all'indirizzo marcellodipierro@stormxdigital.com",
+      "complaint": "L'utente ha anche il diritto di proporre reclamo all'autorità di controllo competente (Garante per la Protezione dei Dati Personali in Italia)"
+    },
+    "cookies": {
+      "title": "10. Cookie Policy",
+      "content": "StormX Digital SRL utilizza cookie e tecnologie simili per raccogliere dati utili a migliorare l'esperienza utente e per finalità di marketing. Gli utenti possono gestire le preferenze relative ai cookie tramite le impostazioni del proprio browser."
+    },
+    "changes": {
+      "title": "11. Modifiche alla Privacy Policy",
+      "content": "StormX Digital SRL si riserva il diritto di modificare questa privacy policy. Eventuali modifiche saranno comunicate tramite avvisi pubblicati sul Sito. Si consiglia agli utenti di consultare periodicamente questa pagina per eventuali aggiornamenti."
+    }
+
+  },
+
   "errorPage": {
     "title": "404 - Pagina Non Trovata",
     "description": "Siamo spiacenti, la pagina che state cercando non esiste o è stata spostata.",
@@ -387,7 +591,6 @@
     "contactButton": "Contatto con Noi"
 
 }
-
 }
 
 

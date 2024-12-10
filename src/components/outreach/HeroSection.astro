@@ -1,0 +1,69 @@
+---
+const { translations } = Astro.props;
+---
+
+<div class="pb-8 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 xl:gap-24">
+  <div class="w-full lg:w-1/2 space-y-6 lg:max-w-2xl">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight animate-fade-in">
+      {translations.outreach.hero.mainTitle}<br/>
+      <span class="text-2xl sm:text-3xl md:text-4xl">{translations.outreach.hero.subTitle}</span><br/>
+      <span class="bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-white px-4 py-2 inline-block mt-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        {translations.outreach.hero.highlightedTitle}
+      </span>
+    </h1>
+    
+    <div class="space-y-4 mt-6">
+      {translations.outreach.hero.bulletPoints.point1 && (
+        <div class="flex items-start gap-3 transform hover:translate-x-2 transition-transform duration-300">
+          <span class="text-[#FF4D00] text-2xl flex-shrink-0">👉</span>
+          <p class="text-base sm:text-lg">{translations.outreach.hero.bulletPoints.point1}</p>
+        </div>
+      )}
+      {translations.outreach.hero.bulletPoints.point2 && (
+        <div class="flex items-start gap-3 transform hover:translate-x-2 transition-transform duration-300">
+          <span class="text-[#FF4D00] text-2xl flex-shrink-0">👉</span>
+          <p class="text-base sm:text-lg">{translations.outreach.hero.bulletPoints.point2}</p>
+        </div>
+      )}
+      {translations.outreach.hero.bulletPoints.point3 && (
+        <div class="flex items-start gap-3 transform hover:translate-x-2 transition-transform duration-300">
+          <span class="text-[#FF4D00] text-2xl flex-shrink-0">👉</span>
+          <p class="text-base sm:text-lg">{translations.outreach.hero.bulletPoints.point3}</p>
+        </div>
+      )}
+    </div>
+
+    <a 
+      href="https://cal.com/marcello-di-pierro/amazon-growth-session"
+      class="inline-block mt-8 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-white font-bold text-base sm:text-lg rounded-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+    >
+      {translations.outreach.hero.ctaButton}
+    </a>
+  </div>
+
+  <div class="w-full lg:w-2/5 flex justify-center">
+    <img
+      src="https://i.ibb.co/G76DvwR/image-1.png"
+      alt="Outreach Image"
+      class="w-3/4 sm:w-2/3 lg:w-full h-auto rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+<style>
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

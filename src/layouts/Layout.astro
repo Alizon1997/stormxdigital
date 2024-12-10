@@ -2,6 +2,9 @@
 import "../styles/global.css";
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FacebookPixel from '../components/FacebookPixel.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import LinkedInPixel from '../components/LinkedInPixel.astro';
 import { ViewTransitions } from 'astro:transitions';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
@@ -18,7 +21,7 @@ const translations = currentLocale === 'en' ? enTranslations : itTranslations;
 const {
   title = translations.site.title,
   description = translations.site.description,
-  image = '/StormXLogo.svg', // Replace with your actual default image path
+  image = '/StormXLogo.svg',
   url = Astro.url,
 } = Astro.props;
 
@@ -61,6 +64,11 @@ const jsonLd = {
 
     <!-- JSON-LD structured data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Tracking Scripts -->
+    <FacebookPixel />
+    <GoogleAnalytics />
+    <LinkedInPixel />
   </head>
   <body class="bg-white font-SpaceGrotesk">
     <Navbar currentLocale={currentLocale} />

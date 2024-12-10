@@ -1,5 +1,21 @@
 // types/services.ts
 
+interface ProcessStep {
+  title: string;
+  subtitle: string;
+  points: string[];
+  purpose: {
+    label: string;
+    text: string;
+  };
+}
+
+interface Statistic {
+  value: string;
+  label: string;
+}
+
+
 export interface ServiceItem {
     id: number;
     name1: string;
@@ -37,6 +53,7 @@ export interface ServiceItem {
   
 
   export interface TranslationType {
+[x: string]: any;
     services: {
       title: string;
       description: string;
@@ -62,6 +79,62 @@ export interface ServiceItem {
       description2: string;
       repeatProcess: string;
       items: ProcessItem[];
+    };
+    outreach: {
+      hero: {
+        mainTitle: string;
+        subTitle: string;
+        highlightedTitle: string;
+        bulletPoints: {
+          point1: string;
+          point2: string;
+          point3: string;
+        };
+        ctaButton: string;
+      };
+      process: {
+        mainTitle: string;
+        description: string;
+        steps: {
+          step1: ProcessStep;
+          step2: ProcessStep;
+          step3: ProcessStep;
+          step4: ProcessStep;
+        };
+      };
+      comparison: {
+        title: string;
+        subtitle: string;
+        featuresTitle: string;
+        tableHeaders: {
+          benefits: string;
+          stormX: string;
+          traditional: string;
+        };
+        features: string[];
+      };
+      successStory: {
+        title: string;
+        subtitle: string;
+        company: {
+          name: string;
+          type: string;
+          description1: string;
+          description2: string;
+          stats: {
+            growth: Statistic;
+            meetings: Statistic;
+            margin: Statistic;
+          };
+        };
+      };
+      cta: {
+        description: string;
+        button: string;
+      };
+      faq: {
+        title: string;
+      }
     };
     table: {
       title: string;

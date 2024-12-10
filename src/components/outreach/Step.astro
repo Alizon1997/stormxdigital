@@ -1,0 +1,49 @@
+---
+interface Props {
+  step: {
+    title: string;
+    subtitle: string;
+    points: string[];
+    purpose: {
+      label: string;
+      text: string;
+    };
+  };
+  stepNumber: number;
+  imagePosition: 'left' | 'right';
+}
+
+const { step, stepNumber, imagePosition } = Astro.props;
+---
+
+<div class={`pb-4 flex flex-col md:flex-row ${imagePosition === 'right' ? 'md:flex-row-reverse' : ''} items-center gap-8 md:gap-32`}>
+  <div class="w-full md:w-3/4 bg-white rounded-2xl p-8 shadow-lg">
+    <div class="text-white text-4xl font-extrabold rounded-lg text-left mb-6">
+      <span class="bg-gradient-to-r from-[#F95C04] from-7% to-[#FF8E0A] to-82% text-4xl rounded-md px-4">Step {stepNumber}</span>
+    </div>
+    <h3 class="text-left text-3xl font-bold mb-6">{step.title}</h3>
+    <p class="text-left text-xl font-bold mb-4">{step.subtitle}</p>
+    <ul class="text-left space-y-3 mb-6 px-8">
+      {step.points.map((point) => (
+        <li class="text-md">• {point}</li>
+      ))}
+    </ul>
+    <p class="text-left text-[16px] font-extrabold">
+      <span class="font-extrabold text-orange">{step.purpose.label}</span> {step.purpose.text}
+    </p>
+  </div>
+  <div class="w-full md:w-[454px]">
+    <img 
+      src={`/step-${stepNumber}.png`} 
+      alt={`Step ${stepNumber}`} 
+      class="w-full rounded-lg"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+<style>
+  .text-orange {
+    @apply text-[#F95C04];
+  }
+</style>

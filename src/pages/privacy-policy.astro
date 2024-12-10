@@ -1,0 +1,144 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Container from '@/components/Container.astro'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import type { PrivacySection, PrivacyTranslations } from '@/components/types/privacy'
+
+const currentLocale = Astro.currentLocale || 'it'
+import enTranslations from '../../public/locales/en/translation.json'
+import itTranslations from '../../public/locales/it/translation.json'
+
+const translations = (currentLocale === 'en' ? enTranslations : itTranslations) as PrivacyTranslations
+---
+
+<Layout title={currentLocale === 'en' ? 'Privacy Policy - Storm X Digital' : 'Informativa sulla Privacy - Storm X Digital'}>
+  <Container>
+    <div class="min-h-screen py-10 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white shadow-xl sm:shadow-2xl rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-100">
+          <div class="bg-gradient-to-r from-[#F95C04] via-7% to-[#FF8E0A] to-82% px-4 sm:px-8 py-8 sm:py-12">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">
+              {translations.privacy.title}
+            </h1>
+          </div>
+
+          <div class="px-4 sm:px-8 py-8 sm:py-12 space-y-8 sm:space-y-12">
+            {/* General Information */}
+            <div class="privacy-section">
+              <h2 class="section-title">
+                {translations.privacy.generalInfo.title}
+              </h2>
+              <p class="section-content">
+                {translations.privacy.generalInfo.content}
+              </p>
+            </div>
+
+            {/* Data Controller */}
+            <div class="privacy-section bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-8">
+              <h2 class="section-title">
+                {translations.privacy.dataController.title}
+              </h2>
+              <div class="space-y-3">
+                {(['companyName', 'vat', 'address', 'email', 'phone'] as const).map((field) => (
+                  <p class="flex items-center space-x-2 text-gray-700 text-sm sm:text-base">
+                    <span class="w-2 h-2 bg-orange rounded-full flex-shrink-0"></span>
+                    <span class="flex-1">{translations.privacy.dataController[field]}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            {/* Types of Data Collected */}
+            <div class="privacy-section">
+              <h2 class="section-title">
+                {translations.privacy.dataTypes.title}
+              </h2>
+              <p class="mb-4 sm:mb-6">{translations.privacy.dataTypes.intro}</p>
+              <ul class="space-y-3 sm:space-y-4">
+                {(['contact', 'usage', 'cookies'] as const).map((type) => (
+                  <li class="flex items-start">
+                    <span class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded-full bg-orange/10 text-orange mt-1">
+                      <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                    </span>
+                    <span class="ml-3 text-gray-700 text-sm sm:text-base">{translations.privacy.dataTypes[type]}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Dynamic Sections */}
+            {Object.entries(translations.privacy).map(([key, section]) => {
+              if (['legalBasis', 'purposes', 'security', 'retention', 'sharing', 'userRights', 'cookies', 'changes'].includes(key)) {
+                const typedSection = section as PrivacySection
+                return (
+                  <div class={`privacy-section ${key === 'userRights' ? 'bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-8' : ''}`}>
+                    <h2 class="section-title">
+                      {typedSection.title}
+                    </h2>
+                    {typedSection.intro && <p class="mb-4 sm:mb-6">{typedSection.intro}</p>}
+                    {typedSection.items && (
+                      <ul class="space-y-3 sm:space-y-4">
+                        {typedSection.items.map((item) => (
+                          <li class="flex items-start">
+                            <span class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded-full bg-orange/10 text-orange mt-1">
+                              <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                              </svg>
+                            </span>
+                            <span class="ml-3 text-gray-700 text-sm sm:text-base">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {typedSection.content && <p class="section-content">{typedSection.content}</p>}
+                    {typedSection.thirdCountries && (
+                      <div class="mt-4 sm:mt-6 p-3 sm:p-4 bg-orange/5 rounded-lg sm:rounded-xl border border-orange/10">
+                        <p class="text-gray-700 text-sm sm:text-base">{typedSection.thirdCountries}</p>
+                      </div>
+                    )}
+                    {typedSection.rights && (
+                      <div class="grid gap-3 sm:gap-4 mt-4 sm:mt-6">
+                        {Object.entries(typedSection.rights).map(([rightKey, right]) => {
+                          const [title, content] = right.split(':')
+                          return (
+                            <div class="p-3 sm:p-4 bg-white rounded-lg sm:rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                              <p class="text-gray-700 text-sm sm:text-base">
+                                <strong class="text-orange">{title}:</strong>
+                                <span class="ml-2">{content}</span>
+                              </p>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )
+              }
+              return null
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .privacy-section {
+    @apply transition-all duration-300 rounded-xl;
+  }
+  .section-title {
+    @apply text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200;
+  }
+  .section-content {
+    @apply text-gray-800 leading-relaxed text-sm sm:text-base;
+  }
+  .text-orange {
+    @apply text-[#F95C04];
+  }
+  .bg-orange {
+    @apply bg-[#F95C04];
+  }
+</style>

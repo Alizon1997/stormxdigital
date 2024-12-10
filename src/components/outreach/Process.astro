@@ -1,0 +1,35 @@
+---
+import Container from "../Container.astro"
+import Topic from "../Topic.astro";
+import teamData from '../Data/team.json';
+import Collapse from "../Collapse.astro";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { TranslationType } from '../types/services';
+
+// Ensure currentLocale is always 'en' or 'it'
+const currentLocale = (Astro.currentLocale || 'it') as keyof typeof teamData;
+const translations: TranslationType = currentLocale === 'en' ? enTranslations : itTranslations;
+
+// Import translations
+import enTranslations from '../../../public/locales/en/translation.json';
+import itTranslations from '../../../public/locales/it/translation.json';
+import { Translation } from "react-i18next";
+
+---
+<Container>
+<div class="pt-20 relative flex flex-col items-center justify-center  md:flex-row">
+    <h3 class="pl-4 text-center text-5xl font-bold mb-4">{translations.outreach.faq.title}</h3>
+</div>
+ 
+<div class="my-6">
+    <div class="space-y-10">
+        {
+        teamData[currentLocale].outreach.map((outreach, key) => (
+          <Collapse label={outreach.label} index={key + 1}>
+            {outreach.content}
+          </Collapse>
+        ))
+        }
+    </div>
+</div>
+</Container>

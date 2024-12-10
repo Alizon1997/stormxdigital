@@ -4,7 +4,7 @@ import ArticleIcon from "../Icons/ArticleIcon.astro";
 import VideoIcon from "../Icons/VideoIcon.astro";
 import Topic from "../Topic.astro";
 import articlesData from '../../components//Data/articles.json';
-import PostCarousel from "../PostCard";
+
 import { fetchPosts } from "@/lib/fetchPosts";
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import type { TranslationType } from '../types/services';
@@ -23,6 +23,5 @@ const translations: TranslationType = currentLocale === 'en' ? enTranslations : 
   <div class="relative flex flex-col items-center md:flex-row">
     <Topic title={translations.blog.title} description={translations.blog.description} />
   </div>
-
-  <PostCarousel client:load posts={posts} translations={translations.blog} currentLocale={currentLocale} />
+ <!--   <PostCarousel client:load posts={posts} translations={translations.blog} currentLocale={currentLocale} />  -->
 </Container>
