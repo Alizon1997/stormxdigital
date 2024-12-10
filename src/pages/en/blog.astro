@@ -16,7 +16,7 @@ interface Post {
   authorImage: string;
 }
 
-const fetchedPosts = await fetchPosts();
+const fetchedPosts = await fetchPosts() || [];
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);

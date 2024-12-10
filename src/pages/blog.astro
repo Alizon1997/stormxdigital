@@ -16,8 +16,7 @@ interface Post {
   authorImage: string;
 }
 
-// Assuming fetchPosts returns a Promise<Document[]>
-const fetchedPosts = await fetchPosts();
+const fetchedPosts = await fetchPosts() || [];
 
 // Map the fetched posts to ensure they match the Post interface
 const posts: Post[] = fetchedPosts.map(doc => ({
@@ -30,7 +29,6 @@ const posts: Post[] = fetchedPosts.map(doc => ({
   author: doc.author,
   authorImage: doc.authorImage
 }));
-
 ---
 
 <Layout title="Blog - Storm X Digital" description="Storm X Amazon Agency | Bespoke Amazon Partner to Grow Your Business into a Bestseller." image="/StormXLogo.svg">
