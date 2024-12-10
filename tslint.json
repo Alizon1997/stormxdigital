@@ -1,5 +1,5 @@
 {
     "rules": {
-      "no-unused-variable": false   
+      "no-unused-variable": false
     }
-}
+  }
