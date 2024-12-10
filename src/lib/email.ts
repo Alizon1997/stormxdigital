@@ -6,7 +6,7 @@ const transporter = nodemailer.createTransport({
     user: 'marcellodipierro@stormxdigital.com',
     // Use an App Password instead of your regular password
     // Generate one at https://myaccount.google.com/apppasswords
-    pass: 'Marcello981!'
+    pass: 'mxby upok qmrm nuwa'
   }
 });
 
@@ -22,7 +22,7 @@ export const sendEmail = async (data: {
   const mailOptions = {
     from: 'marcellodipierro@stormxdigital.com',
     to: 'marcellodipierro@stormxdigital.com',
-    subject: `New Contact Form Submission from ${name}`,
+    subject: `Storm X Digital Contact Form ${name}`,
     html: `
       <h2>New Contact Form Submission</h2>
       <p><strong>Name:</strong> ${name}</p>
