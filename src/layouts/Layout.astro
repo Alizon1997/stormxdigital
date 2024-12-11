@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import FacebookPixel from '../components/FacebookPixel.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import LinkedInPixel from '../components/LinkedInPixel.astro';
+import LfeederTracking from '../components/LfeederTracking.astro';
 import { ViewTransitions } from 'astro:transitions';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
@@ -69,6 +70,7 @@ const jsonLd = {
     <FacebookPixel />
     <GoogleAnalytics />
     <LinkedInPixel />
+    <LfeederTracking />
   </head>
   <body class="bg-white font-SpaceGrotesk">
     <Navbar currentLocale={currentLocale} />
