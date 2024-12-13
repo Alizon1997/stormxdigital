@@ -1,0 +1,33 @@
+---
+// LeadFeeder tracking component
+---
+
+<script>
+  interface Window {
+    ldfdr?: {
+      _q: any[];
+      (...args: any[]): void;
+    };
+  }
+
+  declare let fs: HTMLScriptElement;
+
+  (function(ss: string, ex?: string) {
+    (window as any).ldfdr = (window as any).ldfdr || function() {
+      ((window as any).ldfdr._q = (window as any).ldfdr._q || []).push([].slice.call(arguments));
+    };
+
+    (function(d: Document, s: string) {
+      const firstScript = d.getElementsByTagName(s)[0];
+      
+      function createScript(src: string): void {
+        const script = d.createElement(s) as HTMLScriptElement;
+        script.src = src;
+        script.async = true;
+        firstScript.parentNode?.insertBefore(script, firstScript);
+      }
+
+      createScript('https://sc.lfeeder.com/lftracker_v1_' + ss + (ex ? '_' + ex : '') + '.js');
+    })(document, 'script');
+  })('lYNOR8xrlPv4WQJZ');
+</script>
